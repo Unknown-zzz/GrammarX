@@ -1,0 +1,30 @@
+{
+  "name": "grammar-x",
+  "private": true,
+  "version": "2.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"node --watch --no-warnings server/index.js\" \"vite\"",
+    "build": "vite build",
+    "start": "node --no-warnings server/start.js",
+    "preview": "vite preview"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "jsqr": "^1.4.0",
+    "qrcode": "^1.5.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "selfsigned": "^5.5.0",
+    "socket.io": "^4.8.0",
+    "socket.io-client": "^4.8.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "concurrently": "^9.1.0",
+    "vite": "^5.4.8"
+  }
+}
