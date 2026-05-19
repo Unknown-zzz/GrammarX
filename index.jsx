@@ -399,19 +399,20 @@ function CountdownTimer({ timeLeft, totalTime, color }) {
 // QR encodes just the room code as plain text — simple, fast, no URL needed
 function QRCodeDisplay({ code }) {
   const [src, setSrc] = useState('');
+  const joinUrl = `${window.location.origin}/?join=${code}`;
   useEffect(() => {
-    QRCode.toDataURL(code, {
+    QRCode.toDataURL(joinUrl, {
       margin: 2, width: 200, errorCorrectionLevel: 'M',
       color: { dark: '#080810', light: '#f5f1e8' },
     }).then(setSrc).catch(()=>{});
-  }, [code]);
+  }, [joinUrl]);
   if (!src) return <div className="qr-section"><div style={{color:'var(--mut)',fontSize:'.72rem'}}>Generando QR…</div></div>;
   return (
     <div className="qr-section">
       <div className="qr-box">
         <img src={src} width={176} height={176} alt="QR sala" style={{display:'block'}}/>
       </div>
-      <div className="qr-caption">📱 Escanea con la app para unirte</div>
+      <div className="qr-caption">📱 Escanea o abre el link para unirte</div>
     </div>
   );
 }
@@ -449,7 +450,7 @@ function QRScanner({ onScan, onClose }) {
       if (qr?.data) {
         doneRef.current = true;
         streamRef.current?.getTracks().forEach(t => t.stop());
-        onScan(qr.data.trim().toUpperCase().replace(/[^A-Z0-9]/g, ''));
+        onScan(qr.data.trim()); // pass raw — handleScan will parse URL or plain code
       } else {
         rafRef.current = requestAnimationFrame(tick);
       }
@@ -589,6 +590,15 @@ function JoinScreen({ user, initialCode='', onJoined, onBack }) {
   const [loading, setLoading] = useState(false);
   const [scanning, setScanning] = useState(false);
 
+  // Auto-join when arriving via QR link (?join=CODE)
+  const autoJoinedRef = useRef(false);
+  useEffect(() => {
+    if (initialCode && !autoJoinedRef.current) {
+      autoJoinedRef.current = true;
+      doJoin(initialCode);
+    }
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
   const doJoin = async (raw) => {
     const c = (raw ?? code).trim().toUpperCase();
     if (c.length < 4) { setErr('Ingresa el código de sala'); return; }
@@ -601,8 +611,15 @@ function JoinScreen({ user, initialCode='', onJoined, onBack }) {
 
   const handleScan = scanned => {
     setScanning(false);
-    setCode(scanned);
-    doJoin(scanned);
+    let extracted = scanned;
+    try {
+      const url = new URL(scanned);
+      const joinParam = url.searchParams.get('join');
+      if (joinParam) extracted = joinParam;
+    } catch { /* not a URL — use as-is */ }
+    const clean = extracted.trim().toUpperCase().replace(/[^A-Z0-9]/g, '');
+    setCode(clean);
+    doJoin(clean);
   };
 
   return (
@@ -951,10 +968,19 @@ function PlayerLobbyScreen({ user, sessionCode, onStart }) {
 
 // ── Question sub-components ────────────────────────────────────────────────────
 
-function QuestionG1({ round, onAnswer, locked }) {
+function QuestionG1({ round, onAnswer, locked, revealed }) {
   const [words] = useState(() => shuffle(round.s.split(' ')));
   const [placed, setPlaced] = useState([]);
   const [zone, setZone] = useState('idle');
+  const pendingZoneRef = useRef(null);
+
+  // Show the result only once the round is revealed (all answered or time up)
+  useEffect(() => {
+    if (revealed && pendingZoneRef.current) {
+      setZone(pendingZoneRef.current);
+      pendingZoneRef.current = null;
+    }
+  }, [revealed]);
 
   const place  = i => { if(locked)return; setPlaced(p=>p.includes(i)?p:[...p,i]); setZone('active'); };
   const remove = pos => { if(locked)return; setPlaced(p=>{const n=[...p];n.splice(pos,1);return n;}); };
@@ -966,7 +992,7 @@ function QuestionG1({ round, onAnswer, locked }) {
     const ans = placed.map(i=>words[i]);
     const isCorrect = JSON.stringify(ans)===JSON.stringify(correct);
     onAnswer(isCorrect);
-    setZone(isCorrect?'correct':'wrong');
+    pendingZoneRef.current = isCorrect ? 'correct' : 'wrong'; // held until reveal
   };
 
   return (
@@ -996,9 +1022,9 @@ function QuestionG1({ round, onAnswer, locked }) {
   );
 }
 
-function QuestionMCQ({ round, gameId, onAnswer, locked, chosenIdx, opts }) {
+function QuestionMCQ({ round, gameId, onAnswer, locked, chosenIdx, opts, revealed }) {
   const parts = round.tpl ? round.tpl.split('___') : ['',''];
-  const filledText = locked && chosenIdx!==null && opts[chosenIdx]?.isCorrect ? opts[chosenIdx].text : '___';
+  const filledText = revealed && chosenIdx !== null ? (opts[chosenIdx]?.text ?? '___') : '___';
 
   return (
     <>
@@ -1033,7 +1059,7 @@ function QuestionMCQ({ round, gameId, onAnswer, locked, chosenIdx, opts }) {
       <div className="opt-grid">
         {opts.map((o,i)=>(
           <button key={i}
-            className={`opt-btn${chosenIdx===i?(o.isCorrect?' correct':' wrong'):''}${locked&&o.isCorrect&&chosenIdx!==i?' correct':''}`}
+            className={`opt-btn${revealed&&chosenIdx===i?(o.isCorrect?' correct':' wrong'):''}${revealed&&o.isCorrect&&chosenIdx!==i?' correct':''}`}
             onClick={()=>onAnswer(o.isCorrect,i)} disabled={locked}>
             {o.text}
           </button>
@@ -1049,7 +1075,7 @@ function PlayerGameScreen({ user, sessionCode, onSessionClosed }) {
   const [timeLeft, setTimeLeft] = useState(20);
   const [myScore, setMyScore] = useState(0);
   const [hasAnswered, setHasAnswered] = useState(false);
-  const [feedback, setFeedback] = useState(null);
+  const [pendingFeedback, setPendingFeedback] = useState(null); // shown only after reveal
   const [opts, setOpts] = useState([]);
   const [chosenIdx, setChosenIdx] = useState(null);
   const submitting     = useRef(false);
@@ -1063,6 +1089,11 @@ function PlayerGameScreen({ user, sessionCode, onSessionClosed }) {
     if (!round || gameId==='G1') return [];
     return shuffle(round.opts.map((o,i)=>({text:o, isCorrect:i===0})));
   }
+
+  // Reveal answers when everyone answered OR time ran out
+  const allAnswered = (rs?.totalPlayers ?? 0) > 0 && (rs?.answeredCount ?? 0) >= (rs?.totalPlayers ?? 1);
+  const revealed    = (timeLeft <= 0 && rs?.status === 'playing') || allAnswered;
+  const feedback    = revealed ? pendingFeedback : null;
 
   useEffect(() => {
     const applyState = data => {
@@ -1088,7 +1119,7 @@ function PlayerGameScreen({ user, sessionCode, onSessionClosed }) {
         submitting.current     = false;
         setOpts(buildOpts(data.rounds?.[data.currentRound], data.gameId));
         setHasAnswered(false);
-        setFeedback(null);
+        setPendingFeedback(null);
         setChosenIdx(null);
       }
 
@@ -1114,7 +1145,7 @@ function PlayerGameScreen({ user, sessionCode, onSessionClosed }) {
         submitting.current     = true;
         hasAnsweredRef.current = true;
         setHasAnswered(true);
-        setFeedback({ ok: false, msg: '⏰ Tiempo agotado — +0 pts', type: 'timeout' });
+        setPendingFeedback({ ok: false, msg: '⏰ Tiempo agotado — +0 pts', type: 'timeout' });
         setMyScore(s => s);
         socket.emit('answer', {
           code: sessionCode, name: user,
@@ -1131,7 +1162,7 @@ function PlayerGameScreen({ user, sessionCode, onSessionClosed }) {
     hasAnsweredRef.current = true;
     setHasAnswered(true);
     setMyScore(s => s + score);
-    setFeedback({ ok: isCorrect, msg: isCorrect ? `✓ Correcto! +${score} pts` : '✗ Incorrecto — +0 pts' });
+    setPendingFeedback({ ok: isCorrect, msg: isCorrect ? `✓ Correcto! +${score} pts` : '✗ Incorrecto — +0 pts' });
     const cur = rsRef.current;
     if (cur) socket.emit('answer', { code:sessionCode, name:user, roundIndex:cur.currentRound, score, gameToken:cur.gameToken });
   };
@@ -1215,8 +1246,8 @@ function PlayerGameScreen({ user, sessionCode, onSessionClosed }) {
 
         <div className="slide-up" key={rs.currentRound + rs.gameToken}>
           {rs.gameId==='G1'
-            ? <QuestionG1 round={round} onAnswer={handleG1Answer} locked={hasAnswered}/>
-            : <QuestionMCQ round={round} gameId={rs.gameId} onAnswer={handleAnswer} locked={hasAnswered} chosenIdx={chosenIdx} opts={opts}/>
+            ? <QuestionG1 round={round} onAnswer={handleG1Answer} locked={hasAnswered} revealed={revealed}/>
+            : <QuestionMCQ round={round} gameId={rs.gameId} onAnswer={handleAnswer} locked={hasAnswered} revealed={revealed} chosenIdx={chosenIdx} opts={opts}/>
           }
         </div>
 
@@ -1312,8 +1343,11 @@ function PodiumScreen({ user }) {
 export default function App() {
   injectCSS(CSS);
 
-  // Read ?code= from URL (player scanned QR with native camera app)
-  const [urlCode] = useState(() => new URLSearchParams(window.location.search).get('code')?.toUpperCase() || '');
+  // Read ?join= from URL (player opened QR link directly in browser)
+  const [urlCode] = useState(() => {
+    const p = new URLSearchParams(window.location.search);
+    return (p.get('join') || p.get('code') || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+  });
 
   const [screen, setScreen]     = useState(() => urlCode ? 'login' : 'login');
   const [user, setUser]         = useState('');
