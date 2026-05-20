@@ -40,48 +40,59 @@ function calcScore(correct, timeLeft, tpr, diff) { if(!correct) return 0; return
 const TECH = new Set(['programmed','deployed','tested','ran','executed','compiled','debugged','configured','installed','initialized','committed','pushed','pulled','merged','cloned','forked','refactored','documented','reviewed','monitored','logged','parsed','queried','migrated','automated','optimized','containerized','orchestrated','encrypted','authenticated','synchronized','integrated','validated','built','shipped','released','rolled','patched']);
 const isTech = w => TECH.has(w.toLowerCase().replace(/[^a-z]/g,''));
 const G1_DATA = [
-  {s:'She wrote a long email',h:'Someone sent a written message',t:'Ella escribió un correo largo',d:1},
-  {s:'He fixed the broken printer',h:'A person repaired an office machine',t:'Él arregló la impresora rota',d:1},
-  {s:'They opened a new account',h:'People created access to a service',t:'Ellos abrieron una cuenta nueva',d:1},
-  {s:'We turned off the computer',h:'The device was powered down',t:'Nosotros apagamos la computadora',d:1},
-  {s:'He installed the new software update',h:'A person added a newer version of a program',t:'Él instaló la nueva actualización de software',d:2},
-  {s:'She tested the login form carefully',h:'Someone checked if a feature worked',t:'Ella testeó el formulario de inicio de sesión',d:2},
-  {s:'They ran the script on the server',h:'A file was executed on a remote machine',t:'Ellos ejecutaron el script en el servidor',d:2},
-  {s:'We configured the database connection settings',h:'The team set up how the app talks to the DB',t:'Configuramos los ajustes de conexión a la base de datos',d:2},
-  {s:'The developer debugged the authentication module yesterday',h:'Someone found errors in the login system',t:'El desarrollador depuró el módulo de autenticación ayer',d:3},
-  {s:'She committed all her changes to the repository',h:'Code was saved into version control',t:'Ella hizo commit de todos sus cambios al repositorio',d:3},
-  {s:'They deployed the new build to production',h:'The latest version went live on the server',t:'Ellos hicieron deploy del nuevo build a producción',d:3},
-  {s:'He reviewed the pull request before merging',h:'Code was checked before being combined',t:'Él revisó el pull request antes de hacer el merge',d:3},
-  {s:'The team refactored the legacy codebase last sprint',h:'Old code was restructured without changing behavior',t:'El equipo refactorizó el código legado en el último sprint',d:4},
-  {s:'She automated the deployment pipeline using shell scripts',h:'The release process was made automatic with code',t:'Ella automatizó el pipeline de despliegue usando shell scripts',d:4},
-  {s:'They migrated all user data to the new cluster',h:'Information was moved from one system to another',t:'Migraron todos los datos de usuario al nuevo clúster',d:4},
-  {s:'He containerized the application using Docker and Kubernetes',h:'The app was packaged to run anywhere',t:'Él contenerizó la aplicación usando Docker y Kubernetes',d:4},
-  {s:'The engineer orchestrated the microservices deployment across multiple regions',h:'Services were coordinated to run in different locations',t:'El ingeniero orquestó el despliegue de microservicios en múltiples regiones',d:5},
-  {s:'She optimized the database queries and reduced latency significantly',h:'SQL was improved so the app responded faster',t:'Ella optimizó las queries y redujo la latencia significativamente',d:5},
-  {s:'They authenticated users with OAuth and encrypted the tokens',h:'Login and security were implemented using modern protocols',t:'Autenticaron usuarios con OAuth y cifraron los tokens',d:5},
-  {s:'He integrated the payment gateway and validated every edge case',h:'A billing system was connected and thoroughly tested',t:'Integró el gateway de pagos y validó cada caso límite',d:5},
+  {s:'She wrote a long email',d:1},
+  {s:'He fixed the broken printer',d:1},
+  {s:'They opened a new account',d:1},
+  {s:'We turned off the computer',d:1},
+  {s:'He installed the new software update',d:2},
+  {s:'She tested the login form carefully',d:2},
+  {s:'They ran the script on the server',d:2},
+  {s:'We configured the database connection settings',d:2},
+  {s:'The developer debugged the authentication module yesterday',d:3},
+  {s:'She committed all her changes to the repository',d:3},
+  {s:'They deployed the new build to production',d:3},
+  {s:'He reviewed the pull request before merging',d:3},
+  {s:'The team refactored the legacy codebase last sprint',d:4},
+  {s:'She automated the deployment pipeline using shell scripts',d:4},
+  {s:'They migrated all user data to the new cluster',d:4},
+  {s:'He containerized the application using Docker and Kubernetes',d:4},
+  {s:'The engineer orchestrated the microservices deployment across multiple regions',d:5},
+  {s:'She optimized the database queries and reduced latency significantly',d:5},
+  {s:'They authenticated users with OAuth and encrypted the tokens',d:5},
+  {s:'He integrated the payment gateway and validated every edge case',d:5},
 ];
 
 // ── G2 DATA ────────────────────────────────────────────────────────────────────
+// Pattern A — short adj COMPARATIVE  : X is ADJer than Y
+// Pattern B — short adj SUPERLATIVE  : X is the ADJest
+// Pattern C — long adj  COMPARATIVE  : X is more ADJ than Y
+// Pattern D — long adj  SUPERLATIVE  : X is the most ADJ
 const G2_DATA = [
-  {left:'🐢 Turtle',right:'🐇 Rabbit',tpl:'A rabbit runs ___ than a turtle.',opts:['faster','more fast','more faster','fastest'],t:'Un conejo corre más rápido que una tortuga.',d:1},
-  {left:'📱 Phone',right:'💻 Laptop',tpl:'A laptop is ___ than a phone.',opts:['bigger','more big','more bigger','biggest'],t:'Una laptop es más grande que un teléfono.',d:1},
-  {left:'☕ Coffee',right:'💧 Water',tpl:'Coffee is ___ than water.',opts:['worse for you','more bad for you','badder','worst'],t:'El café es peor para ti que el agua.',d:1},
-  {left:'🌧️ Rain',right:'☀️ Sun',tpl:'A sunny day is ___ than a rainy one.',opts:['more pleasant','pleasanter','pleasant','pleasantest'],t:'Un día soleado es más agradable que uno lluvioso.',d:1},
-  {left:'🐘 Elephant',right:'🐭 Mouse',tpl:'An elephant is ___ animal in the land.',opts:['the heaviest','the most heavy','the heavier','heaviest'],t:'El elefante es el animal más pesado en tierra.',d:2},
-  {left:'🚀 Rocket',right:'✈️ Plane',tpl:'A rocket travels ___ than a plane.',opts:['much faster','much more fast','far more faster','more faster'],t:'Un cohete viaja mucho más rápido que un avión.',d:2},
-  {left:'🏔️ Everest',right:'🏠 House',tpl:'Everest is ___ mountain on Earth.',opts:['the highest','the most high','the higher','highest'],t:'El Everest es la montaña más alta de la Tierra.',d:2},
-  {left:'🐌 Snail',right:'🦅 Eagle',tpl:'An eagle flies ___ than a snail crawls.',opts:['far more quickly','much more quicker','more quickly','far quicker'],t:'Un águila vuela mucho más rápido de lo que se arrastra un caracol.',d:2},
-  {left:'⚙️ C',right:'🐍 Python',tpl:'C executes ___ efficiently than Python.',opts:['more','most','much more','much most'],t:'C ejecuta más eficientemente que Python.',d:3},
-  {left:'🗄️ SQL',right:'📄 NoSQL',tpl:'SQL databases are ___ structured than NoSQL.',opts:['more rigidly','most rigid','more rigid','rigidlier'],t:'Las BD SQL son más rígidamente estructuradas que NoSQL.',d:3},
-  {left:'☁️ Cloud',right:'🖥️ Local',tpl:'Cloud storage is ___ solution for scaling.',opts:['by far the most scalable','by far more scalable','the far most scalable','the most scalablest'],t:'El almacenamiento en la nube es la solución más escalable.',d:3},
-  {left:'🤖 AI',right:'👤 Human',tpl:'AI processes data ___ than any human.',opts:['considerably faster','considerably more fast','considerablier faster','considerably the fastest'],t:'La IA procesa datos considerablemente más rápido que cualquier humano.',d:4},
-  {left:'🔐 AES-256',right:'🔓 MD5',tpl:'AES-256 is ___ encryption standard.',opts:['the most secure','the more secure','the securest','more secure'],t:'AES-256 es el estándar de cifrado más seguro.',d:4},
-  {left:'📡 5G',right:'📶 3G',tpl:'5G is ___ network technology than 3G.',opts:['far more advanced','far most advanced','much advanced','most advanced'],t:'5G es una tecnología de red mucho más avanzada que 3G.',d:4},
-  {left:'🧠 GPT-4',right:'🤖 GPT-2',tpl:'The ___ the model, the ___ the responses.',opts:['larger / more nuanced','larger / most nuanced','larger / nuanceder','large / more nuanced'],t:'Cuanto más grande el modelo, más matizadas las respuestas.',d:5},
-  {left:'⚡ Rust',right:'🐘 PHP',tpl:'Rust is arguably ___ systems language ever created.',opts:['the most performant','the more performant','most performant','the performantest'],t:'Rust es sin duda el lenguaje de sistemas más eficiente jamás creado.',d:5},
-  {left:'🌐 IPv6',right:'🌐 IPv4',tpl:'IPv6 provides a ___ address space than IPv4.',opts:['vastly larger','vastly more larger','vaster','most vast'],t:'IPv6 proporciona un espacio de direcciones mucho mayor que IPv4.',d:5},
-  {left:'🔬 Unit Test',right:'🧪 E2E Test',tpl:'Unit tests run ___ than end-to-end tests.',opts:['significantly faster','significantly more fast','significantlier fast','far the fastest'],t:'Los unit tests corren significativamente más rápido que los tests E2E.',d:5},
+  // ── d:1 · Pattern A — short adj comparative (ADJer than) ────────────────
+  {left:'🐢 Turtle',right:'🐇 Rabbit',tpl:'A rabbit is ___ than a turtle.',opts:['faster','more fast','more faster','fastest'],d:1},
+  {left:'📱 Phone',right:'💻 Laptop',tpl:'A laptop is ___ than a phone.',opts:['bigger','more big','more bigger','biggest'],d:1},
+  {left:'🐭 Mouse',right:'🖥️ Monitor',tpl:'A mouse is ___ than a monitor.',opts:['smaller','more small','more smaller','smallest'],d:1},
+  {left:'💡 LED',right:'🕯️ Candle',tpl:'An LED is ___ than a candle.',opts:['brighter','more bright','more brighter','brightest'],d:1},
+  // ── d:2 · Pattern B — short adj superlative (the ADJest) ────────────────
+  {left:'🏔️ Everest',right:'⛰️ Hill',tpl:'Everest is ___ mountain in the world.',opts:['the tallest','the most tall','taller','most tall'],d:2},
+  {left:'🐋 Blue Whale',right:'🐘 Elephant',tpl:'The blue whale is ___ animal on Earth.',opts:['the largest','the most large','larger','most large'],d:2},
+  {left:'☀️ Sun',right:'💡 Bulb',tpl:'The sun is ___ natural light source.',opts:['the brightest','the most bright','brighter','most bright'],d:2},
+  {left:'🧊 Ice',right:'💧 Water',tpl:'Ice is ___ state of water.',opts:['the coldest','the most cold','colder','most cold'],d:2},
+  // ── d:3 · Pattern C — long adj comparative (more ADJ than) ──────────────
+  {left:'🐍 Python',right:'⚙️ Assembly',tpl:'Python is ___ than Assembly.',opts:['more readable','readabler','most readable','more readabler'],d:3},
+  {left:'☁️ Cloud',right:'💾 USB Drive',tpl:'Cloud storage is ___ than a USB drive.',opts:['more convenient','convenienter','most convenient','more convenienter'],d:3},
+  {left:'🔒 HTTPS',right:'🔓 HTTP',tpl:'HTTPS is ___ than HTTP.',opts:['more secure','securer','most secure','more securer'],d:3},
+  {left:'💡 SSD',right:'💿 HDD',tpl:'An SSD is ___ than an HDD.',opts:['more efficient','efficienter','most efficient','more efficienter'],d:3},
+  // ── d:4 · Pattern D — long adj superlative (the most ADJ) ───────────────
+  {left:'⚛️ React',right:'🅰️ Angular',tpl:'React is ___ front-end library today.',opts:['the most popular','most popular','the popularest','popularest'],d:4},
+  {left:'🔐 AES-256',right:'🔓 MD5',tpl:'AES-256 is ___ encryption standard.',opts:['the most secure','most secure','the securest','securest'],d:4},
+  {left:'⚡ Rust',right:'🐘 PHP',tpl:'Rust is ___ systems language available.',opts:['the most performant','most performant','the performantest','performantest'],d:4},
+  {left:'☁️ Kubernetes',right:'🖥️ Bare Metal',tpl:'Kubernetes is ___ deployment option.',opts:['the most scalable','most scalable','the scalablest','scalablest'],d:4},
+  // ── d:5 · Mixed — all four patterns ─────────────────────────────────────
+  {left:'🧠 GPT-4',right:'🤖 GPT-2',tpl:'GPT-4 is ___ than GPT-2.',opts:['more sophisticated','sophisticateder','most sophisticated','more sophisticateder'],d:5},
+  {left:'📡 Fiber',right:'📶 Wi-Fi',tpl:'Fiber is ___ internet connection than Wi-Fi.',opts:['more stable','stabler','most stable','more stableer'],d:5},
+  {left:'🔬 Unit Test',right:'🧪 E2E Test',tpl:'Unit tests are ___ to run than E2E tests.',opts:['faster','more fast','more faster','fastest'],d:5},
+  {left:'🌐 IPv6',right:'🌐 IPv4',tpl:'IPv6 has ___ address space than IPv4.',opts:['a larger','a more large','a more larger','the largest'],d:5},
 ];
 
 // ── G3 DATA ────────────────────────────────────────────────────────────────────
@@ -807,13 +818,18 @@ function HostGameScreen({ sessionCode, onGameOver }) {
 
         {round && (
           <div className="q-preview">
-            <div className="q-preview-label">Pregunta actual (vista del jugador)</div>
+            <div className="q-preview-label">Pregunta actual</div>
             <div className="q-preview-text">
-              {rs.gameId==='G1' && <><b>Pista:</b> {round.h}</>}
+              {rs.gameId==='G1' && <>{round.s}</>}
               {rs.gameId==='G2' && <>{round.tpl.replace('___','______')}</>}
               {rs.gameId==='G3' && <><b>{round.title}</b> — {round.q}</>}
               {rs.gameId==='G4' && <><b>Situación:</b> {round.ctx}<br/>{round.tpl.replace('___','______')}</>}
             </div>
+            {canAdvance && (
+              <div className="q-preview-answer">
+                ✓ {rs.gameId==='G1' ? round.s : round.opts?.[0]}
+              </div>
+            )}
           </div>
         )}
 
@@ -1150,7 +1166,18 @@ function PlayerGameScreen({ user, sessionCode, onSessionClosed }) {
     hasAnsweredRef.current = true;
     setHasAnswered(true);
     setMyScore(s => s + score);
-    setPendingFeedback({ ok: isCorrect, msg: isCorrect ? `✓ Correcto! +${score} pts` : '✗ Incorrecto — +0 pts' });
+    let msg;
+    if (isCorrect) {
+      const cur = rsRef.current;
+      const base      = (cur?.rounds?.[cur.currentRound]?.d ?? 1) * 100;
+      const timeBonus = score - base;
+      msg = timeBonus > 0
+        ? `✓ Correcto! +${base} + ⚡${timeBonus} velocidad = ${score} pts`
+        : `✓ Correcto! +${score} pts`;
+    } else {
+      msg = '✗ Incorrecto — +0 pts';
+    }
+    setPendingFeedback({ ok: isCorrect, msg });
     const cur = rsRef.current;
     if (cur) socket.emit('answer', { code:sessionCode, name:user, roundIndex:cur.currentRound, score, gameToken:cur.gameToken });
   };
