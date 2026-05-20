@@ -814,9 +814,6 @@ function HostGameScreen({ sessionCode, onGameOver }) {
               {rs.gameId==='G3' && <><b>{round.title}</b> — {round.q}</>}
               {rs.gameId==='G4' && <><b>Situación:</b> {round.ctx}<br/>{round.tpl.replace('___','______')}</>}
             </div>
-            <div className="q-preview-answer">
-              ✓ Respuesta correcta: {rs.gameId==='G1'?round.s:round.opts?.[0]}
-            </div>
           </div>
         )}
 
@@ -997,11 +994,6 @@ function QuestionG1({ round, onAnswer, locked, revealed }) {
 
   return (
     <>
-      <div className="hint-box">
-        <div className="hint-label">Pista</div>
-        <div className="hint-text">{round.h}</div>
-        <div className="hint-trans">🇪🇸 {round.t}</div>
-      </div>
       <div className={`answer-zone ${zone!=='idle'?zone:'active'}`}>
         {!placed.length?<span className="zone-ph">Toca las palabras en el orden correcto ↓</span>
           :placed.map((wi,pos)=><div key={pos} className="chip sel" onClick={()=>remove(pos)}>{words[wi]}</div>)}
@@ -1049,10 +1041,6 @@ function QuestionMCQ({ round, gameId, onAnswer, locked, chosenIdx, opts, reveale
           <div className="crystal-ctx"><div className="ctx-label">🔮 Situación</div><div className="ctx-text">{round.ctx}</div></div>
           <div className="crystal-sentence">
             {parts[0]}<span className="crystal-blank">{filledText}</span>{parts[1]}
-          </div>
-          <div className="hint-box" style={{borderLeftColor:'var(--pur)',marginBottom:'.8rem'}}>
-            <div className="hint-label" style={{color:'var(--pur)'}}>Pista</div>
-            <div className="hint-text" style={{fontSize:'.8rem'}}>{round.hint}</div>
           </div>
         </>
       )}
