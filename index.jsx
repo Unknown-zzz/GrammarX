@@ -37,29 +37,54 @@ function pickRounds(pool) { const r=[]; for(let d=1;d<=5;d++) r.push(...shuffle(
 function calcScore(correct, timeLeft, tpr, diff) { if(!correct) return 0; return diff*100 + Math.round((timeLeft/tpr)*diff*50); }
 
 // ── G1 DATA ────────────────────────────────────────────────────────────────────
-const TECH = new Set(['programmed','deployed','tested','ran','executed','compiled','debugged','configured','installed','initialized','committed','pushed','pulled','merged','cloned','forked','refactored','documented','reviewed','monitored','logged','parsed','queried','migrated','automated','optimized','containerized','orchestrated','encrypted','authenticated','synchronized','integrated','validated','built','shipped','released','rolled','patched']);
+const TECH = new Set(['programmed','deployed','tested','ran','executed','compiled','debugged','configured','installed','initialized','committed','pushed','pulled','merged','cloned','forked','refactored','documented','reviewed','monitored','logged','parsed','queried','migrated','automated','optimized','containerized','orchestrated','encrypted','authenticated','synchronized','integrated','validated','built','shipped','released','rolled','patched','formatted','updated','deleted','created','renamed']);
 const isTech = w => TECH.has(w.toLowerCase().replace(/[^a-z]/g,''));
 const G1_DATA = [
+  // d:1 — 4-word sentences
   {s:'She wrote a long email',d:1},
   {s:'He fixed the broken printer',d:1},
   {s:'They opened a new account',d:1},
   {s:'We turned off the computer',d:1},
-  {s:'He installed the new software update',d:2},
-  {s:'She tested the login form carefully',d:2},
-  {s:'They ran the script on the server',d:2},
-  {s:'We configured the database connection settings',d:2},
-  {s:'The developer debugged the authentication module yesterday',d:3},
-  {s:'She committed all her changes to the repository',d:3},
-  {s:'They deployed the new build to production',d:3},
-  {s:'He reviewed the pull request before merging',d:3},
+  {s:'She read a short story',d:1},
+  {s:'He sent a quick message',d:1},
+  {s:'They found the missing key',d:1},
+  {s:'We made a big mistake',d:1},
+  // d:2 — 5-word sentences
+  {s:'He installed the new software',d:2},
+  {s:'She tested the login form',d:2},
+  {s:'They ran the server script',d:2},
+  {s:'We updated the config file',d:2},
+  {s:'She deleted the old backup',d:2},
+  {s:'He created a new branch',d:2},
+  {s:'They cloned the remote repository',d:2},
+  {s:'We renamed the main folder',d:2},
+  // d:3 — 6-word sentences
+  {s:'The developer debugged the authentication module',d:3},
+  {s:'She committed all changes to repository',d:3},
+  {s:'They deployed the new build successfully',d:3},
+  {s:'He reviewed the pull request carefully',d:3},
+  {s:'She pushed her code to production',d:3},
+  {s:'They merged the feature branch yesterday',d:3},
+  {s:'He formatted the entire database table',d:3},
+  {s:'We documented the new API endpoints',d:3},
+  // d:4 — 7-word sentences
   {s:'The team refactored the legacy codebase last sprint',d:4},
-  {s:'She automated the deployment pipeline using shell scripts',d:4},
-  {s:'They migrated all user data to the new cluster',d:4},
-  {s:'He containerized the application using Docker and Kubernetes',d:4},
+  {s:'She automated the deployment pipeline using scripts',d:4},
+  {s:'They migrated all user data to the cluster',d:4},
+  {s:'He containerized the application using Docker',d:4},
+  {s:'She synchronized the local database with remote',d:4},
+  {s:'They monitored the application logs for errors',d:4},
+  {s:'He configured the load balancer for performance',d:4},
+  {s:'We tested all endpoints before the release',d:4},
+  // d:5 — 8+ word sentences
   {s:'The engineer orchestrated the microservices deployment across multiple regions',d:5},
   {s:'She optimized the database queries and reduced latency significantly',d:5},
   {s:'They authenticated users with OAuth and encrypted the tokens',d:5},
   {s:'He integrated the payment gateway and validated every edge case',d:5},
+  {s:'She implemented the continuous integration pipeline and automated the tests',d:5},
+  {s:'They rolled back the deployment after detecting a critical regression',d:5},
+  {s:'He patched the security vulnerability and released the hotfix immediately',d:5},
+  {s:'We synchronized all microservices and validated the event-driven logs',d:5},
 ];
 
 // ── G2 DATA ────────────────────────────────────────────────────────────────────
@@ -73,60 +98,129 @@ const G2_DATA = [
   {left:'📱 Phone',right:'💻 Laptop',tpl:'A laptop is ___ than a phone.',opts:['bigger','more big','more bigger','biggest'],d:1},
   {left:'🐭 Mouse',right:'🖥️ Monitor',tpl:'A mouse is ___ than a monitor.',opts:['smaller','more small','more smaller','smallest'],d:1},
   {left:'💡 LED',right:'🕯️ Candle',tpl:'An LED is ___ than a candle.',opts:['brighter','more bright','more brighter','brightest'],d:1},
+  {left:'🐱 Cat',right:'🐕 Dog',tpl:'A cat is ___ than a dog.',opts:['quieter','more quiet','more quieter','quietest'],d:1},
+  {left:'🚲 Bike',right:'🚗 Car',tpl:'A bike is ___ than a car.',opts:['cheaper','more cheap','more cheaper','cheapest'],d:1},
+  {left:'❄️ Winter',right:'☀️ Summer',tpl:'Summer is ___ than winter.',opts:['hotter','more hot','more hotter','hottest'],d:1},
+  {left:'🖊️ Pen',right:'✏️ Pencil',tpl:'A pencil is ___ than a pen.',opts:['thinner','more thin','more thinner','thinnest'],d:1},
   // ── d:2 · Pattern B — short adj superlative (the ADJest) ────────────────
   {left:'🏔️ Everest',right:'⛰️ Hill',tpl:'Everest is ___ mountain in the world.',opts:['the tallest','the most tall','taller','most tall'],d:2},
   {left:'🐋 Blue Whale',right:'🐘 Elephant',tpl:'The blue whale is ___ animal on Earth.',opts:['the largest','the most large','larger','most large'],d:2},
   {left:'☀️ Sun',right:'💡 Bulb',tpl:'The sun is ___ natural light source.',opts:['the brightest','the most bright','brighter','most bright'],d:2},
   {left:'🧊 Ice',right:'💧 Water',tpl:'Ice is ___ state of water.',opts:['the coldest','the most cold','colder','most cold'],d:2},
+  {left:'🐆 Cheetah',right:'🦁 Lion',tpl:'A cheetah is ___ land animal.',opts:['the fastest','the most fast','faster','most fast'],d:2},
+  {left:'🌊 Pacific',right:'🌍 Atlantic',tpl:'The Pacific is ___ ocean on Earth.',opts:['the deepest','the most deep','deeper','most deep'],d:2},
+  {left:'🏜️ Sahara',right:'🌵 Arizona',tpl:'The Sahara is ___ desert in the world.',opts:['the hottest','the most hot','hotter','most hot'],d:2},
+  {left:'💎 Diamond',right:'🪨 Rock',tpl:'Diamond is ___ natural material known.',opts:['the hardest','the most hard','harder','most hard'],d:2},
   // ── d:3 · Pattern C — long adj comparative (more ADJ than) ──────────────
   {left:'🐍 Python',right:'⚙️ Assembly',tpl:'Python is ___ than Assembly.',opts:['more readable','readabler','most readable','more readabler'],d:3},
   {left:'☁️ Cloud',right:'💾 USB Drive',tpl:'Cloud storage is ___ than a USB drive.',opts:['more convenient','convenienter','most convenient','more convenienter'],d:3},
   {left:'🔒 HTTPS',right:'🔓 HTTP',tpl:'HTTPS is ___ than HTTP.',opts:['more secure','securer','most secure','more securer'],d:3},
   {left:'💡 SSD',right:'💿 HDD',tpl:'An SSD is ___ than an HDD.',opts:['more efficient','efficienter','most efficient','more efficienter'],d:3},
+  {left:'🐙 GitHub',right:'💾 USB Drive',tpl:'GitHub is ___ than a USB drive for teams.',opts:['more collaborative','collaborativer','most collaborative','more collaborativer'],d:3},
+  {left:'🐳 Docker',right:'🖥️ Virtual Machine',tpl:'Docker is ___ than a virtual machine.',opts:['more lightweight','lighterweight','most lightweight','more lighterweight'],d:3},
+  {left:'🗄️ SQL',right:'📦 NoSQL',tpl:'SQL is ___ than NoSQL for structured data.',opts:['more reliable','reliabler','most reliable','more reliabler'],d:3},
+  {left:'💻 VS Code',right:'📝 Notepad',tpl:'VS Code is ___ than Notepad for coding.',opts:['more powerful','powerfuler','most powerful','more powerfuler'],d:3},
   // ── d:4 · Pattern D — long adj superlative (the most ADJ) ───────────────
   {left:'⚛️ React',right:'🅰️ Angular',tpl:'React is ___ front-end library today.',opts:['the most popular','most popular','the popularest','popularest'],d:4},
   {left:'🔐 AES-256',right:'🔓 MD5',tpl:'AES-256 is ___ encryption standard.',opts:['the most secure','most secure','the securest','securest'],d:4},
   {left:'⚡ Rust',right:'🐘 PHP',tpl:'Rust is ___ systems language available.',opts:['the most performant','most performant','the performantest','performantest'],d:4},
   {left:'☁️ Kubernetes',right:'🖥️ Bare Metal',tpl:'Kubernetes is ___ deployment option.',opts:['the most scalable','most scalable','the scalablest','scalablest'],d:4},
+  {left:'🐍 Python',right:'🔣 Brainfuck',tpl:'Python is ___ language for beginners.',opts:['the most accessible','most accessible','the accessiblest','accessiblest'],d:4},
+  {left:'🌐 Cloud',right:'🏢 On-Premise',tpl:'Cloud computing is ___ infrastructure solution.',opts:['the most flexible','most flexible','the flexiblest','flexiblest'],d:4},
+  {left:'🔧 TypeScript',right:'🟨 JavaScript',tpl:'TypeScript is ___ typed language available.',opts:['the most strictly','most strictly','the strictliest','strictliest'],d:4},
+  {left:'⚡ GraphQL',right:'🔗 REST',tpl:'GraphQL is ___ API query language today.',opts:['the most efficient','most efficient','the efficientest','efficientest'],d:4},
   // ── d:5 · Mixed — all four patterns ─────────────────────────────────────
   {left:'🧠 GPT-4',right:'🤖 GPT-2',tpl:'GPT-4 is ___ than GPT-2.',opts:['more sophisticated','sophisticateder','most sophisticated','more sophisticateder'],d:5},
   {left:'📡 Fiber',right:'📶 Wi-Fi',tpl:'Fiber is ___ internet connection than Wi-Fi.',opts:['more stable','stabler','most stable','more stableer'],d:5},
   {left:'🔬 Unit Test',right:'🧪 E2E Test',tpl:'Unit tests are ___ to run than E2E tests.',opts:['faster','more fast','more faster','fastest'],d:5},
   {left:'🌐 IPv6',right:'🌐 IPv4',tpl:'IPv6 has ___ address space than IPv4.',opts:['a larger','a more large','a more larger','the largest'],d:5},
+  {left:'🦺 TypeScript',right:'🟨 JavaScript',tpl:'TypeScript is ___ than JavaScript for large projects.',opts:['more maintainable','maintainableer','most maintainable','more maintainableer'],d:5},
+  {left:'🔐 HTTPS',right:'📂 FTP',tpl:'HTTPS is ___ than FTP for file transfers.',opts:['more encrypted','encrypteder','most encrypted','more encrypteder'],d:5},
+  {left:'🐆 Cheetah',right:'🐢 Turtle',tpl:'A cheetah is ___ than a turtle.',opts:['faster','more fast','more faster','fastest'],d:5},
+  {left:'🏔️ Everest',right:'🌋 Vesuvius',tpl:'Everest is ___ mountain ever climbed.',opts:['the tallest','the most tall','taller','most tall'],d:5},
 ];
 
 // ── G3 DATA ────────────────────────────────────────────────────────────────────
 const G3_DATA = [
-  {title:'The New Developer',passage:'Alex has just joined the team. He has never worked with TypeScript before, but he has already read the documentation twice. The team has welcomed him warmly.',q:'What has Alex done with the documentation?',opts:['Read it twice','Written it once','Deleted it','Never touched it'],t:'¿Qué ha hecho Alex con la documentación?',d:1},
-  {title:'The Production Bug',passage:'The QA team has found a critical bug in production. They have already notified the developers and have written a detailed report. No one has fixed it yet.',q:'Has the bug been fixed?',opts:['No, not yet','Yes, already','Yes, twice','The text does not say'],t:'¿Se ha arreglado el bug?',d:1},
-  {title:'The Database Migration',passage:'The operations team has successfully migrated the database to a new cluster. They have been working on it for three weeks. The CEO has praised their effort.',q:'How long has the team been working on the migration?',opts:['Three weeks','Two days','One month','A sprint'],t:'¿Cuánto tiempo ha trabajado el equipo en la migración?',d:2},
-  {title:'The Open-Source Project',passage:'Maria has published her first open-source library. Over 200 developers have starred the repository since Monday. Three companies have already reached out to sponsor it.',q:'How many developers have starred the repository?',opts:['Over 200','Exactly 200','Three','The text does not say'],t:'¿Cuántos desarrolladores han marcado el repositorio con estrella?',d:2},
-  {title:'The Security Audit',passage:'The security team has conducted a full audit of the application. They have identified five vulnerabilities. Two of them have already been patched by the backend team.',q:'How many vulnerabilities have been patched so far?',opts:['Two','Five','All of them','None'],t:'¿Cuántas vulnerabilidades han sido parcheadas hasta ahora?',d:3},
-  {title:'The AI Model',passage:'Researchers at the lab have trained a new language model. It has outperformed every previous benchmark. The team has not yet published the paper, but they have submitted it for review.',q:'What has the team done with the paper?',opts:['Submitted it for review','Published it','Deleted it','Written it twice'],t:'¿Qué ha hecho el equipo con el paper?',d:3},
-  {title:'The Startup Launch',passage:'The startup has raised $5 million in Series A funding. The founders have hired ten engineers and have signed contracts with two major clients. They have not yet launched the product publicly.',q:'Has the product been launched publicly?',opts:['No, not yet','Yes, last week','Yes, to two clients','The text does not say'],t:'¿Se ha lanzado el producto públicamente?',d:4},
-  {title:'The Cloud Architecture',passage:'The infrastructure team has redesigned the entire cloud architecture. They have replaced the monolith with microservices, have adopted Kubernetes, and have reduced costs by 40%. No downtime has been reported during the transition.',q:'What has been achieved during the transition?',opts:['Zero downtime','40% more cost','One hour of downtime','Three outages'],t:'¿Qué se logró durante la transición?',d:4},
-  {title:'The Code Review',passage:'The senior engineer has reviewed over fifty pull requests this quarter. She has left detailed comments on each one. Several junior developers have told her it has been the most helpful feedback they have ever received.',q:'What have junior developers said about the feedback?',opts:["It's the most helpful they've received",'It was too harsh','It was not enough','They have not commented'],t:'¿Qué han dicho los juniors sobre el feedback?',d:5},
-  {title:'The Performance Optimization',passage:'The engineering team has spent the last month optimizing the platform. They have reduced average API response time from 800ms to 95ms. The product has never performed this well in its three-year history.',q:'What was the original average API response time?',opts:['800ms','95ms','Three years','The text does not say'],t:'¿Cuál era el tiempo de respuesta promedio original de la API?',d:5},
+  // d:1
+  {title:'The New Developer',passage:'Alex has just joined the team. He has never worked with TypeScript before, but he has already read the documentation twice. The team has welcomed him warmly.',q:'What has Alex done with the documentation?',opts:['Read it twice','Written it once','Deleted it','Never touched it'],d:1},
+  {title:'The Production Bug',passage:'The QA team has found a critical bug in production. They have already notified the developers and have written a detailed report. No one has fixed it yet.',q:'Has the bug been fixed?',opts:['No, not yet','Yes, already','Yes, twice','The text does not say'],d:1},
+  {title:'The Bug Report',passage:'The QA engineer has just filed a new bug report. She has attached three screenshots and has labeled it as critical priority. The development team has not read it yet.',q:'What has the QA engineer attached to the report?',opts:['Three screenshots','Two videos','A PDF','Nothing'],d:1},
+  {title:'The First Commit',passage:'The intern has made his first commit to the project. He has written a clear commit message and has followed the team\'s style guide perfectly. His mentor has already approved it.',q:'Who has approved the intern\'s commit?',opts:['His mentor','The QA team','The CEO','No one yet'],d:1},
+  {title:'The New Password',passage:'The IT department has sent a password reset email to all employees. Most users have already changed their passwords. Two people have not responded yet.',q:'Have all employees changed their passwords?',opts:['No, two have not','Yes, all of them','Only IT has','The text does not say'],d:1},
+  // d:2
+  {title:'The Database Migration',passage:'The operations team has successfully migrated the database to a new cluster. They have been working on it for three weeks. The CEO has praised their effort.',q:'How long has the team been working on the migration?',opts:['Three weeks','Two days','One month','A sprint'],d:2},
+  {title:'The Open-Source Project',passage:'Maria has published her first open-source library. Over 200 developers have starred the repository since Monday. Three companies have already reached out to sponsor it.',q:'How many developers have starred the repository?',opts:['Over 200','Exactly 200','Three','The text does not say'],d:2},
+  {title:'The Sprint Review',passage:'The team has completed its third sprint. They have delivered all eight user stories and have received positive feedback from the product owner. The velocity has increased by twenty percent.',q:'By how much has the velocity increased?',opts:['Twenty percent','Eight percent','Three percent','The text does not say'],d:2},
+  {title:'The App Update',passage:'The developers have released version 3.0 of the app. They have fixed over thirty bugs and have added five new features. Users have already left hundreds of positive reviews.',q:'How many bugs have been fixed in version 3.0?',opts:['Over thirty','Five','Hundreds','The text does not say'],d:2},
+  {title:'The New Office',passage:'The company has moved to a new office downtown. They have installed faster internet and have set up twelve new workstations. Employees have not yet received their access cards.',q:'What have employees not received yet?',opts:['Their access cards','New computers','Faster internet','A new desk'],d:2},
+  // d:3
+  {title:'The Security Audit',passage:'The security team has conducted a full audit of the application. They have identified five vulnerabilities. Two of them have already been patched by the backend team.',q:'How many vulnerabilities have been patched so far?',opts:['Two','Five','All of them','None'],d:3},
+  {title:'The AI Model',passage:'Researchers at the lab have trained a new language model. It has outperformed every previous benchmark. The team has not yet published the paper, but they have submitted it for review.',q:'What has the team done with the paper?',opts:['Submitted it for review','Published it','Deleted it','Written it twice'],d:3},
+  {title:'The Remote Team',passage:'The company has hired twelve remote engineers over the past year. They have set up asynchronous communication channels and have adopted a flexible schedule policy. Productivity has never been higher.',q:'What has the company set up for communication?',opts:['Asynchronous channels','Daily meetings','An office space','Video calls only'],d:3},
+  {title:'The API Integration',passage:'The backend team has integrated three external APIs into the platform. They have documented every endpoint and have written unit tests for each one. No integration errors have been reported so far.',q:'Have any integration errors been reported?',opts:['No, none so far','Yes, three errors','Yes, one error','The text does not say'],d:3},
+  {title:'The Hackathon',passage:'Twenty teams have participated in the annual hackathon. The winning team has built an AI tool that helps doctors diagnose rare diseases. The judges have called it the most innovative project in five years.',q:'What has the winning team built?',opts:['An AI tool for doctors','A new mobile app','A website','A database system'],d:3},
+  // d:4
+  {title:'The Startup Launch',passage:'The startup has raised $5 million in Series A funding. The founders have hired ten engineers and have signed contracts with two major clients. They have not yet launched the product publicly.',q:'Has the product been launched publicly?',opts:['No, not yet','Yes, last week','Yes, to two clients','The text does not say'],d:4},
+  {title:'The Cloud Architecture',passage:'The infrastructure team has redesigned the entire cloud architecture. They have replaced the monolith with microservices, have adopted Kubernetes, and have reduced costs by 40%. No downtime has been reported during the transition.',q:'What has been achieved during the transition?',opts:['Zero downtime','40% more cost','One hour of downtime','Three outages'],d:4},
+  {title:'The Data Breach',passage:'Security analysts have discovered a data breach affecting 50,000 users. The company has notified all affected accounts and has reset every password. Regulators have been informed as required by law.',q:'How many users have been affected by the breach?',opts:['50,000','All users','Only employees','The text does not say'],d:4},
+  {title:'The New Framework',passage:'The frontend team has adopted a new component framework. They have refactored sixty percent of the codebase and have reduced bundle size by half. Three developers have already published tutorials about it.',q:'What has happened to the bundle size?',opts:['It has been reduced by half','It has doubled','It stayed the same','The text does not say'],d:4},
+  {title:'The Certification',passage:'The engineering team has completed an AWS certification program. Fifteen engineers have passed the exam on their first attempt. The company has increased their cloud budget as a result.',q:'How many engineers passed the exam on the first attempt?',opts:['Fifteen','All of them','Five','The text does not say'],d:4},
+  // d:5
+  {title:'The Code Review',passage:'The senior engineer has reviewed over fifty pull requests this quarter. She has left detailed comments on each one. Several junior developers have told her it has been the most helpful feedback they have ever received.',q:'What have junior developers said about the feedback?',opts:["It's the most helpful they've received",'It was too harsh','It was not enough','They have not commented'],d:5},
+  {title:'The Performance Optimization',passage:'The engineering team has spent the last month optimizing the platform. They have reduced average API response time from 800ms to 95ms. The product has never performed this well in its three-year history.',q:'What was the original average API response time?',opts:['800ms','95ms','Three years','The text does not say'],d:5},
+  {title:'The Microservices Migration',passage:'The platform team has spent eight months migrating the monolith to microservices. They have decomposed the system into fourteen independent services and have introduced event-driven communication. Deployment frequency has increased from monthly to daily.',q:'How has deployment frequency changed after the migration?',opts:['From monthly to daily','From daily to monthly','From weekly to monthly','The text does not say'],d:5},
+  {title:'The ML Pipeline',passage:'Data scientists have built an automated machine learning pipeline. They have trained the model on two million data points and have achieved ninety-four percent accuracy on the test set. The model has already been deployed to the production recommendation engine.',q:'Where has the model been deployed?',opts:['The production recommendation engine','The test environment','A staging server','The text does not say'],d:5},
+  {title:'The Global Rollout',passage:'The DevOps team has orchestrated a global rollout across twelve regions. They have configured automated failover and have monitored over two billion requests without a single outage. The CTO has called it the smoothest deployment in company history.',q:'How many regions has the rollout covered?',opts:['Twelve','Two billion','One','The text does not say'],d:5},
 ];
 
 // ── G4 DATA ────────────────────────────────────────────────────────────────────
 const G4_DATA = [
-  {ctx:'You hear thunder outside.',tpl:'It ___ rain soon.',opts:["'s going to","will","won't","is raining"],hint:'Visible evidence → going to.',t:'Va a llover pronto.',d:1},
-  {ctx:'Maria has already bought her flight ticket for next Monday.',tpl:'She ___ fly to London next week.',opts:['is going to','will',"won't",'flies'],hint:'Planned future action → going to.',t:'Ella va a volar a Londres la semana que viene.',d:1},
-  {ctx:'Nobody planned it, but someone drops their coffee.',tpl:'I ___ help you clean that up.',opts:["'ll","'m going to","won't",'am helping'],hint:'Spontaneous decision → will.',t:'Te ayudaré a limpiar eso.',d:1},
-  {ctx:'The project deadline is tomorrow. The code is broken.',tpl:'We ___ make it in time.',opts:["won't","will","'re going to",'make'],hint:'Prediction with doubt → won\'t.',t:'No lo lograremos a tiempo.',d:1},
-  {ctx:'The team has already scheduled the sprint planning for Friday.',tpl:'We ___ our sprint on Friday.',opts:['are starting','will start','start','going to start'],hint:'Fixed schedule → present continuous.',t:'Comenzaremos nuestro sprint el viernes.',d:2},
-  {ctx:'Look at those error logs — the server is clearly overloaded.',tpl:"The system ___ crash if we don't act.",opts:['is going to','will',"won't",'crashes'],hint:'Evidence of imminent problem → going to.',t:'El sistema va a colapsar si no actuamos.',d:2},
-  {ctx:'A colleague asks for help with a difficult algorithm.',tpl:"I ___ take a look at it after lunch.",opts:["'ll","'m going to","won't",'take'],hint:'On-the-spot offer → will.',t:'Lo revisaré después del almuerzo.',d:2},
-  {ctx:'The tests are green, staging looks perfect.',tpl:'We ___ the update to production tonight.',opts:["'re pushing",'will push','go to push','pushed'],hint:'Arranged plan with time → present continuous.',t:'Vamos a subir la actualización a producción esta noche.',d:3},
-  {ctx:'Current trends: AI adoption is accelerating globally.',tpl:'AI ___ transform every industry within a decade.',opts:['will','is going to',"won't",'transforms'],hint:'General prediction/opinion → will.',t:'La IA transformará todas las industrias en una década.',d:3},
-  {ctx:'The intern just broke the main branch.',tpl:'The senior dev ___ be happy about this.',opts:["won't",'will','is going to','is being'],hint:'Prediction (negative) → won\'t.',t:'El desarrollador senior no estará contento con esto.',d:3},
-  {ctx:'Engineers at the conference have already confirmed the talk.',tpl:'The lead architect ___ a keynote at 9 a.m.',opts:['is giving','will give','gives','going to give'],hint:'Confirmed appointment → present continuous.',t:'El arquitecto principal dará una presentación a las 9 a.m.',d:4},
-  {ctx:'Based on current server metrics, the load is dangerously high.',tpl:'The database ___ start rejecting queries soon.',opts:['is going to','will',"won't",'rejects'],hint:'Strong evidence of upcoming event → going to.',t:'La base de datos va a empezar a rechazar consultas pronto.',d:4},
-  {ctx:'No evidence, purely speculative future statement about quantum computing.',tpl:'Quantum computers ___ eventually break all current encryption.',opts:['will','are going to',"won't",'break'],hint:'Speculative/opinion future → will.',t:'Las computadoras cuánticas romperán todo el cifrado actual.',d:4},
-  {ctx:'The CI pipeline just failed for the third time.',tpl:"We ___ be able to ship without fixing this.",opts:["won't",'will','are going to','are'],hint:'Negative prediction → won\'t.',t:'No podremos hacer el envío sin arreglar esto.',d:5},
-  {ctx:'Company roadmap: next quarter feature set is fully approved.',tpl:'The team ___ three major features next quarter.',opts:['is delivering','will deliver','delivers','going to deliver'],hint:'Scheduled organizational plan → present continuous.',t:'El equipo entregará tres funciones principales el próximo trimestre.',d:5},
-  {ctx:'The new microservices architecture is nearly ready to go live.',tpl:'By next month, the monolith ___ fully replaced.',opts:['will have been','is going to be','is being','will be being'],hint:'Future perfect passive for a completed future action.',t:'Para el próximo mes, el monolito habrá sido completamente reemplazado.',d:5},
+  // d:1
+  {ctx:'You hear thunder outside.',tpl:'It ___ rain soon.',opts:["'s going to","will","won't","is raining"],d:1},
+  {ctx:'Maria has already bought her flight ticket for next Monday.',tpl:'She ___ fly to London next week.',opts:['is going to','will',"won't",'flies'],d:1},
+  {ctx:'Nobody planned it, but someone drops their coffee.',tpl:'I ___ help you clean that up.',opts:["'ll","'m going to","won't",'am helping'],d:1},
+  {ctx:'The project deadline is tomorrow. The code is broken.',tpl:'We ___ make it in time.',opts:["won't","will","'re going to",'make'],d:1},
+  {ctx:'The forecast shows heavy snow tonight.',tpl:'The roads ___ be icy tomorrow morning.',opts:['are going to','will',"won't",'are'],d:1},
+  {ctx:'You just saw someone drop their wallet on the street.',tpl:'I ___ pick that up for you!',opts:["'ll","'m going to","won't",'pick'],d:1},
+  {ctx:'The battery icon on your laptop is at 3%.',tpl:'The laptop ___ shut down very soon.',opts:["'s going to","will","won't",'shuts'],d:1},
+  {ctx:'Your friend just called and asked you to choose between pizza and sushi.',tpl:'I ___ have pizza, thanks!',opts:["'ll","'m going to","won't",'have'],d:1},
+  // d:2
+  {ctx:'The team has already scheduled the sprint planning for Friday.',tpl:'We ___ our sprint on Friday.',opts:['are starting','will start','start','going to start'],d:2},
+  {ctx:'Look at those error logs — the server is clearly overloaded.',tpl:"The system ___ crash if we don't act.",opts:['is going to','will',"won't",'crashes'],d:2},
+  {ctx:'A colleague asks for help with a difficult algorithm.',tpl:"I ___ take a look at it after lunch.",opts:["'ll","'m going to","won't",'take'],d:2},
+  {ctx:'The conference call is already booked in the calendar for Thursday.',tpl:'We ___ the client at 3 pm on Thursday.',opts:['are calling','will call','going to call','called'],d:2},
+  {ctx:'The user just clicked "Delete All" by mistake.',tpl:'They ___ very upset when they realize.',opts:["'re going to be","will be","won't be",'are'],d:2},
+  {ctx:'You just read that a new Star Wars film is confirmed for December.',tpl:'I ___ see it on opening night!',opts:["'m going to","'ll","won't",'see'],d:2},
+  {ctx:'Dark clouds are gathering quickly over the stadium.',tpl:'The match ___ be cancelled.',opts:['is going to','will',"won't",'cancels'],d:2},
+  {ctx:'Anna has registered for a yoga class every Tuesday morning.',tpl:'She ___ yoga every Tuesday.',opts:['is doing','will do','does','going to do'],d:2},
+  // d:3
+  {ctx:'The tests are green, staging looks perfect.',tpl:'We ___ the update to production tonight.',opts:["'re pushing",'will push','go to push','pushed'],d:3},
+  {ctx:'Current trends: AI adoption is accelerating globally.',tpl:'AI ___ transform every industry within a decade.',opts:['will','is going to',"won't",'transforms'],d:3},
+  {ctx:'The intern just broke the main branch.',tpl:'The senior dev ___ be happy about this.',opts:["won't",'will','is going to','is being'],d:3},
+  {ctx:'The server logs show memory usage at 99%.',tpl:'The server ___ respond to new requests.',opts:["won't",'will','is going to','responds'],d:3},
+  {ctx:'Nobody knows what technology will dominate in 2040.',tpl:'We ___ mostly use voice interfaces by 2040.',opts:['will','are going to',"won't",'use'],d:3},
+  {ctx:'The design team has already blocked their calendars for the workshop.',tpl:'They ___ the UX workshop next Monday.',opts:['are attending','will attend','going to attend','attend'],d:3},
+  {ctx:'Renewable energy costs have dropped 90% in the last decade.',tpl:'Solar power ___ replace fossil fuels in most countries.',opts:['will','is going to',"won't",'replaces'],d:3},
+  {ctx:'You see your teammate struggling with a heavy box.',tpl:'I ___ give you a hand with that.',opts:["'ll","'m going to","won't",'give'],d:3},
+  // d:4
+  {ctx:'Engineers at the conference have already confirmed the talk.',tpl:'The lead architect ___ a keynote at 9 a.m.',opts:['is giving','will give','gives','going to give'],d:4},
+  {ctx:'Based on current server metrics, the load is dangerously high.',tpl:'The database ___ start rejecting queries soon.',opts:['is going to','will',"won't",'rejects'],d:4},
+  {ctx:'No evidence, purely speculative future statement about quantum computing.',tpl:'Quantum computers ___ eventually break all current encryption.',opts:['will','are going to',"won't",'break'],d:4},
+  {ctx:'The product manager has just added a feature to the Q3 roadmap.',tpl:'The team ___ that feature in Q3.',opts:['is implementing','will implement','going to implement','implements'],d:4},
+  {ctx:'Current data shows the app crashes on iOS 17 every single launch.',tpl:'New users on iOS 17 ___ the app impossible to use.',opts:['are going to find','will find',"won't find",'find'],d:4},
+  {ctx:'The company has booked a stand at the tech expo next March.',tpl:'We ___ our new product at the expo.',opts:['are showcasing','will showcase','going to showcase','showcase'],d:4},
+  {ctx:'Looking at the roadmap, nothing is planned for the legacy module.',tpl:'The legacy module ___ receive any updates.',opts:["won't",'will','is going to','receives'],d:4},
+  {ctx:'A junior dev just asked you to explain async/await spontaneously.',tpl:'Sure, I ___ show you an example right now.',opts:["'ll","'m going to","won't",'show'],d:4},
+  // d:5
+  {ctx:'The CI pipeline just failed for the third time.',tpl:"We ___ be able to ship without fixing this.",opts:["won't",'will','are going to','are'],d:5},
+  {ctx:'Company roadmap: next quarter feature set is fully approved.',tpl:'The team ___ three major features next quarter.',opts:['is delivering','will deliver','delivers','going to deliver'],d:5},
+  {ctx:'The new microservices architecture is nearly ready to go live.',tpl:'By next month, the monolith ___ fully replaced.',opts:['will have been','is going to be','is being','will be being'],d:5},
+  {ctx:'The migration script has been tested and approved. Launch is Friday.',tpl:'By Monday, all legacy data ___ to the new format.',opts:['will have been converted','is going to convert','will be converting','converts'],d:5},
+  {ctx:'Board approval is pending. Decision expected this afternoon.',tpl:'If approved, work ___ on the new campus next quarter.',opts:['will begin','is going to begin','begins','will have begun'],d:5},
+  {ctx:'The monitoring dashboard shows a memory leak growing steadily.',tpl:'By midnight, the server ___ all available RAM.',opts:['will have consumed','is going to consume','will be consuming','consumes'],d:5},
+  {ctx:'The release notes confirm the patch ships at 6 pm.',tpl:'By 7 pm, most users ___ the update automatically.',opts:['will have received','are going to receive','will be receiving','receive'],d:5},
+  {ctx:'Nobody has any evidence — it is pure speculation about future trends.',tpl:'Developers ___ write less code as AI tools improve.',opts:['will','are going to',"won't",'write'],d:5},
 ];
 
 // ── CSS ────────────────────────────────────────────────────────────────────────
@@ -825,11 +919,6 @@ function HostGameScreen({ sessionCode, onGameOver }) {
               {rs.gameId==='G3' && <><b>{round.title}</b> — {round.q}</>}
               {rs.gameId==='G4' && <><b>Situación:</b> {round.ctx}<br/>{round.tpl.replace('___','______')}</>}
             </div>
-            {canAdvance && (
-              <div className="q-preview-answer">
-                ✓ {rs.gameId==='G1' ? round.s : round.opts?.[0]}
-              </div>
-            )}
           </div>
         )}
 
