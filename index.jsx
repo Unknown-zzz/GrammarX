@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback, useRef } from 'react';
 import { io } from 'socket.io-client';
 import QRCode from 'qrcode';
 import jsQR   from 'jsqr';
+import SFX    from './src/sounds.js';
 
 // ── Socket singleton ───────────────────────────────────────────────────────────
 const socket = io(
@@ -761,13 +762,23 @@ function HostLobbyScreen({ user, sessionCode, onStart, onCancel }) {
   const [tpr, setTpr] = useState(20);
   const [starting, setStarting] = useState(false);
   const [showQR, setShowQR] = useState(false);
+  const prevPlayerCount = useRef(0);
 
   useEffect(() => {
     // Rejoin socket room and get current state
     socket.emit('rejoin', { code: sessionCode }, state => {
-      if (state?.players) setPlayers(state.players.map(p => ({ name: p.name })));
+      if (state?.players) {
+        const list = state.players.map(p => ({ name: p.name }));
+        prevPlayerCount.current = list.length;
+        setPlayers(list);
+      }
     });
-    const onState = state => setPlayers(state.players?.map(p => ({ name: p.name })) || []);
+    const onState = state => {
+      const list = state.players?.map(p => ({ name: p.name })) || [];
+      if (list.length > prevPlayerCount.current) SFX.playerJoin();
+      prevPlayerCount.current = list.length;
+      setPlayers(list);
+    };
     socket.on('state', onState);
     return () => socket.off('state', onState);
   }, [sessionCode]);
@@ -1177,6 +1188,8 @@ function PlayerGameScreen({ user, sessionCode, onSessionClosed }) {
   const rsRef          = useRef(null);   // always holds latest rs for timer
   const hasAnsweredRef = useRef(false);  // mirror of hasAnswered for timer closure
   const clockOffset    = useRef(0);      // ms this device's clock is ahead of server
+  const prevSecRef     = useRef(-1);     // last integer second seen by timer (for ticks)
+  const gameStartedRef = useRef(false);  // whether music+fanfare already played this game
 
   function buildOpts(round, gameId) {
     if (!round || gameId==='G1') return [];
@@ -1202,14 +1215,29 @@ function PlayerGameScreen({ user, sessionCode, onSessionClosed }) {
         setMyScore(0);
         optsKey.current = '';
         submitting.current = false;
+        gameStartedRef.current = false; // re-arm fanfare for new game
+      }
+
+      // Game just started → fanfare + music
+      if (data.status === 'playing' && !gameStartedRef.current) {
+        gameStartedRef.current = true;
+        SFX.gameStart();
+        setTimeout(() => SFX.startMusic(), 900); // start music after fanfare
+      }
+
+      // Game ended → stop music + victory
+      if (data.status === 'ended') {
+        SFX.stopMusic();
       }
 
       // New round → reset answer state and build opts once
       const key = `${data.gameToken}-${data.currentRound}`;
       if (optsKey.current !== key) {
+        if (optsKey.current !== '') SFX.roundStart(); // skip on very first load
         optsKey.current        = key;
         hasAnsweredRef.current = false;
         submitting.current     = false;
+        prevSecRef.current     = -1; // reset tick tracker for new round
         setOpts(buildOpts(data.rounds?.[data.currentRound], data.gameId));
         setHasAnswered(false);
         setPendingFeedback(null);
@@ -1222,8 +1250,18 @@ function PlayerGameScreen({ user, sessionCode, onSessionClosed }) {
 
     socket.emit('rejoin', { code: sessionCode }, applyState);
     socket.on('state', applyState);
-    return () => socket.off('state', applyState);
+    return () => {
+      socket.off('state', applyState);
+      SFX.stopMusic(); // stop music when PlayerGameScreen unmounts
+    };
   }, [sessionCode]);
+
+  // Victory sound when game ends
+  useEffect(() => {
+    if (rs?.status === 'ended') {
+      setTimeout(() => SFX.victory(), 400);
+    }
+  }, [rs?.status]);
 
   // Client-side countdown timer — reads refs directly, no stale closure issues
   useEffect(() => {
@@ -1234,7 +1272,17 @@ function PlayerGameScreen({ user, sessionCode, onSessionClosed }) {
       const syncedNow = Date.now() - clockOffset.current;
       const left = Math.max(0, cur.timePerRound - (syncedNow - cur.roundStartedAt) / 1000);
       setTimeLeft(left);
+
+      // ── Tick sounds on each integer second change ──
+      const sec = Math.ceil(left);
+      if (sec !== prevSecRef.current && sec > 0 && !hasAnsweredRef.current) {
+        prevSecRef.current = sec;
+        if (sec <= 3) SFX.urgentTick();
+        else          SFX.tick();
+      }
+
       if (left <= 0 && !submitting.current && !hasAnsweredRef.current) {
+        SFX.timeout();
         submitting.current     = true;
         hasAnsweredRef.current = true;
         setHasAnswered(true);
@@ -1251,6 +1299,9 @@ function PlayerGameScreen({ user, sessionCode, onSessionClosed }) {
 
   const doSubmit = (score, isCorrect) => {
     if (submitting.current || hasAnsweredRef.current) return;
+    // ── Answer sounds ──
+    if (isCorrect) SFX.correct();
+    else           SFX.wrong();
     submitting.current     = true;
     hasAnsweredRef.current = true;
     setHasAnswered(true);
@@ -1457,6 +1508,12 @@ export default function App() {
   const [user, setUser]         = useState('');
   const [code, setCode]         = useState('');
   const [gameOver, setGameOver] = useState([]);
+  const [muted, setMuted]       = useState(false);
+
+  const toggleMute = () => {
+    const nowMuted = SFX.toggleMute();
+    setMuted(nowMuted);
+  };
 
   const handleHost = async name => {
     setUser(name);
@@ -1484,6 +1541,24 @@ export default function App() {
       {screen==='player-lobby' && <PlayerLobbyScreen user={user} sessionCode={code} onStart={()=>setScreen('player-game')}/>}
       {screen==='player-game'  && <PlayerGameScreen user={user} sessionCode={code} onSessionClosed={handleSessionClosed} key={code}/>}
       {screen==='podium'       && <PodiumScreen user={user}/>}
+
+      {/* ── Floating mute button ── */}
+      <button
+        onClick={toggleMute}
+        title={muted ? 'Activar sonido' : 'Silenciar'}
+        style={{
+          position:'fixed', bottom:'1rem', right:'1rem', zIndex:9999,
+          width:'2.8rem', height:'2.8rem', borderRadius:'50%',
+          background:'rgba(8,8,16,0.85)', border:'1px solid var(--bdr)',
+          color: muted ? 'var(--mut)' : 'var(--acc)',
+          fontSize:'1.2rem', cursor:'pointer',
+          display:'flex', alignItems:'center', justifyContent:'center',
+          backdropFilter:'blur(8px)', transition:'all .2s',
+          boxShadow: muted ? 'none' : '0 0 10px rgba(240,192,64,.25)',
+        }}
+      >
+        {muted ? '🔇' : '🔊'}
+      </button>
     </>
   );
 }
