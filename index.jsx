@@ -1017,11 +1017,24 @@ function HostGameScreen({ sessionCode, onGameOver }) {
   const clockOffset2 = useRef(0);
 
   useEffect(() => {
+    // Compute timeLeft immediately from server state to avoid false isTimeUp on first render
+    const syncTimeLeft = data => {
+      if (data.roundStartedAt && data.status === 'playing') {
+        const offset = data.serverTime ? Date.now() - data.serverTime : clockOffset2.current;
+        clockOffset2.current = offset;
+        const left = Math.max(0, data.timePerRound - (Date.now() - offset - data.roundStartedAt) / 1000);
+        setTimeLeft(left);
+      } else {
+        setTimeLeft(data.timePerRound ?? 20); // reset to full when not in a round
+      }
+    };
+
     socket.emit('rejoin', { code: sessionCode }, state => {
       if (state && !state.error) {
         if (state.serverTime) clockOffset2.current = Date.now() - state.serverTime;
         rsRef2.current = state;
         setRs(state);
+        syncTimeLeft(state);
       }
     });
     const onState = data => {
@@ -1030,6 +1043,7 @@ function HostGameScreen({ sessionCode, onGameOver }) {
         rsRef2.current = data;
         setRs(data);
         setAdvancing(false);
+        syncTimeLeft(data);
       }
     };
     socket.on('state', onState);
@@ -1068,7 +1082,7 @@ function HostGameScreen({ sessionCode, onGameOver }) {
 
   const g = GAMES[rs.gameId] || GAMES.G1;
   const round = rs.rounds?.[rs.currentRound];
-  const isTimeUp = timeLeft <= 0;
+  const isTimeUp = rs.status === 'playing' && rs.roundStartedAt > 0 && timeLeft <= 0;
   const allAnswered = rs.answeredCount >= rs.totalPlayers && rs.totalPlayers > 0;
   const canAdvance = isTimeUp || allAnswered;
   const isLastRound = rs.currentRound >= rs.totalRounds - 1;
