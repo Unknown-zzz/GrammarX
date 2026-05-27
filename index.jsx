@@ -545,6 +545,27 @@ body{background:#080810;color:#eeeae2;font-family:'JetBrains Mono',monospace;min
 .instr-timer-bar{fill:none;stroke-width:3.5;stroke-linecap:round;stroke-dasharray:157;transition:stroke-dashoffset .9s linear}
 .instr-timer-num{font-family:'Bricolage Grotesque',sans-serif;font-size:.85rem;font-weight:800;min-width:1.2rem;text-align:center}
 .instr-tpr{display:flex;align-items:center;gap:.5rem;font-size:.72rem;color:var(--mut);margin-bottom:.9rem;padding:.5rem .7rem;background:var(--s2);border-radius:6px}
+
+/* ── Player Instructions Screen (full page) ─────────────────────────────────── */
+.instr-page{width:100%;max-width:500px}
+.instr-ready-list{background:var(--s1);border:1px solid var(--bdr);border-radius:5px;padding:.85rem 1.1rem;margin-top:.8rem}
+.instr-ready-header{font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:var(--mut);margin-bottom:.6rem;display:flex;justify-content:space-between;align-items:center}
+.instr-ready-item{display:flex;align-items:center;gap:.6rem;padding:.32rem .2rem;font-size:.8rem;border-bottom:1px solid var(--bdr)}
+.instr-ready-item:last-child{border-bottom:none}
+.instr-ready-btn{width:100%;padding:1rem;font-size:1.05rem;border:none;border-radius:8px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;cursor:pointer;transition:all .2s;margin-top:.9rem;letter-spacing:.03em}
+.instr-ready-btn.active{background:var(--grn);color:#080810;box-shadow:0 4px 20px rgba(90,224,160,.35)}
+.instr-ready-btn.active:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(90,224,160,.45)}
+.instr-ready-btn.done{background:var(--s2);color:var(--grn);border:1px solid var(--grn);cursor:default}
+
+/* ── Host instructions-waiting phase ────────────────────────────────────────── */
+.instr-host-panel{background:var(--s1);border:1px solid var(--bdr);border-radius:5px;padding:1rem 1.2rem;margin-bottom:.9rem}
+.instr-host-title{font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:var(--mut);margin-bottom:.7rem;display:flex;justify-content:space-between;align-items:center}
+.instr-host-item{display:flex;align-items:center;gap:.7rem;padding:.35rem .3rem;font-size:.82rem;border-bottom:1px solid var(--bdr)}
+.instr-host-item:last-child{border-bottom:none}
+.launch-btn{width:100%;padding:1.1rem;font-size:1.1rem;border-radius:5px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;border:none;cursor:pointer;transition:all .2s;letter-spacing:.04em;margin-bottom:.6rem}
+.launch-btn.ready{background:var(--grn);color:#080810;box-shadow:0 4px 24px rgba(90,224,160,.35)}
+.launch-btn.ready:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(90,224,160,.45)}
+.launch-btn.waiting{background:var(--s2);color:var(--mut);cursor:default}
 `;
 
 function injectCSS(css) {
@@ -827,27 +848,35 @@ function JoinScreen({ user, initialCode='', onJoined, onBack }) {
 
 // ── Screen: Host Lobby ─────────────────────────────────────────────────────────
 function HostLobbyScreen({ user, sessionCode, onStart, onCancel }) {
-  const [players, setPlayers] = useState([]);
-  const [gameId, setGameId] = useState('G1');
-  const [tpr, setTpr] = useState(20);
-  const [starting, setStarting] = useState(false);
-  const [showQR, setShowQR] = useState(false);
+  const [players, setPlayers]           = useState([]);
+  const [gameId, setGameId]             = useState('G1');
+  const [tpr, setTpr]                   = useState(20);
+  const [starting, setStarting]         = useState(false);
+  const [showQR, setShowQR]             = useState(false);
+  const [phase, setPhaseState]          = useState('lobby'); // 'lobby' | 'instructions'
+  const [readyPlayers, setReadyPlayers] = useState([]);
+  const [launching, setLaunching]       = useState(false);
   const prevPlayerCount = useRef(0);
+  const phaseRef        = useRef('lobby');
+  const setPhase = v => { phaseRef.current = v; setPhaseState(v); };
 
   useEffect(() => {
-    // Rejoin socket room and get current state
     socket.emit('rejoin', { code: sessionCode }, state => {
       if (state?.players) {
         const list = state.players.map(p => ({ name: p.name }));
         prevPlayerCount.current = list.length;
         setPlayers(list);
       }
+      if (state?.readyPlayers) setReadyPlayers(state.readyPlayers);
+      if (state?.status === 'instructions') setPhase('instructions');
     });
     const onState = state => {
       const list = state.players?.map(p => ({ name: p.name })) || [];
-      if (list.length > prevPlayerCount.current) SFX.playerJoin();
+      if (list.length > prevPlayerCount.current && phaseRef.current === 'lobby') SFX.playerJoin();
       prevPlayerCount.current = list.length;
       setPlayers(list);
+      if (state.readyPlayers) setReadyPlayers(state.readyPlayers);
+      if (state.status === 'instructions') setPhase('instructions');
     };
     socket.on('state', onState);
     return () => socket.off('state', onState);
@@ -859,11 +888,74 @@ function HostLobbyScreen({ user, sessionCode, onStart, onCancel }) {
     const pool = gameId==='G1'?G1_DATA:gameId==='G2'?G2_DATA:gameId==='G3'?G3_DATA:G4_DATA;
     const rounds = pickRounds(pool);
     try {
-      await emit('start', { code: sessionCode, rounds, gameId, tpr });
-      onStart(gameId, tpr);
+      await emit('prestart', { code: sessionCode, rounds, gameId, tpr });
+      setPhase('instructions');
     } catch { setStarting(false); }
   };
 
+  const handleLaunch = async () => {
+    if (launching) return;
+    setLaunching(true);
+    try {
+      await emit('launch', { code: sessionCode });
+      onStart();
+    } catch { setLaunching(false); }
+  };
+
+  // ── Instructions-waiting phase (all players must confirm ready) ───────────────
+  if (phase === 'instructions') {
+    const g = GAMES[gameId];
+    const allReady = players.length > 0 && readyPlayers.length >= players.length;
+    return (
+      <div className="page">
+        <div className="lobby-wrap slide-up">
+          <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:'1rem'}}>
+            <div>
+              <div className="brand" style={{fontSize:'1.4rem',marginBottom:0}}>GRAMMAR <em>X</em></div>
+              <div className="host-badge">🎮 HOST: {user}</div>
+            </div>
+            <div style={{fontSize:'.7rem',color:g.color,background:`${g.color}15`,border:`1px solid ${g.color}40`,padding:'.3rem .8rem',borderRadius:'20px',fontWeight:700}}>
+              {g.icon} {g.name}
+            </div>
+          </div>
+          <div className="code-display" style={{marginBottom:'1rem'}}>
+            <div className="code-label">Jugadores leyendo instrucciones</div>
+            <div className="code-value">{sessionCode}</div>
+            <div className="code-hint">Espera a que todos confirmen estar listos</div>
+          </div>
+          <div className="instr-host-panel">
+            <div className="instr-host-title">
+              <span>Estado de jugadores</span>
+              <span style={{color:allReady?'var(--grn)':'var(--acc)',fontFamily:"'Bricolage Grotesque',sans-serif",fontWeight:700}}>
+                {readyPlayers.length}/{players.length} listos
+              </span>
+            </div>
+            {players.map((p,i)=>(
+              <div key={i} className="instr-host-item">
+                <span style={{fontSize:'1.1rem',minWidth:'1.6rem',textAlign:'center'}}>
+                  {readyPlayers.includes(p.name)?'✅':'⏳'}
+                </span>
+                <span style={{fontFamily:"'Bricolage Grotesque',sans-serif",fontWeight:700,flex:1}}>{p.name}</span>
+                <span style={{fontSize:'.7rem',color:readyPlayers.includes(p.name)?'var(--grn)':'var(--mut)'}}>
+                  {readyPlayers.includes(p.name)?'Listo':'Leyendo...'}
+                </span>
+              </div>
+            ))}
+            {!players.length&&<div style={{color:'var(--mut)',fontSize:'.72rem',padding:'.5rem',textAlign:'center'}}>Sin jugadores</div>}
+          </div>
+          <button className={`launch-btn${allReady?' ready':' waiting'}`}
+            onClick={allReady&&!launching?handleLaunch:undefined}
+            disabled={launching||!allReady}>
+            {launching?<><span className="spinner"/>Iniciando...</>
+              :allReady?'▶ ¡Todos listos! Comenzar partida'
+              :`⏳ Esperando (${readyPlayers.length}/${players.length} listos)`}
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  // ── Normal lobby ──────────────────────────────────────────────────────────────
   const g = GAMES[gameId];
   return (
     <div className="page">
@@ -908,7 +1000,7 @@ function HostLobbyScreen({ user, sessionCode, onStart, onCancel }) {
         </div>
         <button className="btn" onClick={handleStart} disabled={!players.length||starting}
           style={{fontSize:'1.05rem',padding:'.95rem',background:players.length?g.color:'var(--mut)',color:'#080810',marginBottom:'.6rem'}}>
-          {starting?<><span className="spinner"/>Iniciando...</>:!players.length?'⏳ Esperando jugadores...':`▶ INICIAR ${g.icon} ${g.name} (${players.length})`}
+          {starting?<><span className="spinner"/>Preparando...</>:!players.length?'⏳ Esperando jugadores...':`▶ INICIAR ${g.icon} ${g.name} (${players.length})`}
         </button>
         <button className="btn secondary" onClick={onCancel}>Cancelar sala</button>
       </div>
@@ -1000,6 +1092,12 @@ function HostGameScreen({ sessionCode, onGameOver }) {
               {rs.gameId==='G3' && <><b>{round.title}</b> — {round.q}</>}
               {rs.gameId==='G4' && <><b>Situación:</b> {round.ctx}<br/>{round.tpl.replace('___','______')}</>}
             </div>
+            {canAdvance && (
+              <div className="q-preview-answer">
+                ✓ Respuesta correcta:&nbsp;
+                <b>{rs.gameId === 'G1' ? round.s : round.opts[0]}</b>
+              </div>
+            )}
           </div>
         )}
 
@@ -1092,93 +1190,99 @@ function HostResultsScreen({ sessionCode, players, onNewGame, onClose }) {
   );
 }
 
-// ── Instructions Overlay ──────────────────────────────────────────────────────
-function InstructionsOverlay({ gameId, timePerRound, onDone }) {
-  const TOTAL = 7;
-  const [count, setCount] = useState(TOTAL);
-  const timerRef = useRef(null);
+// ── Screen: Player Instructions (full page, with ready system) ───────────────
+function PlayerInstructionsScreen({ user, sessionCode, gameId, timePerRound, players, readyPlayers }) {
+  const [confirmed, setConfirmed] = useState(false);
 
-  // Auto-countdown
-  useEffect(() => {
-    timerRef.current = setInterval(() => {
-      setCount(c => {
-        if (c <= 1) { clearInterval(timerRef.current); onDone(); return 0; }
-        return c - 1;
-      });
-    }, 1000);
-    return () => clearInterval(timerRef.current);
-  }, []);
-
-  const skip = () => { clearInterval(timerRef.current); onDone(); };
+  const handleReady = async () => {
+    if (confirmed) return;
+    SFX.click();
+    setConfirmed(true);
+    try {
+      await emit('player_ready', { code: sessionCode, name: user });
+    } catch { setConfirmed(false); }
+  };
 
   const g    = GAMES[gameId];
   const info = GAME_INSTRUCTIONS[gameId];
-  if (!g || !info) { onDone(); return null; }
+  if (!g || !info) return null;
 
-  // SVG ring: circumference ≈ 157 (r=25)
-  const pct    = count / TOTAL;
-  const offset = 157 * (1 - pct);
+  const readyCount = readyPlayers.length;
+  const totalCount = players.length;
 
   return (
-    <div className="instr-overlay">
-      <div className="instr-card" style={{borderColor: info.color + '55'}}>
-        {/* top accent bar */}
-        <div style={{position:'absolute',top:0,left:0,right:0,height:'3px',borderRadius:'16px 16px 0 0',background:`linear-gradient(90deg,transparent,${info.color},transparent)`}}/>
+    <div className="page" style={{justifyContent:'flex-start',paddingTop:'1rem',paddingBottom:'2rem'}}>
+      <div className="instr-page slide-up">
+        {/* brand */}
+        <div style={{textAlign:'center',marginBottom:'1.1rem'}}>
+          <div className="brand" style={{fontSize:'1.2rem',marginBottom:0}}>GRAMMAR <em>X</em></div>
+          <div className="brand-sub">Lee las instrucciones antes de jugar</div>
+        </div>
 
-        {/* Header */}
-        <div className="instr-header">
-          <div className="instr-icon">{g.icon}</div>
-          <div>
-            <div className="instr-title" style={{color: info.color}}>{g.name}</div>
-            <div className="instr-grammar">{g.sub}</div>
+        {/* instructions card */}
+        <div className="instr-card" style={{borderColor:info.color+'55',maxWidth:'100%'}}>
+          <div style={{position:'absolute',top:0,left:0,right:0,height:'3px',borderRadius:'16px 16px 0 0',background:`linear-gradient(90deg,transparent,${info.color},transparent)`}}/>
+          <div className="instr-header">
+            <div className="instr-icon">{g.icon}</div>
+            <div>
+              <div className="instr-title" style={{color:info.color}}>{g.name}</div>
+              <div className="instr-grammar">{g.sub}</div>
+            </div>
+          </div>
+          <div className="instr-how" style={{borderLeftColor:info.color}}>{info.how}</div>
+          <ul className="instr-steps">
+            {info.steps.map((step,i)=>(
+              <li key={i} className="instr-step">
+                <span className="instr-step-n" style={{color:info.color}}>{i+1}.</span>
+                <span>{step}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="instr-tip">{info.tip}</div>
+          <div className="instr-tpr">
+            <span>⏱</span>
+            <span><b style={{color:'#eeeae2'}}>{timePerRound}s</b> por pregunta</span>
+            <span style={{margin:'0 .4rem',opacity:.4}}>·</span>
+            <span>Responde rápido para ganar puntos de velocidad ⚡</span>
           </div>
         </div>
 
-        {/* How to play summary */}
-        <div className="instr-how" style={{borderLeftColor: info.color}}>
-          {info.how}
-        </div>
+        {/* ready button */}
+        <button
+          className={`instr-ready-btn${confirmed?' done':' active'}`}
+          onClick={handleReady}
+          disabled={confirmed}
+        >
+          {confirmed ? '✅ ¡Listo! Esperando a los demás...' : '¡Estoy listo! →'}
+        </button>
 
-        {/* Steps */}
-        <ul className="instr-steps">
-          {info.steps.map((step, i) => (
-            <li key={i} className="instr-step">
-              <span className="instr-step-n" style={{color: info.color}}>{i + 1}.</span>
-              <span>{step}</span>
-            </li>
-          ))}
-        </ul>
-
-        {/* Tip */}
-        <div className="instr-tip">{info.tip}</div>
-
-        {/* Time per round info */}
-        <div className="instr-tpr">
-          <span>⏱</span>
-          <span><b style={{color:'var(--txt)'}}>{timePerRound}s</b> por pregunta</span>
-          <span style={{margin:'0 .4rem',opacity:.4}}>·</span>
-          <span>Responde rápido para ganar puntos de velocidad ⚡</span>
-        </div>
-
-        {/* Footer: button + countdown ring */}
-        <div className="instr-footer">
-          <button className="instr-btn" onClick={skip}>
-            ¡Entendido, a jugar! →
-          </button>
-          <div className="instr-timer">
-            <svg className="instr-timer-svg" width="34" height="34" viewBox="0 0 34 34">
-              <circle className="instr-timer-track" cx="17" cy="17" r="13"/>
-              <circle
-                className="instr-timer-bar"
-                cx="17" cy="17" r="13"
-                stroke={count <= 3 ? '#e05a5a' : info.color}
-                strokeDashoffset={offset}
-              />
-            </svg>
-            <span className="instr-timer-num" style={{color: count <= 3 ? '#e05a5a' : info.color}}>
-              {count}
+        {/* player ready list */}
+        <div className="instr-ready-list">
+          <div className="instr-ready-header">
+            <span>Jugadores en la sala</span>
+            <span style={{color:readyCount>=totalCount&&totalCount>0?'var(--grn)':'var(--acc)',fontWeight:700}}>
+              {readyCount}/{totalCount} listos
             </span>
           </div>
+          {players.map((p,i)=>(
+            <div key={i} className="instr-ready-item">
+              <span style={{fontSize:'1rem',minWidth:'1.5rem',textAlign:'center'}}>
+                {readyPlayers.includes(p.name)?'✅':'⏳'}
+              </span>
+              <span style={{fontFamily:"'Bricolage Grotesque',sans-serif",fontWeight:700,flex:1,
+                color:p.name===user?'var(--acc)':'#eeeae2'}}>
+                {p.name}{p.name===user?' (tú)':''}
+              </span>
+              <span style={{fontSize:'.68rem',color:readyPlayers.includes(p.name)?'var(--grn)':'var(--mut)'}}>
+                {readyPlayers.includes(p.name)?'Listo ✓':'Leyendo...'}
+              </span>
+            </div>
+          ))}
+          {!players.length&&<div style={{color:'var(--mut)',fontSize:'.72rem',padding:'.5rem 0',textAlign:'center'}}>Cargando...</div>}
+        </div>
+
+        <div style={{textAlign:'center',fontSize:'.72rem',color:'var(--mut)',marginTop:'.6rem'}}>
+          El host iniciará la partida cuando todos estén listos
         </div>
       </div>
     </div>
@@ -1187,11 +1291,13 @@ function InstructionsOverlay({ gameId, timePerRound, onDone }) {
 
 // ── Screen: Player Lobby ───────────────────────────────────────────────────────
 function PlayerLobbyScreen({ user, sessionCode, onStart }) {
-  const [players, setPlayers]         = useState([]);
-  const [hostName, setHostName]       = useState('');
-  const [gameInfo, setGameInfo]       = useState(null);
-  const [showInstr, setShowInstr]     = useState(false);
-  const [startData, setStartData]     = useState(null); // { gameId, timePerRound }
+  const [players, setPlayers]           = useState([]);
+  const [hostName, setHostName]         = useState('');
+  const [gameInfo, setGameInfo]         = useState(null);
+  const [status, setStatus]             = useState('waiting');
+  const [readyPlayers, setReadyPlayers] = useState([]);
+  const [gameData, setGameData]         = useState(null); // { gameId, timePerRound }
+  const startedRef = useRef(false);
 
   useEffect(() => {
     const applyState = data => {
@@ -1199,23 +1305,29 @@ function PlayerLobbyScreen({ user, sessionCode, onStart }) {
       if (data.host)   setHostName(data.host);
       if (data.gameId) setGameInfo(GAMES[data.gameId]);
       setPlayers(data.players?.map(p => ({ name: p.name })) || []);
-      if (data.status === 'playing' && !showInstr) {
-        // Show instructions before entering the game
-        setStartData({ gameId: data.gameId, timePerRound: data.timePerRound ?? 20 });
-        setShowInstr(true);
+      if (data.readyPlayers) setReadyPlayers(data.readyPlayers);
+      setStatus(data.status || 'waiting');
+      if (data.gameId) setGameData({ gameId: data.gameId, timePerRound: data.timePerRound ?? 20 });
+      // When host launches → go straight to game (instructions already shown)
+      if (data.status === 'playing' && !startedRef.current) {
+        startedRef.current = true;
+        onStart();
       }
     };
     socket.emit('rejoin', { code: sessionCode }, applyState);
     socket.on('state', applyState);
     return () => socket.off('state', applyState);
-  }, [sessionCode]);
+  }, [sessionCode]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  // Show instructions overlay when game starts
-  if (showInstr && startData) {
-    return <InstructionsOverlay
-      gameId={startData.gameId}
-      timePerRound={startData.timePerRound}
-      onDone={onStart}
+  // Instructions screen — shown for every player while status = 'instructions'
+  if (status === 'instructions' && gameData) {
+    return <PlayerInstructionsScreen
+      user={user}
+      sessionCode={sessionCode}
+      gameId={gameData.gameId}
+      timePerRound={gameData.timePerRound}
+      players={players}
+      readyPlayers={readyPlayers}
     />;
   }
 

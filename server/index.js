@@ -8,6 +8,9 @@ import { networkInterfaces } from 'os';
 import selfsigned        from 'selfsigned';
 import * as db           from './db.js';
 
+// In-memory ready tracking: code → Set<playerName>
+const readySets = new Map();
+
 const __dir  = dirname(fileURLToPath(import.meta.url));
 const DIST   = join(__dir, '..', 'dist');
 const PORT   = Number(process.env.PORT) || 3001;
@@ -60,7 +63,10 @@ app.get('*', (_, res) => res.sendFile(join(DIST, 'index.html')));
 // ── Helpers ────────────────────────────────────────────────────────────────────
 function push(code) {
   const state = db.getRoundState(code);
-  if (state) io.to(code).emit('state', state);
+  if (state) {
+    state.readyPlayers = [...(readySets.get(code) || new Set())];
+    io.to(code).emit('state', state);
+  }
 }
 
 // ── Socket handlers ────────────────────────────────────────────────────────────
@@ -135,6 +141,40 @@ io.on('connection', socket => {
 
   socket.on('getState', ({ code }, ack) => {
     ack?.(db.getRoundState(code));
+  });
+
+  // ── Pre-start: host sends rounds to server; status → 'instructions' ───────────
+  socket.on('prestart', ({ code, gameId, rounds, tpr }, ack) => {
+    try {
+      db.prestartSession(code, gameId, rounds, tpr);
+      readySets.set(code, new Set());
+      socket.join(code);
+      ack?.({ ok: true });
+      push(code);
+    } catch (e) { ack?.({ error: e.message }); }
+  });
+
+  // ── Player confirmed ready ─────────────────────────────────────────────────────
+  socket.on('player_ready', ({ code, name }, ack) => {
+    try {
+      if (!readySets.has(code)) readySets.set(code, new Set());
+      readySets.get(code).add(name);
+      ack?.({ ok: true });
+      push(code);
+    } catch (e) { ack?.({ error: e.message }); }
+  });
+
+  // ── Launch: host fires after all ready; starts the actual timer ───────────────
+  socket.on('launch', ({ code }, ack) => {
+    try {
+      const state = db.getRoundState(code);
+      if (!state) { ack?.({ error: 'Session not found' }); return; }
+      db.startSession(code, state.gameId, state.rounds, state.timePerRound);
+      readySets.delete(code);
+      socket.join(code);
+      ack?.({ ok: true });
+      push(code);
+    } catch (e) { ack?.({ error: e.message }); }
   });
 });
 

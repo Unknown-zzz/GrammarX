@@ -59,6 +59,7 @@ const q = {
   addAnswer:       db.prepare('INSERT OR IGNORE INTO answers (session_code, player_name, round_index, score, game_token) VALUES (?, ?, ?, ?, ?)'),
   getAnswers:      db.prepare('SELECT player_name, round_index, score FROM answers WHERE session_code=? AND game_token=?'),
   insertScore:     db.prepare('INSERT INTO scores (name, score, game_id, session_code, saved_at) VALUES (?, ?, ?, ?, ?)'),
+  prestartSession: db.prepare(`UPDATE sessions SET status='instructions', game_id=?, rounds=?, time_per_round=? WHERE code=?`),
   scoresByGame:    db.prepare('SELECT name, SUM(score) as score FROM scores WHERE game_id=? GROUP BY name ORDER BY score DESC'),
   scoresAll:       db.prepare('SELECT name, SUM(score) as score FROM scores GROUP BY name ORDER BY score DESC'),
 };
@@ -75,6 +76,11 @@ export function joinSession(code, name) {
   if (s.status === 'closed') return { error: 'La sesión ya terminó' };
   q.addPlayer.run(code, name);
   return { ok: true };
+}
+
+export function prestartSession(code, gameId, rounds, tpr) {
+  const res = q.prestartSession.run(gameId, JSON.stringify(rounds), tpr || 20, code);
+  if (Number(res.changes) === 0) throw new Error(`Session not found: ${code}`);
 }
 
 export function startSession(code, gameId, rounds, tpr) {
