@@ -33,6 +33,51 @@ const DIFF_META = {
 };
 const TIME_OPTIONS = [10, 15, 20, 30];
 
+// ── Instructions data (per game mode) ─────────────────────────────────────────
+const GAME_INSTRUCTIONS = {
+  G1: {
+    color: '#f0c040',
+    how: 'Reconstruye la oración en pasado simple ordenando las palabras correctamente.',
+    steps: [
+      'Las palabras de una oración aparecen mezcladas abajo.',
+      'Tócalas en el orden correcto para armar la oración.',
+      'Pulsa "Verificar →" cuando estés listo.',
+      'Si te equivocas, usa "✕ Limpiar" para reordenar.',
+    ],
+    tip: '💡 Busca el verbo en pasado — termina en -ed o es irregular (went, wrote, ran…).',
+  },
+  G2: {
+    color: '#e05a5a',
+    how: 'Elige la forma comparativa o superlativa correcta del adjetivo.',
+    steps: [
+      'Se comparan dos elementos entre sí (ej. 🐢 vs 🐇).',
+      'Lee la oración con el espacio en blanco (___).',
+      'Elige la opción correcta entre las 4 disponibles.',
+    ],
+    tip: '💡 Adj. cortos: -er / the -est · Adj. largos: more / the most · Irregulares: better, worse, best…',
+  },
+  G3: {
+    color: '#5ae0a0',
+    how: 'Lee el texto y elige la respuesta correcta a la pregunta de comprensión.',
+    steps: [
+      'Lee con atención el pasaje de texto (cuadro superior).',
+      'Debajo aparece una pregunta sobre lo que leíste.',
+      'Elige la opción que mejor responde la pregunta.',
+    ],
+    tip: '💡 Fíjate en have/has + participio pasado — eso es Present Perfect (ej. "has finished").',
+  },
+  G4: {
+    color: '#a080f0',
+    how: 'Completa la oración eligiendo la forma correcta del tiempo futuro.',
+    steps: [
+      'Lee la situación o contexto que se presenta.',
+      'Completa la oración con el hueco en blanco (___).',
+      'Elige entre 4 opciones la forma de futuro correcta.',
+    ],
+    tip: "💡 will = decisión espontánea o predicción · going to = plan previo o evidencia visible · won't = negación futura.",
+  },
+};
+
 function shuffle(arr) { const a=[...arr]; for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];} return a; }
 function pickRounds(pool) { const r=[]; for(let d=1;d<=5;d++) r.push(...shuffle(pool.filter(s=>s.d===d)).slice(0,2)); return r; }
 function calcScore(correct, timeLeft, tpr, diff) { if(!correct) return 0; return diff*100 + Math.round((timeLeft/tpr)*diff*50); }
@@ -475,6 +520,31 @@ body{background:#080810;color:#eeeae2;font-family:'JetBrains Mono',monospace;min
   .opt-grid{grid-template-columns:1fr}.game-grid{grid-template-columns:1fr}
   .player-grid{grid-template-columns:1fr 1fr}.host-dash{padding:.7rem}
 }
+
+/* ── Instructions Overlay ───────────────────────────────────────────────────── */
+@keyframes instrSlideIn{from{opacity:0;transform:translateY(28px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes instrCountdown{from{stroke-dashoffset:0}to{stroke-dashoffset:157}}
+.instr-overlay{position:fixed;inset:0;z-index:2000;background:rgba(4,4,12,.92);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:1rem}
+.instr-card{background:var(--s1);border:1px solid var(--bdr);border-radius:16px;padding:2rem 1.8rem 1.6rem;max-width:440px;width:100%;animation:instrSlideIn .35s cubic-bezier(.22,.9,.36,1) both;position:relative;overflow:hidden}
+.instr-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:16px 16px 0 0}
+.instr-header{display:flex;align-items:center;gap:.9rem;margin-bottom:1.1rem}
+.instr-icon{font-size:2.4rem;line-height:1;flex-shrink:0}
+.instr-title{font-family:'Bricolage Grotesque',sans-serif;font-size:1.5rem;font-weight:800;letter-spacing:-.03em;line-height:1.1}
+.instr-grammar{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mut);margin-top:.25rem}
+.instr-how{font-size:.82rem;color:var(--txt);opacity:.85;line-height:1.55;margin-bottom:1rem;padding:.7rem .9rem;background:var(--s2);border-radius:8px;border-left:3px solid}
+.instr-steps{list-style:none;margin-bottom:.9rem;display:flex;flex-direction:column;gap:.45rem}
+.instr-step{display:flex;align-items:flex-start;gap:.6rem;font-size:.78rem;line-height:1.5;color:var(--txt);opacity:.8}
+.instr-step-n{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:.8rem;min-width:1.4rem;flex-shrink:0;opacity:1}
+.instr-tip{font-size:.75rem;line-height:1.5;padding:.6rem .85rem;background:rgba(240,192,64,.06);border:1px solid rgba(240,192,64,.2);border-radius:8px;color:var(--acc);margin-bottom:1rem}
+.instr-footer{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.instr-btn{flex:1;padding:.75rem 1rem;background:var(--acc);color:#080810;border:none;border-radius:8px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:.95rem;cursor:pointer;letter-spacing:.01em;transition:opacity .15s}
+.instr-btn:hover{opacity:.88}
+.instr-timer{display:flex;align-items:center;gap:.5rem;flex-shrink:0}
+.instr-timer-svg{transform:rotate(-90deg)}
+.instr-timer-track{fill:none;stroke:var(--bdr);stroke-width:3.5}
+.instr-timer-bar{fill:none;stroke-width:3.5;stroke-linecap:round;stroke-dasharray:157;transition:stroke-dashoffset .9s linear}
+.instr-timer-num{font-family:'Bricolage Grotesque',sans-serif;font-size:.85rem;font-weight:800;min-width:1.2rem;text-align:center}
+.instr-tpr{display:flex;align-items:center;gap:.5rem;font-size:.72rem;color:var(--mut);margin-bottom:.9rem;padding:.5rem .7rem;background:var(--s2);border-radius:6px}
 `;
 
 function injectCSS(css) {
@@ -1022,24 +1092,132 @@ function HostResultsScreen({ sessionCode, players, onNewGame, onClose }) {
   );
 }
 
+// ── Instructions Overlay ──────────────────────────────────────────────────────
+function InstructionsOverlay({ gameId, timePerRound, onDone }) {
+  const TOTAL = 7;
+  const [count, setCount] = useState(TOTAL);
+  const timerRef = useRef(null);
+
+  // Auto-countdown
+  useEffect(() => {
+    timerRef.current = setInterval(() => {
+      setCount(c => {
+        if (c <= 1) { clearInterval(timerRef.current); onDone(); return 0; }
+        return c - 1;
+      });
+    }, 1000);
+    return () => clearInterval(timerRef.current);
+  }, []);
+
+  const skip = () => { clearInterval(timerRef.current); onDone(); };
+
+  const g    = GAMES[gameId];
+  const info = GAME_INSTRUCTIONS[gameId];
+  if (!g || !info) { onDone(); return null; }
+
+  // SVG ring: circumference ≈ 157 (r=25)
+  const pct    = count / TOTAL;
+  const offset = 157 * (1 - pct);
+
+  return (
+    <div className="instr-overlay">
+      <div className="instr-card" style={{borderColor: info.color + '55'}}>
+        {/* top accent bar */}
+        <div style={{position:'absolute',top:0,left:0,right:0,height:'3px',borderRadius:'16px 16px 0 0',background:`linear-gradient(90deg,transparent,${info.color},transparent)`}}/>
+
+        {/* Header */}
+        <div className="instr-header">
+          <div className="instr-icon">{g.icon}</div>
+          <div>
+            <div className="instr-title" style={{color: info.color}}>{g.name}</div>
+            <div className="instr-grammar">{g.sub}</div>
+          </div>
+        </div>
+
+        {/* How to play summary */}
+        <div className="instr-how" style={{borderLeftColor: info.color}}>
+          {info.how}
+        </div>
+
+        {/* Steps */}
+        <ul className="instr-steps">
+          {info.steps.map((step, i) => (
+            <li key={i} className="instr-step">
+              <span className="instr-step-n" style={{color: info.color}}>{i + 1}.</span>
+              <span>{step}</span>
+            </li>
+          ))}
+        </ul>
+
+        {/* Tip */}
+        <div className="instr-tip">{info.tip}</div>
+
+        {/* Time per round info */}
+        <div className="instr-tpr">
+          <span>⏱</span>
+          <span><b style={{color:'var(--txt)'}}>{timePerRound}s</b> por pregunta</span>
+          <span style={{margin:'0 .4rem',opacity:.4}}>·</span>
+          <span>Responde rápido para ganar puntos de velocidad ⚡</span>
+        </div>
+
+        {/* Footer: button + countdown ring */}
+        <div className="instr-footer">
+          <button className="instr-btn" onClick={skip}>
+            ¡Entendido, a jugar! →
+          </button>
+          <div className="instr-timer">
+            <svg className="instr-timer-svg" width="34" height="34" viewBox="0 0 34 34">
+              <circle className="instr-timer-track" cx="17" cy="17" r="13"/>
+              <circle
+                className="instr-timer-bar"
+                cx="17" cy="17" r="13"
+                stroke={count <= 3 ? '#e05a5a' : info.color}
+                strokeDashoffset={offset}
+              />
+            </svg>
+            <span className="instr-timer-num" style={{color: count <= 3 ? '#e05a5a' : info.color}}>
+              {count}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // ── Screen: Player Lobby ───────────────────────────────────────────────────────
 function PlayerLobbyScreen({ user, sessionCode, onStart }) {
-  const [players, setPlayers] = useState([]);
-  const [hostName, setHostName] = useState('');
-  const [gameInfo, setGameInfo] = useState(null);
+  const [players, setPlayers]         = useState([]);
+  const [hostName, setHostName]       = useState('');
+  const [gameInfo, setGameInfo]       = useState(null);
+  const [showInstr, setShowInstr]     = useState(false);
+  const [startData, setStartData]     = useState(null); // { gameId, timePerRound }
 
   useEffect(() => {
     const applyState = data => {
       if (!data) return;
-      if (data.host) setHostName(data.host);
+      if (data.host)   setHostName(data.host);
       if (data.gameId) setGameInfo(GAMES[data.gameId]);
       setPlayers(data.players?.map(p => ({ name: p.name })) || []);
-      if (data.status === 'playing') onStart();
+      if (data.status === 'playing' && !showInstr) {
+        // Show instructions before entering the game
+        setStartData({ gameId: data.gameId, timePerRound: data.timePerRound ?? 20 });
+        setShowInstr(true);
+      }
     };
     socket.emit('rejoin', { code: sessionCode }, applyState);
     socket.on('state', applyState);
     return () => socket.off('state', applyState);
   }, [sessionCode]);
+
+  // Show instructions overlay when game starts
+  if (showInstr && startData) {
+    return <InstructionsOverlay
+      gameId={startData.gameId}
+      timePerRound={startData.timePerRound}
+      onDone={onStart}
+    />;
+  }
 
   return (
     <div className="page">
