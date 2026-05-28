@@ -23,7 +23,7 @@ function emit(event, data) {
 const GAMES = {
   G1:{ id:'G1', name:'Time Machine',  icon:'⏰', sub:'Past Simple',                color:'#f0c040', desc:'Ordena las palabras en pasado simple.' },
   G2:{ id:'G2', name:'Duel Mode',     icon:'⚔️',  sub:'Comparatives & Superlatives', color:'#e05a5a', desc:'Elige la forma comparativa o superlativa correcta.' },
-  G3:{ id:'G3', name:'Evidence File', icon:'🔍', sub:'Present Perfect',             color:'#5ae0a0', desc:'Lee el pasaje y responde la pregunta de comprensión.' },
+  G3:{ id:'G3', name:'Evidence File', icon:'🔍', sub:'Present Perfect',             color:'#5ae0a0', desc:'Encuentra el error gramatical y elige la versión corregida.' },
   G4:{ id:'G4', name:'Crystal Ball',  icon:'🔮', sub:'Future Tense',                color:'#a080f0', desc:'Elige la forma futura correcta.' },
 };
 const DIFF_META = {

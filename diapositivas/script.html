@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GrammarX — Presentation Script</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..60,400;12..60,600;12..60,800&family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:  #080810; --s1: #111118; --s2: #1a1a26;
+      --acc: #f0c040; --red: #e05a5a; --grn: #5ae0a0;
+      --blu: #60c0f0; --pur: #a080f0; --mut: #55556a;
+      --bdr: #2a2a44; --txt: #eeeae2;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--txt);
+      min-height: 100vh;
+      padding: 40px 20px 80px;
+    }
+
+    .page { max-width: 820px; margin: 0 auto; }
+
+    /* ── HEADER ────────────────────────────────────────── */
+    .header {
+      text-align: center;
+      margin-bottom: 48px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--bdr);
+    }
+    .header-brand {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 2.8rem; font-weight: 800; letter-spacing: -.04em;
+      margin-bottom: 4px;
+    }
+    .header-sub {
+      font-size: .72rem; letter-spacing: .2em; text-transform: uppercase;
+      color: var(--mut); margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex; justify-content: center; gap: 24px; flex-wrap: wrap;
+      font-size: .68rem; color: var(--mut);
+    }
+    .meta-item { display: flex; align-items: center; gap: 6px; }
+    .meta-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--acc); }
+
+    /* ── TIMING BAR ─────────────────────────────────────── */
+    .timing-bar {
+      background: var(--s1); border: 1px solid var(--bdr);
+      border-radius: 10px; padding: 18px 22px; margin-bottom: 40px;
+      display: flex; align-items: center; gap: 20px;
+    }
+    .timing-icon { font-size: 2rem; }
+    .timing-body { flex: 1; }
+    .timing-title {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 1rem; font-weight: 700; margin-bottom: 6px;
+    }
+    .timing-row { display: flex; gap: 10px; flex-wrap: wrap; }
+    .timing-chip {
+      font-size: .62rem; padding: 3px 10px; border-radius: 20px;
+      letter-spacing: .08em; font-weight: 700; border: 1px solid;
+    }
+
+    /* ── SECTION TITLE ──────────────────────────────────── */
+    .section-lbl {
+      font-size: .6rem; letter-spacing: .22em; text-transform: uppercase;
+      color: var(--mut); margin-bottom: 20px; margin-top: 48px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .section-lbl::after {
+      content: ''; flex: 1; height: 1px; background: var(--bdr);
+    }
+
+    /* ── SPEAKER BLOCK ──────────────────────────────────── */
+    .speaker-block {
+      margin-bottom: 28px;
+      border-radius: 12px; overflow: hidden;
+      border: 1px solid var(--bdr);
+    }
+
+    .speaker-header {
+      display: flex; align-items: center; gap: 14px;
+      padding: 14px 20px;
+    }
+    .speaker-avatar {
+      width: 42px; height: 42px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; font-weight: 700; flex-shrink: 0;
+      font-family: 'Bricolage Grotesque', sans-serif;
+    }
+    .speaker-info { flex: 1; }
+    .speaker-name {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 1rem; font-weight: 800; margin-bottom: 2px;
+    }
+    .speaker-role {
+      font-size: .62rem; letter-spacing: .1em; text-transform: uppercase;
+      color: var(--mut);
+    }
+    .speaker-timing {
+      font-size: .62rem; letter-spacing: .08em;
+      color: var(--mut); text-align: right;
+    }
+    .speaker-slides {
+      font-size: .7rem; font-weight: 700;
+    }
+
+    /* Script lines */
+    .speaker-body { padding: 0 20px 20px; background: var(--bg); }
+
+    .slide-ref {
+      font-size: .58rem; letter-spacing: .18em; text-transform: uppercase;
+      color: var(--mut); margin: 14px 0 6px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .slide-ref::before {
+      content: '▶';
+      font-size: .5rem;
+    }
+
+    .line {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 1.15rem; font-weight: 600; line-height: 1.55;
+      padding: 14px 18px; border-radius: 8px;
+      border-left: 3px solid; margin-bottom: 6px;
+    }
+
+    /* Pronunciation/tip box */
+    .tip-box {
+      background: rgba(85,85,106,.12); border: 1px solid var(--bdr);
+      border-radius: 8px; padding: 12px 16px; margin-top: 10px;
+      font-size: .72rem; line-height: 1.6; color: rgba(238,234,226,.6);
+    }
+    .tip-box strong { color: var(--txt); }
+    .tip-box .tip-title {
+      font-size: .58rem; letter-spacing: .18em; text-transform: uppercase;
+      color: var(--mut); margin-bottom: 6px; display: block;
+    }
+
+    /* Stress marks inside script lines */
+    em { font-style: normal; text-decoration: underline; text-underline-offset: 3px; }
+    strong { font-weight: 800; }
+
+    /* ── FULL SCRIPT RUN-THROUGH ────────────────────────── */
+    .runthrough {
+      background: var(--s1); border: 1px solid var(--bdr);
+      border-radius: 12px; padding: 28px 30px; margin-top: 48px;
+    }
+    .runthrough-title {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 1.2rem; font-weight: 800; margin-bottom: 20px;
+      color: var(--acc);
+    }
+    .rt-line {
+      display: flex; gap: 14px; margin-bottom: 14px;
+      align-items: flex-start;
+    }
+    .rt-who {
+      font-size: .65rem; font-weight: 700; letter-spacing: .08em;
+      text-transform: uppercase; flex-shrink: 0; width: 76px;
+      padding-top: 2px;
+    }
+    .rt-text {
+      font-size: .88rem; line-height: 1.6;
+      color: rgba(238,234,226,.85);
+    }
+    .rt-divider {
+      height: 1px; background: var(--bdr); margin: 10px 0 16px;
+    }
+
+    /* ── FOOTER ──────────────────────────────────────────── */
+    .footer {
+      text-align: center; margin-top: 60px; padding-top: 24px;
+      border-top: 1px solid var(--bdr);
+      font-size: .65rem; letter-spacing: .1em;
+      color: var(--mut);
+    }
+
+    @media print {
+      body { background: #fff; color: #111; padding: 20px; }
+      :root { --bg: #fff; --s1: #f5f5f5; --s2: #eee; --bdr: #ddd; --txt: #111; --mut: #888; }
+      .speaker-block { break-inside: avoid; }
+      .runthrough { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ── HEADER ──────────────────────────────────────── -->
+  <div class="header">
+    <div class="header-brand">
+      <span style="color:var(--acc);">GRAMMAR</span><span style="color:var(--txt);">X</span>
+    </div>
+    <div class="header-sub">Presentation Script · Study Guide</div>
+    <div class="meta-row">
+      <span class="meta-item"><span class="meta-dot"></span>English 2</span>
+      <span class="meta-item"><span class="meta-dot" style="background:var(--grn)"></span>Universidad Privada Domingo Savio</span>
+      <span class="meta-item"><span class="meta-dot" style="background:var(--pur)"></span>Ruth Gascher Portales</span>
+      <span class="meta-item"><span class="meta-dot" style="background:var(--red)"></span>2026</span>
+    </div>
+  </div>
+
+
+  <!-- ── TIMING OVERVIEW ─────────────────────────────── -->
+  <div class="timing-bar">
+    <div class="timing-icon">⏱️</div>
+    <div class="timing-body">
+      <div class="timing-title">Total presentation: <span style="color:var(--acc);">~1 minute</span> · 4 speakers · 8 slides</div>
+      <div class="timing-row">
+        <span class="timing-chip" style="background:rgba(240,192,64,.1);color:var(--acc);border-color:rgba(240,192,64,.3);">Jonathan — 15 sec · Slides 1–2</span>
+        <span class="timing-chip" style="background:rgba(224,90,90,.1);color:var(--red);border-color:rgba(224,90,90,.3);">Luis Rodrigo — 15 sec · Slides 3–4</span>
+        <span class="timing-chip" style="background:rgba(90,224,160,.1);color:var(--grn);border-color:rgba(90,224,160,.3);">Carla — 15 sec · Slide 5</span>
+        <span class="timing-chip" style="background:rgba(160,128,240,.1);color:var(--pur);border-color:rgba(160,128,240,.3);">Diego — 15 sec · Slides 6–8</span>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════════════
+       SPEAKER 1 — JONATHAN
+  ══════════════════════════════════════════════════ -->
+  <div class="section-lbl">Speaker 1</div>
+
+  <div class="speaker-block">
+    <div class="speaker-header" style="background:rgba(240,192,64,.07); border-bottom:1px solid rgba(240,192,64,.2);">
+      <div class="speaker-avatar" style="background:rgba(240,192,64,.15); color:var(--acc);">JC</div>
+      <div class="speaker-info">
+        <div class="speaker-name" style="color:var(--acc);">Jonathan Campos</div>
+        <div class="speaker-role">Introduction &amp; The Problem</div>
+      </div>
+      <div class="speaker-timing">
+        <div class="speaker-slides" style="color:var(--acc);">Slides 1 – 2</div>
+        <div>≈ 15 seconds</div>
+      </div>
+    </div>
+
+    <div class="speaker-body">
+      <div class="slide-ref">Slide 1 — Title (displayed while speaking)</div>
+      <div class="line" style="background:rgba(240,192,64,.05); border-left-color:var(--acc);">
+        Good morning. <em>This</em> is <strong>GrammarX</strong> — a real-time multiplayer web game that transforms English grammar practice into a competitive classroom experience.
+      </div>
+
+      <div class="slide-ref">Slide 2 — The Problem (advance slide, then speak)</div>
+      <div class="line" style="background:rgba(240,192,64,.05); border-left-color:var(--acc);">
+        We built it because traditional grammar exercises are <em>passive</em> and <em>repetitive</em> — students complete them mechanically, with no feedback, and no reason to actually try.
+      </div>
+
+      <div class="tip-box">
+        <span class="tip-title">💡 Tips for Jonathan</span>
+        <strong>Speak slowly and clearly</strong> — you are setting the tone for the whole presentation.<br>
+        Say <strong>"GrammarX"</strong> as two words: <em>GRAM-mar X</em>.<br>
+        Pause briefly after <em>"classroom experience"</em> before moving to the problem.<br>
+        Advance to Slide 2 <strong>before</strong> saying the second sentence.
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════════════
+       SPEAKER 2 — LUIS RODRIGO
+  ══════════════════════════════════════════════════ -->
+  <div class="section-lbl">Speaker 2</div>
+
+  <div class="speaker-block">
+    <div class="speaker-header" style="background:rgba(224,90,90,.07); border-bottom:1px solid rgba(224,90,90,.2);">
+      <div class="speaker-avatar" style="background:rgba(224,90,90,.15); color:var(--red);">LR</div>
+      <div class="speaker-info">
+        <div class="speaker-name" style="color:var(--red);">Luis Rodrigo Vargas Melgar</div>
+        <div class="speaker-role">The Solution &amp; The 4 Mini-Games</div>
+      </div>
+      <div class="speaker-timing">
+        <div class="speaker-slides" style="color:var(--red);">Slides 3 – 4</div>
+        <div>≈ 15 seconds</div>
+      </div>
+    </div>
+
+    <div class="speaker-body">
+      <div class="slide-ref">Slide 3 — The Solution (advance slide, then speak)</div>
+      <div class="line" style="background:rgba(224,90,90,.05); border-left-color:var(--red);">
+        GrammarX solves this with <em>gamification</em>. The teacher creates a room, students join from their phone or computer, and <em>everyone competes live</em> — with instant feedback and a speed bonus on every answer.
+      </div>
+
+      <div class="slide-ref">Slide 4 — The 4 Mini-Games (advance slide, then speak)</div>
+      <div class="line" style="background:rgba(224,90,90,.05); border-left-color:var(--red);">
+        There are <em>four game modes</em>: <strong>Time Machine</strong> for Past Simple, <strong>Duel Mode</strong> for Comparatives, <strong>Evidence File</strong> for Present Perfect, and <strong>Crystal Ball</strong> for the Future Tense.
+      </div>
+
+      <div class="tip-box">
+        <span class="tip-title">💡 Tips for Luis Rodrigo</span>
+        When naming the four games, <strong>pause slightly between each one</strong> so the audience can follow.<br>
+        Point to each card on the screen as you say its name.<br>
+        Say <strong>"gamification"</strong> as: <em>GAM-i-fi-CAY-shun</em>.<br>
+        Say <strong>"Comparatives"</strong> as: <em>com-PAR-a-tivs</em>.
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════════════
+       SPEAKER 3 — CARLA
+  ══════════════════════════════════════════════════ -->
+  <div class="section-lbl">Speaker 3</div>
+
+  <div class="speaker-block">
+    <div class="speaker-header" style="background:rgba(90,224,160,.07); border-bottom:1px solid rgba(90,224,160,.2);">
+      <div class="speaker-avatar" style="background:rgba(90,224,160,.15); color:var(--grn);">CN</div>
+      <div class="speaker-info">
+        <div class="speaker-name" style="color:var(--grn);">Carla Noelia Cano</div>
+        <div class="speaker-role">How to Play</div>
+      </div>
+      <div class="speaker-timing">
+        <div class="speaker-slides" style="color:var(--grn);">Slide 5</div>
+        <div>≈ 15 seconds</div>
+      </div>
+    </div>
+
+    <div class="speaker-body">
+      <div class="slide-ref">Slide 5 — How to Play (advance slide, then speak)</div>
+      <div class="line" style="background:rgba(90,224,160,.05); border-left-color:var(--grn);">
+        Using GrammarX is <em>very simple</em>. The teacher creates a room and shares a QR code. Students join from <em>any device</em> — no registration needed. Then everyone answers ten rounds of questions, and the fastest and most accurate player <strong>wins</strong>.
+      </div>
+
+      <div class="tip-box">
+        <span class="tip-title">💡 Tips for Carla</span>
+        This is the most <strong>straightforward part</strong> — speak with confidence, you've got this.<br>
+        Emphasize <em>"any device"</em> and <em>"no registration"</em> to highlight how accessible it is.<br>
+        Say <strong>"QR code"</strong> as: <em>CUE-ar code</em>.<br>
+        End on <strong>"wins"</strong> with a slight smile — it's a fun moment.
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════════════
+       SPEAKER 4 — DIEGO
+  ══════════════════════════════════════════════════ -->
+  <div class="section-lbl">Speaker 4</div>
+
+  <div class="speaker-block">
+    <div class="speaker-header" style="background:rgba(160,128,240,.07); border-bottom:1px solid rgba(160,128,240,.2);">
+      <div class="speaker-avatar" style="background:rgba(160,128,240,.15); color:var(--pur);">DJ</div>
+      <div class="speaker-info">
+        <div class="speaker-name" style="color:var(--pur);">Diego Justiniano Viera</div>
+        <div class="speaker-role">Tech Stack, Stats &amp; Closing</div>
+      </div>
+      <div class="speaker-timing">
+        <div class="speaker-slides" style="color:var(--pur);">Slides 6 – 8</div>
+        <div>≈ 15 seconds</div>
+      </div>
+    </div>
+
+    <div class="speaker-body">
+      <div class="slide-ref">Slide 6 — Architecture &amp; Tech Stack (advance slide, then speak)</div>
+      <div class="line" style="background:rgba(160,128,240,.05); border-left-color:var(--pur);">
+        We built it with <strong>React</strong>, <strong>Node.js</strong>, <strong>Socket.io</strong>, and <strong>SQLite</strong> — all communicating in real time through WebSockets. It is deployed live on <em>Render Cloud</em>.
+      </div>
+
+      <div class="slide-ref">Slide 7 — Key Stats (advance slide, then speak)</div>
+      <div class="line" style="background:rgba(160,128,240,.05); border-left-color:var(--pur);">
+        Four game modes, over forty questions each, five difficulty levels, and infinite unique sessions. You can try it right now at <strong>grammarx dot onrender dot com</strong>.
+      </div>
+
+      <div class="slide-ref">Slide 8 — Thank You (advance slide)</div>
+      <div class="line" style="background:rgba(160,128,240,.05); border-left-color:var(--pur);">
+        <strong>Thank you</strong> — do you have any questions?
+      </div>
+
+      <div class="tip-box">
+        <span class="tip-title">💡 Tips for Diego</span>
+        For the tech stack, just say the names clearly — don't explain what each one does in detail.<br>
+        Say <strong>"Socket.io"</strong> as: <em>SOC-ket dot eye-oh</em>.<br>
+        Say <strong>"SQLite"</strong> as: <em>SEE-kwel-lite</em>.<br>
+        Say <strong>"onrender.com"</strong> slowly: <em>on-REN-der dot com</em>.<br>
+        For the URL on slide 7, say: <em>"grammarx DOT onrender DOT com"</em> — spell it out clearly.<br>
+        On slide 8, make eye contact with the audience and smile when asking for questions.
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════════════
+       FULL SCRIPT RUN-THROUGH
+  ══════════════════════════════════════════════════ -->
+  <div class="runthrough">
+    <div class="runthrough-title">📋 Full Script — Read-Through (in order)</div>
+
+    <div class="rt-line">
+      <div class="rt-who" style="color:var(--acc);">JONATHAN<br><span style="color:var(--mut);font-size:.55rem;font-weight:400;">Slides 1–2</span></div>
+      <div class="rt-text">"Good morning. This is <strong>GrammarX</strong> — a real-time multiplayer web game that transforms English grammar practice into a competitive classroom experience. We built it because traditional grammar exercises are passive and repetitive — students complete them mechanically, with no feedback, and no reason to actually try."</div>
+    </div>
+
+    <div class="rt-divider"></div>
+
+    <div class="rt-line">
+      <div class="rt-who" style="color:var(--red);">LUIS R.<br><span style="color:var(--mut);font-size:.55rem;font-weight:400;">Slides 3–4</span></div>
+      <div class="rt-text">"GrammarX solves this with gamification. The teacher creates a room, students join from their phone or computer, and everyone competes live — with instant feedback and a speed bonus on every answer. There are four game modes: <strong>Time Machine</strong> for Past Simple, <strong>Duel Mode</strong> for Comparatives, <strong>Evidence File</strong> for Present Perfect, and <strong>Crystal Ball</strong> for the Future Tense."</div>
+    </div>
+
+    <div class="rt-divider"></div>
+
+    <div class="rt-line">
+      <div class="rt-who" style="color:var(--grn);">CARLA<br><span style="color:var(--mut);font-size:.55rem;font-weight:400;">Slide 5</span></div>
+      <div class="rt-text">"Using GrammarX is very simple. The teacher creates a room and shares a QR code. Students join from any device — no registration needed. Then everyone answers ten rounds of questions, and the fastest and most accurate player <strong>wins</strong>."</div>
+    </div>
+
+    <div class="rt-divider"></div>
+
+    <div class="rt-line">
+      <div class="rt-who" style="color:var(--pur);">DIEGO<br><span style="color:var(--mut);font-size:.55rem;font-weight:400;">Slides 6–8</span></div>
+      <div class="rt-text">"We built it with <strong>React</strong>, <strong>Node.js</strong>, <strong>Socket.io</strong>, and <strong>SQLite</strong> — all communicating in real time through WebSockets. It is deployed live on Render Cloud. Four game modes, over forty questions each, five difficulty levels, and infinite unique sessions. You can try it right now at grammarx dot onrender dot com. <strong>Thank you</strong> — do you have any questions?"</div>
+    </div>
+
+  </div>
+
+
+  <!-- ══════════════════════════════════════════════════
+       PRONUNCIATION GUIDE
+  ══════════════════════════════════════════════════ -->
+  <div class="section-lbl" style="margin-top:48px;">Pronunciation Guide</div>
+
+  <div style="background:var(--s1); border:1px solid var(--bdr); border-radius:12px; overflow:hidden;">
+    <div style="padding:16px 20px; border-bottom:1px solid var(--bdr); font-family:'Bricolage Grotesque',sans-serif; font-size:.9rem; font-weight:700; color:var(--blu);">🔊 Key words to pronounce correctly</div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:0;">
+
+      <div style="padding:14px 20px; border-bottom:1px solid var(--bdr); border-right:1px solid var(--bdr);">
+        <div style="font-size:.7rem; font-weight:700; color:var(--acc); margin-bottom:4px;">GrammarX</div>
+        <div style="font-size:.8rem; color:var(--mut);">GRAM · mar · X</div>
+      </div>
+      <div style="padding:14px 20px; border-bottom:1px solid var(--bdr);">
+        <div style="font-size:.7rem; font-weight:700; color:var(--acc); margin-bottom:4px;">multiplayer</div>
+        <div style="font-size:.8rem; color:var(--mut);">MUL · ti · PLAY · er</div>
+      </div>
+
+      <div style="padding:14px 20px; border-bottom:1px solid var(--bdr); border-right:1px solid var(--bdr);">
+        <div style="font-size:.7rem; font-weight:700; color:var(--red); margin-bottom:4px;">gamification</div>
+        <div style="font-size:.8rem; color:var(--mut);">GAM · i · fi · CAY · shun</div>
+      </div>
+      <div style="padding:14px 20px; border-bottom:1px solid var(--bdr);">
+        <div style="font-size:.7rem; font-weight:700; color:var(--red); margin-bottom:4px;">Comparatives</div>
+        <div style="font-size:.8rem; color:var(--mut);">com · PAR · a · tivs</div>
+      </div>
+
+      <div style="padding:14px 20px; border-bottom:1px solid var(--bdr); border-right:1px solid var(--bdr);">
+        <div style="font-size:.7rem; font-weight:700; color:var(--grn); margin-bottom:4px;">registration</div>
+        <div style="font-size:.8rem; color:var(--mut);">re · jis · TRAY · shun</div>
+      </div>
+      <div style="padding:14px 20px; border-bottom:1px solid var(--bdr);">
+        <div style="font-size:.7rem; font-weight:700; color:var(--grn); margin-bottom:4px;">QR code</div>
+        <div style="font-size:.8rem; color:var(--mut);">CUE · ar · code</div>
+      </div>
+
+      <div style="padding:14px 20px; border-right:1px solid var(--bdr);">
+        <div style="font-size:.7rem; font-weight:700; color:var(--pur); margin-bottom:4px;">Socket.io</div>
+        <div style="font-size:.8rem; color:var(--mut);">SOC · ket · dot · EYE · oh</div>
+      </div>
+      <div style="padding:14px 20px;">
+        <div style="font-size:.7rem; font-weight:700; color:var(--pur); margin-bottom:4px;">SQLite</div>
+        <div style="font-size:.8rem; color:var(--mut);">SEE · kwel · LITE</div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════════════
+       SLIDE MAP
+  ══════════════════════════════════════════════════ -->
+  <div class="section-lbl" style="margin-top:48px;">Slide Map</div>
+
+  <div style="background:var(--s1); border:1px solid var(--bdr); border-radius:12px; overflow:hidden;">
+    <div style="display:flex; flex-direction:column; gap:0;">
+      <div style="display:flex; gap:16px; align-items:center; padding:12px 20px; border-bottom:1px solid var(--bdr);">
+        <span style="background:rgba(240,192,64,.15); color:var(--acc); font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:.75rem; padding:4px 10px; border-radius:6px; min-width:24px; text-align:center;">1</span>
+        <span style="font-size:.85rem;">Title — GrammarX logo, team names, university info</span>
+        <span style="margin-left:auto; font-size:.62rem; color:var(--acc);">Jonathan</span>
+      </div>
+      <div style="display:flex; gap:16px; align-items:center; padding:12px 20px; border-bottom:1px solid var(--bdr);">
+        <span style="background:rgba(240,192,64,.15); color:var(--acc); font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:.75rem; padding:4px 10px; border-radius:6px; min-width:24px; text-align:center;">2</span>
+        <span style="font-size:.85rem;">The Problem — passive exercises, no feedback, no competition</span>
+        <span style="margin-left:auto; font-size:.62rem; color:var(--acc);">Jonathan</span>
+      </div>
+      <div style="display:flex; gap:16px; align-items:center; padding:12px 20px; border-bottom:1px solid var(--bdr);">
+        <span style="background:rgba(224,90,90,.15); color:var(--red); font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:.75rem; padding:4px 10px; border-radius:6px; min-width:24px; text-align:center;">3</span>
+        <span style="font-size:.85rem;">The Solution — gamification, instant feedback, live competition</span>
+        <span style="margin-left:auto; font-size:.62rem; color:var(--red);">Luis Rodrigo</span>
+      </div>
+      <div style="display:flex; gap:16px; align-items:center; padding:12px 20px; border-bottom:1px solid var(--bdr);">
+        <span style="background:rgba(224,90,90,.15); color:var(--red); font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:.75rem; padding:4px 10px; border-radius:6px; min-width:24px; text-align:center;">4</span>
+        <span style="font-size:.85rem;">The 4 Mini-Games — Time Machine · Duel Mode · Evidence File · Crystal Ball</span>
+        <span style="margin-left:auto; font-size:.62rem; color:var(--red);">Luis Rodrigo</span>
+      </div>
+      <div style="display:flex; gap:16px; align-items:center; padding:12px 20px; border-bottom:1px solid var(--bdr);">
+        <span style="background:rgba(90,224,160,.15); color:var(--grn); font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:.75rem; padding:4px 10px; border-radius:6px; min-width:24px; text-align:center;">5</span>
+        <span style="font-size:.85rem;">How to Play — 4 steps from room creation to podium</span>
+        <span style="margin-left:auto; font-size:.62rem; color:var(--grn);">Carla</span>
+      </div>
+      <div style="display:flex; gap:16px; align-items:center; padding:12px 20px; border-bottom:1px solid var(--bdr);">
+        <span style="background:rgba(160,128,240,.15); color:var(--pur); font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:.75rem; padding:4px 10px; border-radius:6px; min-width:24px; text-align:center;">6</span>
+        <span style="font-size:.85rem;">Architecture &amp; Tech Stack — React · Node.js · Socket.io · SQLite · Render</span>
+        <span style="margin-left:auto; font-size:.62rem; color:var(--pur);">Diego</span>
+      </div>
+      <div style="display:flex; gap:16px; align-items:center; padding:12px 20px; border-bottom:1px solid var(--bdr);">
+        <span style="background:rgba(160,128,240,.15); color:var(--pur); font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:.75rem; padding:4px 10px; border-radius:6px; min-width:24px; text-align:center;">7</span>
+        <span style="font-size:.85rem;">Key Stats — 4 modes · 40+ questions · 5 levels · ∞ sessions · Live URL</span>
+        <span style="margin-left:auto; font-size:.62rem; color:var(--pur);">Diego</span>
+      </div>
+      <div style="display:flex; gap:16px; align-items:center; padding:12px 20px;">
+        <span style="background:rgba(160,128,240,.15); color:var(--pur); font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:.75rem; padding:4px 10px; border-radius:6px; min-width:24px; text-align:center;">8</span>
+        <span style="font-size:.85rem;">Thank You — team credits, Q&amp;A</span>
+        <span style="margin-left:auto; font-size:.62rem; color:var(--pur);">Diego</span>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ── FOOTER ──────────────────────────────────────── -->
+  <div class="footer">
+    GrammarX · Universidad Privada Domingo Savio · English 2 · 2026<br>
+    grammarx.onrender.com
+  </div>
+
+</div>
+</body>
+</html>
