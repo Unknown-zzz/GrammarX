@@ -33,48 +33,93 @@ const DIFF_META = {
 };
 const TIME_OPTIONS = [10, 15, 20, 30];
 
-// ── Instructions data (per game mode) ─────────────────────────────────────────
+// ── Instructions data (per game mode, bilingual) ─────────────────────────────
 const GAME_INSTRUCTIONS = {
   G1: {
     color: '#f0c040',
-    how: 'Reconstruye la oración en pasado simple ordenando las palabras correctamente.',
-    steps: [
-      'Las palabras de una oración aparecen mezcladas abajo.',
-      'Tócalas en el orden correcto para armar la oración.',
-      'Pulsa "Verificar →" cuando estés listo.',
-      'Si te equivocas, usa "✕ Limpiar" para reordenar.',
-    ],
-    tip: '💡 Busca el verbo en pasado — termina en -ed o es irregular (went, wrote, ran…).',
+    en: {
+      how: 'Rebuild the Past Simple sentence by placing the words in the correct order.',
+      steps: [
+        'The shuffled words of a sentence appear below.',
+        'Tap them in the right order to build the sentence.',
+        'Press "Verify →" when you\'re ready.',
+        'Made a mistake? Use "✕ Clear" to reset.',
+      ],
+      tip: '💡 Find the Past Simple verb — it ends in -ed or is irregular (went, wrote, ran…).',
+    },
+    es: {
+      how: 'Reconstruye la oración en pasado simple ordenando las palabras correctamente.',
+      steps: [
+        'Las palabras de una oración aparecen mezcladas abajo.',
+        'Tócalas en el orden correcto para armar la oración.',
+        'Pulsa "Verificar →" cuando estés listo.',
+        'Si te equivocas, usa "✕ Limpiar" para reordenar.',
+      ],
+      tip: '💡 Busca el verbo en pasado — termina en -ed o es irregular (went, wrote, ran…).',
+    },
   },
   G2: {
     color: '#e05a5a',
-    how: 'Elige la forma comparativa o superlativa correcta del adjetivo.',
-    steps: [
-      'Se comparan dos elementos entre sí (ej. 🐢 vs 🐇).',
-      'Lee la oración con el espacio en blanco (___).',
-      'Elige la opción correcta entre las 4 disponibles.',
-    ],
-    tip: '💡 Adj. cortos: -er / the -est · Adj. largos: more / the most · Irregulares: better, worse, best…',
+    en: {
+      how: 'Choose the correct comparative or superlative form of the adjective.',
+      steps: [
+        'Two elements are compared against each other (e.g. 🐢 vs 🐇).',
+        'Read the sentence with the blank (___).',
+        'Choose the correct option from the 4 available.',
+      ],
+      tip: '💡 Short adj: -er / the -est · Long adj: more / the most · Irregular: better, worse, best…',
+    },
+    es: {
+      how: 'Elige la forma comparativa o superlativa correcta del adjetivo.',
+      steps: [
+        'Se comparan dos elementos entre sí (ej. 🐢 vs 🐇).',
+        'Lee la oración con el espacio en blanco (___).',
+        'Elige la opción correcta entre las 4 disponibles.',
+      ],
+      tip: '💡 Adj. cortos: -er / the -est · Adj. largos: more / the most · Irregulares: better, worse, best…',
+    },
   },
   G3: {
     color: '#5ae0a0',
-    how: 'Lee el texto y elige la respuesta correcta a la pregunta de comprensión.',
-    steps: [
-      'Lee con atención el pasaje de texto (cuadro superior).',
-      'Debajo aparece una pregunta sobre lo que leíste.',
-      'Elige la opción que mejor responde la pregunta.',
-    ],
-    tip: '💡 Fíjate en have/has + participio pasado — eso es Present Perfect (ej. "has finished").',
+    en: {
+      how: 'Read the text and choose the correct answer to the comprehension question.',
+      steps: [
+        'Read the text passage carefully (top box).',
+        'A question about what you read appears below.',
+        'Choose the option that best answers the question.',
+      ],
+      tip: '💡 Look for have/has + past participle — that\'s Present Perfect (e.g. "has finished").',
+    },
+    es: {
+      how: 'Lee el texto y elige la respuesta correcta a la pregunta de comprensión.',
+      steps: [
+        'Lee con atención el pasaje de texto (cuadro superior).',
+        'Debajo aparece una pregunta sobre lo que leíste.',
+        'Elige la opción que mejor responde la pregunta.',
+      ],
+      tip: '💡 Fíjate en have/has + participio pasado — eso es Present Perfect (ej. "has finished").',
+    },
   },
   G4: {
     color: '#a080f0',
-    how: 'Completa la oración eligiendo la forma correcta del tiempo futuro.',
-    steps: [
-      'Lee la situación o contexto que se presenta.',
-      'Completa la oración con el hueco en blanco (___).',
-      'Elige entre 4 opciones la forma de futuro correcta.',
-    ],
-    tip: "💡 will = decisión espontánea o predicción · going to = plan previo o evidencia visible · won't = negación futura.",
+    en: {
+      how: 'Complete the sentence by choosing the correct future tense form.',
+      steps: [
+        'Read the situation or context presented.',
+        'Complete the sentence with the blank (___).',
+        'Choose the correct future form from 4 options.',
+      ],
+      tip: "💡 will = spontaneous decision or prediction · going to = prior plan or visible evidence · won't = future negation.",
+    },
+    es: {
+      how: 'Completa la oración eligiendo la forma correcta del tiempo futuro.',
+      steps: [
+        'Lee la situación o contexto que se presenta.',
+        'Completa la oración con el hueco en blanco (___).',
+        'Elige entre 4 opciones la forma de futuro correcta.',
+      ],
+      tip: "💡 will = decisión espontánea o predicción · going to = plan previo o evidencia visible · won't = negación futura.",
+    },
   },
 };
 
@@ -603,13 +648,13 @@ function QRCodeDisplay({ code }) {
       color: { dark: '#080810', light: '#f5f1e8' },
     }).then(setSrc).catch(()=>{});
   }, [joinUrl]);
-  if (!src) return <div className="qr-section"><div style={{color:'var(--mut)',fontSize:'.72rem'}}>Generando QR…</div></div>;
+  if (!src) return <div className="qr-section"><div style={{color:'var(--mut)',fontSize:'.72rem'}}>Generating QR…</div></div>;
   return (
     <div className="qr-section">
       <div className="qr-box">
         <img src={src} width={176} height={176} alt="QR sala" style={{display:'block'}}/>
       </div>
-      <div className="qr-caption">📱 Escanea o abre el link para unirte</div>
+      <div className="qr-caption">📱 Scan or open the link to join</div>
     </div>
   );
 }
@@ -667,9 +712,9 @@ function QRScanner({ onScan, onClose }) {
       } catch (err) {
         if (!alive) return;
         if (err.name === 'NotAllowedError') {
-          setErrMsg('Permiso de cámara denegado. Habilítalo en la configuración del navegador.');
+          setErrMsg('Camera permission denied. Enable it in your browser settings.');
         } else {
-          setErrMsg(`No se pudo iniciar la cámara: ${err.message}`);
+          setErrMsg(`Could not start camera: ${err.message}`);
         }
         setStatus('error');
       }
@@ -685,7 +730,7 @@ function QRScanner({ onScan, onClose }) {
 
   return (
     <div className="qr-overlay">
-      <div className="qr-overlay-title">📷 Escanear código QR</div>
+      <div className="qr-overlay-title">📷 Scan QR code</div>
 
       <div style={{position:'relative', width:280, height:280, flexShrink:0}}>
         <video ref={videoRef} playsInline muted
@@ -721,14 +766,14 @@ function QRScanner({ onScan, onClose }) {
                        alignItems:'center',justifyContent:'center',gap:'.5rem',
                        background:'rgba(8,8,16,.7)',borderRadius:10}}>
             <span className="spinner" style={{width:20,height:20,borderWidth:3}}/>
-            <span style={{fontSize:'.72rem',color:'var(--mut)'}}>Iniciando cámara…</span>
+            <span style={{fontSize:'.72rem',color:'var(--mut)'}}>Starting camera…</span>
           </div>
         )}
       </div>
 
       {status === 'scanning' && (
         <div className="qr-scanner-hint">
-          Apunta al QR del host · Detecta automáticamente
+          Point at the host's QR · Auto-detects
         </div>
       )}
       {status === 'error' && (
@@ -736,7 +781,7 @@ function QRScanner({ onScan, onClose }) {
       )}
 
       <button className="btn secondary" style={{maxWidth:200}} onClick={onClose}>
-        ✕ Cancelar
+        ✕ Cancel
       </button>
     </div>
   );
@@ -748,33 +793,33 @@ function LoginScreen({ onHost, onPlayer, onPodium }) {
   const [role, setRole] = useState('player');
   const [err, setErr] = useState('');
   const submit = () => {
-    if (!name.trim() || name.trim().length < 2) { setErr('Escribe al menos 2 caracteres'); return; }
+    if (!name.trim() || name.trim().length < 2) { setErr('Enter at least 2 characters'); return; }
     role === 'host' ? onHost(name.trim()) : onPlayer(name.trim());
   };
   return (
     <div className="page">
       <div className="card slide-up">
         <div className="brand">GRAMMAR <em>X</em></div>
-        <div className="brand-sub">English Grammar · 4 Minijuegos</div>
+        <div className="brand-sub">English Grammar · 4 Mini-Games</div>
         {err && <div className="err">{err}</div>}
         <div className="field">
-          <label>Tu nombre</label>
-          <input type="text" value={name} maxLength={20} placeholder="Escribe tu nombre"
+          <label>Your name</label>
+          <input type="text" value={name} maxLength={20} placeholder="Enter your name"
             onChange={e=>{setName(e.target.value);setErr('');}}
             onKeyDown={e=>e.key==='Enter'&&submit()} autoFocus/>
         </div>
         <div className="role-row">
           <div className={`role-card${role==='host'?' active':''}`} onClick={()=>setRole('host')}>
-            <div className="role-icon">🎮</div><div className="role-name">Host</div><div className="role-desc">Controla la sala</div>
+            <div className="role-icon">🎮</div><div className="role-name">Host</div><div className="role-desc">Control the room</div>
           </div>
           <div className={`role-card${role==='player'?' active':''}`} onClick={()=>setRole('player')}>
-            <div className="role-icon">👤</div><div className="role-name">Jugador</div><div className="role-desc">Únete con un código</div>
+            <div className="role-icon">👤</div><div className="role-name">Player</div><div className="role-desc">Join with a code</div>
           </div>
         </div>
         <button className="btn" style={role==='host'?{background:'linear-gradient(135deg,var(--acc),#e0a030)'}:{}} onClick={submit}>
-          {role==='host'?'🎮 Crear sala →':'▶ Unirse →'}
+          {role==='host'?'🎮 Create room →':'▶ Join →'}
         </button>
-        <div className="link-row"><a onClick={onPodium}>Ver leaderboard 🏆</a></div>
+        <div className="link-row"><a onClick={onPodium}>View leaderboard 🏆</a></div>
       </div>
     </div>
   );
@@ -798,12 +843,12 @@ function JoinScreen({ user, initialCode='', onJoined, onBack }) {
 
   const doJoin = async (raw) => {
     const c = (raw ?? code).trim().toUpperCase();
-    if (c.length < 4) { setErr('Ingresa el código de sala'); return; }
+    if (c.length < 4) { setErr('Enter the room code'); return; }
     setLoading(true); setErr('');
     try {
       await emit('join', { code: c, name: user });
       onJoined(c);
-    } catch (e) { setErr(e.message || 'Error de conexión. Intenta de nuevo.'); setLoading(false); }
+    } catch (e) { setErr(e.message || 'Connection error. Please try again.'); setLoading(false); }
   };
 
   const handleScan = scanned => {
@@ -824,10 +869,10 @@ function JoinScreen({ user, initialCode='', onJoined, onBack }) {
       {scanning && <QRScanner onScan={handleScan} onClose={()=>setScanning(false)}/>}
       <div className="card slide-up">
         <div className="brand">GRAMMAR <em>X</em></div>
-        <div className="brand-sub">Únete a la sala</div>
+        <div className="brand-sub">Join the room</div>
         {err && <div className="err">{err}</div>}
         <div className="field">
-          <label>Código de sala</label>
+          <label>Room code</label>
           <input type="text" value={code} maxLength={8} placeholder="Ej: ABC123"
             onChange={e=>{setCode(e.target.value.toUpperCase());setErr('');}}
             onKeyDown={e=>e.key==='Enter'&&doJoin()}
@@ -835,12 +880,12 @@ function JoinScreen({ user, initialCode='', onJoined, onBack }) {
             autoFocus/>
         </div>
         <button className="btn" onClick={()=>doJoin()} disabled={loading}>
-          {loading?<><span className="spinner"/>Conectando...</>:'Entrar →'}
+          {loading?<><span className="spinner"/>Connecting...</>:'Join →'}
         </button>
         <button className="scan-btn" onClick={()=>setScanning(true)}>
-          📷 Escanear código QR
+          📷 Scan QR code
         </button>
-        <button className="btn secondary" onClick={onBack} style={{marginTop:'.4rem'}}>← Volver</button>
+        <button className="btn secondary" onClick={onBack} style={{marginTop:'.4rem'}}>← Back</button>
       </div>
     </div>
   );
@@ -919,15 +964,15 @@ function HostLobbyScreen({ user, sessionCode, onStart, onCancel }) {
             </div>
           </div>
           <div className="code-display" style={{marginBottom:'1rem'}}>
-            <div className="code-label">Jugadores leyendo instrucciones</div>
+            <div className="code-label">Players reading instructions</div>
             <div className="code-value">{sessionCode}</div>
-            <div className="code-hint">Espera a que todos confirmen estar listos</div>
+            <div className="code-hint">Wait for all players to confirm ready</div>
           </div>
           <div className="instr-host-panel">
             <div className="instr-host-title">
-              <span>Estado de jugadores</span>
+              <span>Player status</span>
               <span style={{color:allReady?'var(--grn)':'var(--acc)',fontFamily:"'Bricolage Grotesque',sans-serif",fontWeight:700}}>
-                {readyPlayers.length}/{players.length} listos
+                {readyPlayers.length}/{players.length} ready
               </span>
             </div>
             {players.map((p,i)=>(
@@ -937,18 +982,18 @@ function HostLobbyScreen({ user, sessionCode, onStart, onCancel }) {
                 </span>
                 <span style={{fontFamily:"'Bricolage Grotesque',sans-serif",fontWeight:700,flex:1}}>{p.name}</span>
                 <span style={{fontSize:'.7rem',color:readyPlayers.includes(p.name)?'var(--grn)':'var(--mut)'}}>
-                  {readyPlayers.includes(p.name)?'Listo':'Leyendo...'}
+                  {readyPlayers.includes(p.name)?'Ready':'Reading...'}
                 </span>
               </div>
             ))}
-            {!players.length&&<div style={{color:'var(--mut)',fontSize:'.72rem',padding:'.5rem',textAlign:'center'}}>Sin jugadores</div>}
+            {!players.length&&<div style={{color:'var(--mut)',fontSize:'.72rem',padding:'.5rem',textAlign:'center'}}>No players</div>}
           </div>
           <button className={`launch-btn${allReady?' ready':' waiting'}`}
             onClick={allReady&&!launching?handleLaunch:undefined}
             disabled={launching||!allReady}>
-            {launching?<><span className="spinner"/>Iniciando...</>
-              :allReady?'▶ ¡Todos listos! Comenzar partida'
-              :`⏳ Esperando (${readyPlayers.length}/${players.length} listos)`}
+            {launching?<><span className="spinner"/>Starting...</>
+              :allReady?'▶ All ready! Start game'
+              :`⏳ Waiting (${readyPlayers.length}/${players.length} ready)`}
           </button>
         </div>
       </div>
@@ -965,15 +1010,15 @@ function HostLobbyScreen({ user, sessionCode, onStart, onCancel }) {
           <div className="host-badge">🎮 HOST: {user}</div></div>
         </div>
         <div className="code-display">
-          <div className="code-label">Código de sala — proyéctalo</div>
+          <div className="code-label">Room code — display it</div>
           <div className="code-value">{sessionCode}</div>
-          <div className="code-hint">Los jugadores entran y escriben este código</div>
+          <div className="code-hint">Players enter this code to join</div>
         </div>
         <button className="qr-toggle" onClick={()=>setShowQR(q=>!q)}>
-          {showQR ? '▲ Ocultar QR' : '📱 Mostrar QR para escanear'}
+          {showQR ? '▲ Hide QR' : '📱 Show QR to scan'}
         </button>
         {showQR && <QRCodeDisplay code={sessionCode}/>}
-        <div style={{fontSize:'.62rem',letterSpacing:'.15em',textTransform:'uppercase',color:'var(--mut)',marginBottom:'.5rem'}}>🎯 Minijuego</div>
+        <div style={{fontSize:'.62rem',letterSpacing:'.15em',textTransform:'uppercase',color:'var(--mut)',marginBottom:'.5rem'}}>🎯 Mini-Game</div>
         <div className="game-grid">
           {Object.values(GAMES).map(gm=>(
             <div key={gm.id} className={`game-tile${gameId===gm.id?' active':''}`}
@@ -985,24 +1030,24 @@ function HostLobbyScreen({ user, sessionCode, onStart, onCancel }) {
             </div>
           ))}
         </div>
-        <div style={{fontSize:'.62rem',letterSpacing:'.15em',textTransform:'uppercase',color:'var(--mut)',marginBottom:'.5rem'}}>⏱ Tiempo por pregunta</div>
+        <div style={{fontSize:'.62rem',letterSpacing:'.15em',textTransform:'uppercase',color:'var(--mut)',marginBottom:'.5rem'}}>⏱ Time per question</div>
         <div className="time-row">
           {TIME_OPTIONS.map(t=>(
             <div key={t} className={`time-btn${tpr===t?' active':''}`} onClick={()=>setTpr(t)}>{t}s</div>
           ))}
         </div>
         <div className="players-box">
-          <div className="players-header"><span className="players-title">Jugadores conectados</span><span className="players-count">{players.length}</span></div>
+          <div className="players-header"><span className="players-title">Connected players</span><span className="players-count">{players.length}</span></div>
           <div className="player-list">
-            {!players.length?<div className="player-empty">Esperando jugadores...</div>
+            {!players.length?<div className="player-empty">Waiting for players...</div>
               :players.map((p,i)=><div key={i} className="player-item"><div className="player-dot"/><span>{p.name}</span></div>)}
           </div>
         </div>
         <button className="btn" onClick={handleStart} disabled={!players.length||starting}
           style={{fontSize:'1.05rem',padding:'.95rem',background:players.length?g.color:'var(--mut)',color:'#080810',marginBottom:'.6rem'}}>
-          {starting?<><span className="spinner"/>Preparando...</>:!players.length?'⏳ Esperando jugadores...':`▶ INICIAR ${g.icon} ${g.name} (${players.length})`}
+          {starting?<><span className="spinner"/>Preparing...</>:!players.length?'⏳ Waiting for players...':`▶ START ${g.icon} ${g.name} (${players.length})`}
         </button>
-        <button className="btn secondary" onClick={onCancel}>Cancelar sala</button>
+        <button className="btn secondary" onClick={onCancel}>Cancel room</button>
       </div>
     </div>
   );
@@ -1064,7 +1109,7 @@ function HostGameScreen({ sessionCode, onGameOver }) {
     }
   };
 
-  if (!rs) return <div className="page"><div className="status"><span className="spinner"/>Cargando...</div></div>;
+  if (!rs) return <div className="page"><div className="status"><span className="spinner"/>Loading...</div></div>;
 
   const g = GAMES[rs.gameId] || GAMES.G1;
   const round = rs.rounds?.[rs.currentRound];
@@ -1078,23 +1123,23 @@ function HostGameScreen({ sessionCode, onGameOver }) {
       <div className="host-dash slide-up">
         <div className="dash-header">
           <div className="dash-title">{g.icon} {g.name} <span style={{fontSize:'.8rem',fontWeight:400,color:'var(--mut)'}}>— DASHBOARD</span></div>
-          <div className="dash-meta">Sala {sessionCode} · Ronda {(rs.currentRound||0)+1}/{rs.totalRounds||0}</div>
+          <div className="dash-meta">Room {sessionCode} · Round {(rs.currentRound||0)+1}/{rs.totalRounds||0}</div>
         </div>
 
         <CountdownTimer timeLeft={timeLeft} totalTime={rs.timePerRound||20} color={g.color}/>
 
         {round && (
           <div className="q-preview">
-            <div className="q-preview-label">Pregunta actual</div>
+            <div className="q-preview-label">Current question</div>
             <div className="q-preview-text">
               {rs.gameId==='G1' && <span style={{color:'var(--mut)',fontSize:'.8rem'}}>⏰ {round.s.split(' ').length} palabras — ordénalas correctamente</span>}
               {rs.gameId==='G2' && <>{round.tpl.replace('___','______')}</>}
               {rs.gameId==='G3' && <><b>{round.title}</b> — {round.q}</>}
-              {rs.gameId==='G4' && <><b>Situación:</b> {round.ctx}<br/>{round.tpl.replace('___','______')}</>}
+              {rs.gameId==='G4' && <><b>Situation:</b> {round.ctx}<br/>{round.tpl.replace('___','______')}</>}
             </div>
             {canAdvance && (
               <div className="q-preview-answer">
-                ✓ Respuesta correcta:&nbsp;
+                ✓ Correct answer:&nbsp;
                 <b>{rs.gameId === 'G1' ? round.s : round.opts[0]}</b>
               </div>
             )}
@@ -1103,8 +1148,8 @@ function HostGameScreen({ sessionCode, onGameOver }) {
 
         <div>
           <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:'.5rem'}}>
-            <span style={{fontSize:'.62rem',letterSpacing:'.15em',textTransform:'uppercase',color:'var(--mut)'}}>Jugadores</span>
-            <span style={{fontSize:'.72rem',color:'var(--grn)',fontWeight:700}}>{rs.answeredCount}/{rs.totalPlayers} respondieron</span>
+            <span style={{fontSize:'.62rem',letterSpacing:'.15em',textTransform:'uppercase',color:'var(--mut)'}}>Players</span>
+            <span style={{fontSize:'.72rem',color:'var(--grn)',fontWeight:700}}>{rs.answeredCount}/{rs.totalPlayers} answered</span>
           </div>
           <div className="player-grid">
             {(rs.players||[]).map((p,i)=>(
@@ -1116,16 +1161,16 @@ function HostGameScreen({ sessionCode, onGameOver }) {
                 <div className="pg-status">{p.answered?'✅':'⏳'}</div>
               </div>
             ))}
-            {!rs.players?.length && <div style={{color:'var(--mut)',fontSize:'.78rem',gridColumn:'1/-1',textAlign:'center',padding:'1rem'}}>Sin jugadores</div>}
+            {!rs.players?.length && <div style={{color:'var(--mut)',fontSize:'.78rem',gridColumn:'1/-1',textAlign:'center',padding:'1rem'}}>No players</div>}
           </div>
         </div>
 
         <button className={`advance-btn${canAdvance?(isLastRound?' end':' ready'):' waiting'}`}
           onClick={canAdvance?handleAdvance:undefined} disabled={advancing}>
           {advancing?<><span className="spinner"/>...</>
-            :!canAdvance?`⏳ Esperando... (${rs.answeredCount}/${rs.totalPlayers})`
-            :isLastRound?'🏁 Terminar juego y ver resultados'
-            :`▶ Siguiente pregunta (${(rs.currentRound||0)+2}/${rs.totalRounds})`}
+            :!canAdvance?`⏳ Waiting... (${rs.answeredCount}/${rs.totalPlayers})`
+            :isLastRound?'🏁 End game & see results'
+            :`▶ Next question (${(rs.currentRound||0)+2}/${rs.totalRounds})`}
         </button>
       </div>
     </div>
@@ -1152,8 +1197,8 @@ function HostResultsScreen({ sessionCode, players, onNewGame, onClose }) {
   return (
     <div className="page">
       <div className="results-wrap slide-up">
-        <div className="brand" style={{textAlign:'center',marginBottom:'.2rem'}}>Resultados 🏆</div>
-        <div className="brand-sub" style={{textAlign:'center',marginBottom:'1rem'}}>Sala {sessionCode}</div>
+        <div className="brand" style={{textAlign:'center',marginBottom:'.2rem'}}>Results 🏆</div>
+        <div className="brand-sub" style={{textAlign:'center',marginBottom:'1rem'}}>Room {sessionCode}</div>
 
         {podOrder.length>0&&(
           <div className="results-podium">
@@ -1180,9 +1225,9 @@ function HostResultsScreen({ sessionCode, players, onNewGame, onClose }) {
         )}
 
         <div className="action-row">
-          <button className="btn" onClick={onNewGame}>🎮 Siguiente juego</button>
+          <button className="btn" onClick={onNewGame}>🎮 New game</button>
           <button className="btn danger" onClick={handleClose} disabled={closing}>
-            {closing?<><span className="spinner"/>...</>:'🚪 Cerrar sesión'}
+            {closing?<><span className="spinner"/>...</>:'🚪 Close session'}
           </button>
         </div>
       </div>
@@ -1193,6 +1238,7 @@ function HostResultsScreen({ sessionCode, players, onNewGame, onClose }) {
 // ── Screen: Player Instructions (full page, with ready system) ───────────────
 function PlayerInstructionsScreen({ user, sessionCode, gameId, timePerRound, players, readyPlayers }) {
   const [confirmed, setConfirmed] = useState(false);
+  const [lang, setLang]           = useState('en'); // 'en' | 'es'
 
   const handleReady = async () => {
     if (confirmed) return;
@@ -1204,36 +1250,51 @@ function PlayerInstructionsScreen({ user, sessionCode, gameId, timePerRound, pla
   };
 
   const g    = GAMES[gameId];
-  const info = GAME_INSTRUCTIONS[gameId];
+  const info = GAME_INSTRUCTIONS[gameId]?.[lang];
   if (!g || !info) return null;
 
   const readyCount = readyPlayers.length;
   const totalCount = players.length;
+  const color = GAME_INSTRUCTIONS[gameId].color;
 
   return (
     <div className="page" style={{justifyContent:'flex-start',paddingTop:'1rem',paddingBottom:'2rem'}}>
       <div className="instr-page slide-up">
-        {/* brand */}
-        <div style={{textAlign:'center',marginBottom:'1.1rem'}}>
-          <div className="brand" style={{fontSize:'1.2rem',marginBottom:0}}>GRAMMAR <em>X</em></div>
-          <div className="brand-sub">Lee las instrucciones antes de jugar</div>
+        {/* brand + lang toggle */}
+        <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:'1.1rem'}}>
+          <div>
+            <div className="brand" style={{fontSize:'1.2rem',marginBottom:0}}>GRAMMAR <em>X</em></div>
+            <div className="brand-sub" style={{marginBottom:0}}>Read the instructions before playing</div>
+          </div>
+          <button
+            onClick={()=>setLang(l=>l==='en'?'es':'en')}
+            style={{
+              background:'rgba(255,255,255,.06)', border:'1px solid var(--bdr)',
+              color:'var(--mut)', borderRadius:'20px', padding:'.3rem .8rem',
+              fontSize:'.65rem', cursor:'pointer', letterSpacing:'.08em',
+              fontFamily:"'JetBrains Mono',monospace", whiteSpace:'nowrap',
+              transition:'all .2s',
+            }}
+          >
+            🌐 {lang==='en' ? 'Ver en Español' : 'View in English'}
+          </button>
         </div>
 
         {/* instructions card */}
-        <div className="instr-card" style={{borderColor:info.color+'55',maxWidth:'100%'}}>
-          <div style={{position:'absolute',top:0,left:0,right:0,height:'3px',borderRadius:'16px 16px 0 0',background:`linear-gradient(90deg,transparent,${info.color},transparent)`}}/>
+        <div className="instr-card" style={{borderColor:color+'55',maxWidth:'100%'}}>
+          <div style={{position:'absolute',top:0,left:0,right:0,height:'3px',borderRadius:'16px 16px 0 0',background:`linear-gradient(90deg,transparent,${color},transparent)`}}/>
           <div className="instr-header">
             <div className="instr-icon">{g.icon}</div>
             <div>
-              <div className="instr-title" style={{color:info.color}}>{g.name}</div>
+              <div className="instr-title" style={{color}}>{g.name}</div>
               <div className="instr-grammar">{g.sub}</div>
             </div>
           </div>
-          <div className="instr-how" style={{borderLeftColor:info.color}}>{info.how}</div>
+          <div className="instr-how" style={{borderLeftColor:color}}>{info.how}</div>
           <ul className="instr-steps">
             {info.steps.map((step,i)=>(
               <li key={i} className="instr-step">
-                <span className="instr-step-n" style={{color:info.color}}>{i+1}.</span>
+                <span className="instr-step-n" style={{color}}>{i+1}.</span>
                 <span>{step}</span>
               </li>
             ))}
@@ -1241,9 +1302,9 @@ function PlayerInstructionsScreen({ user, sessionCode, gameId, timePerRound, pla
           <div className="instr-tip">{info.tip}</div>
           <div className="instr-tpr">
             <span>⏱</span>
-            <span><b style={{color:'#eeeae2'}}>{timePerRound}s</b> por pregunta</span>
+            <span><b style={{color:'#eeeae2'}}>{timePerRound}s</b> {lang==='en'?'per question':'por pregunta'}</span>
             <span style={{margin:'0 .4rem',opacity:.4}}>·</span>
-            <span>Responde rápido para ganar puntos de velocidad ⚡</span>
+            <span>{lang==='en'?'Answer quickly to earn speed bonus points ⚡':'Responde rápido para ganar puntos de velocidad ⚡'}</span>
           </div>
         </div>
 
@@ -1253,15 +1314,15 @@ function PlayerInstructionsScreen({ user, sessionCode, gameId, timePerRound, pla
           onClick={handleReady}
           disabled={confirmed}
         >
-          {confirmed ? '✅ ¡Listo! Esperando a los demás...' : '¡Estoy listo! →'}
+          {confirmed ? "✅ Ready! Waiting for others..." : "I'm ready! →"}
         </button>
 
         {/* player ready list */}
         <div className="instr-ready-list">
           <div className="instr-ready-header">
-            <span>Jugadores en la sala</span>
+            <span>Players in the room</span>
             <span style={{color:readyCount>=totalCount&&totalCount>0?'var(--grn)':'var(--acc)',fontWeight:700}}>
-              {readyCount}/{totalCount} listos
+              {readyCount}/{totalCount} ready
             </span>
           </div>
           {players.map((p,i)=>(
@@ -1271,18 +1332,18 @@ function PlayerInstructionsScreen({ user, sessionCode, gameId, timePerRound, pla
               </span>
               <span style={{fontFamily:"'Bricolage Grotesque',sans-serif",fontWeight:700,flex:1,
                 color:p.name===user?'var(--acc)':'#eeeae2'}}>
-                {p.name}{p.name===user?' (tú)':''}
+                {p.name}{p.name===user?' (you)':''}
               </span>
               <span style={{fontSize:'.68rem',color:readyPlayers.includes(p.name)?'var(--grn)':'var(--mut)'}}>
-                {readyPlayers.includes(p.name)?'Listo ✓':'Leyendo...'}
+                {readyPlayers.includes(p.name)?'Ready ✓':'Reading...'}
               </span>
             </div>
           ))}
-          {!players.length&&<div style={{color:'var(--mut)',fontSize:'.72rem',padding:'.5rem 0',textAlign:'center'}}>Cargando...</div>}
+          {!players.length&&<div style={{color:'var(--mut)',fontSize:'.72rem',padding:'.5rem 0',textAlign:'center'}}>Loading...</div>}
         </div>
 
         <div style={{textAlign:'center',fontSize:'.72rem',color:'var(--mut)',marginTop:'.6rem'}}>
-          El host iniciará la partida cuando todos estén listos
+          The host will start the game when everyone is ready
         </div>
       </div>
     </div>
@@ -1336,30 +1397,30 @@ function PlayerLobbyScreen({ user, sessionCode, onStart }) {
       <div className="lobby-wrap slide-up">
         <div style={{textAlign:'center',marginBottom:'1.2rem'}}>
           <div className="brand" style={{fontSize:'1.4rem'}}>GRAMMAR <em>X</em></div>
-          <div className="brand-sub">Sala {sessionCode}</div>
+          <div className="brand-sub">Room {sessionCode}</div>
         </div>
         <div className="code-display" style={{borderColor:'var(--blu)'}}>
-          <div className="code-label">Conectado como</div>
+          <div className="code-label">Connected as</div>
           <div className="code-value" style={{color:'var(--blu)',fontSize:'2rem'}}>{user}</div>
-          <div className="code-hint">{hostName?`Host: ${hostName} · `:''}Sala: <b>{sessionCode}</b></div>
+          <div className="code-hint">{hostName?`Host: ${hostName} · `:''}Room: <b>{sessionCode}</b></div>
         </div>
         {gameInfo&&(
           <div className="hint-box" style={{marginBottom:'1rem',borderLeftColor:gameInfo.color}}>
-            <div className="hint-label" style={{color:gameInfo.color}}>{gameInfo.icon} Minijuego seleccionado</div>
+            <div className="hint-label" style={{color:gameInfo.color}}>{gameInfo.icon} Selected mini-game</div>
             <div className="hint-text" style={{fontSize:'.85rem'}}>{gameInfo.name} — {gameInfo.sub}</div>
           </div>
         )}
         <div className="waiting-anim">
           <div className="waiting-dot"/><div className="waiting-dot"/><div className="waiting-dot"/>
-          <span style={{marginLeft:'.6rem'}}>Esperando que el host inicie</span>
+          <span style={{marginLeft:'.6rem'}}>Waiting for the host to start</span>
         </div>
         <div className="players-box">
-          <div className="players-header"><span className="players-title">En la sala</span><span className="players-count">{players.length}</span></div>
+          <div className="players-header"><span className="players-title">In the room</span><span className="players-count">{players.length}</span></div>
           <div className="player-list">
             {!players.length?<div className="player-empty">...</div>
               :players.map((p,i)=>(
                 <div key={i} className="player-item"><div className="player-dot"/>
-                  <span style={p.name===user?{color:'var(--acc)',fontWeight:700}:{}}>{p.name}{p.name===user?' (tú)':''}</span>
+                  <span style={p.name===user?{color:'var(--acc)',fontWeight:700}:{}}>{p.name}{p.name===user?' (you)':''}</span>
                 </div>
               ))}
           </div>
@@ -1401,7 +1462,7 @@ function QuestionG1({ round, onAnswer, locked, revealed }) {
   return (
     <>
       <div className={`answer-zone ${zone!=='idle'?zone:'active'}`}>
-        {!placed.length?<span className="zone-ph">Toca las palabras en el orden correcto ↓</span>
+        {!placed.length?<span className="zone-ph">Tap words in the correct order ↓</span>
           :placed.map((wi,pos)=><div key={pos} className="chip sel" onClick={()=>remove(pos)}>{words[wi]}</div>)}
       </div>
       <div className="word-bank">
@@ -1412,8 +1473,8 @@ function QuestionG1({ round, onAnswer, locked, revealed }) {
       </div>
       {!locked && (
         <div className="g1-actions">
-          <button className="btn danger" onClick={clear}>✕ Limpiar</button>
-          <button className="btn" onClick={check}>Verificar →</button>
+          <button className="btn danger" onClick={clear}>✕ Clear</button>
+          <button className="btn" onClick={check}>Verify →</button>
         </div>
       )}
     </>
@@ -1439,12 +1500,12 @@ function QuestionMCQ({ round, gameId, onAnswer, locked, chosenIdx, opts, reveale
       {gameId==='G3' && (
         <>
           <div className="passage-box"><div className="passage-title">🔍 {round.title}</div><div className="passage-text">{round.passage}</div></div>
-          <div className="question-box"><div className="q-label">Pregunta</div>{round.q}</div>
+          <div className="question-box"><div className="q-label">Question</div>{round.q}</div>
         </>
       )}
       {gameId==='G4' && (
         <>
-          <div className="crystal-ctx"><div className="ctx-label">🔮 Situación</div><div className="ctx-text">{round.ctx}</div></div>
+          <div className="crystal-ctx"><div className="ctx-label">🔮 Situation</div><div className="ctx-text">{round.ctx}</div></div>
           <div className="crystal-sentence">
             {parts[0]}<span className="crystal-blank">{filledText}</span>{parts[1]}
           </div>
@@ -1576,7 +1637,7 @@ function PlayerGameScreen({ user, sessionCode, onSessionClosed }) {
         submitting.current     = true;
         hasAnsweredRef.current = true;
         setHasAnswered(true);
-        setPendingFeedback({ ok: false, msg: '⏰ Tiempo agotado — +0 pts', type: 'timeout' });
+        setPendingFeedback({ ok: false, msg: "⏰ Time's up — +0 pts", type: 'timeout' });
         setMyScore(s => s);
         socket.emit('answer', {
           code: sessionCode, name: user,
@@ -1602,10 +1663,10 @@ function PlayerGameScreen({ user, sessionCode, onSessionClosed }) {
       const base      = (cur?.rounds?.[cur.currentRound]?.d ?? 1) * 100;
       const timeBonus = score - base;
       msg = timeBonus > 0
-        ? `✓ Correcto! +${base} + ⚡${timeBonus} velocidad = ${score} pts`
-        : `✓ Correcto! +${score} pts`;
+        ? `✓ Correct! +${base} + ⚡${timeBonus} speed = ${score} pts`
+        : `✓ Correct! +${score} pts`;
     } else {
-      msg = '✗ Incorrecto — +0 pts';
+      msg = '✗ Wrong — +0 pts';
     }
     setPendingFeedback({ ok: isCorrect, msg });
     const cur = rsRef.current;
@@ -1633,8 +1694,8 @@ function PlayerGameScreen({ user, sessionCode, onSessionClosed }) {
       <div className="page">
         <div className="waiting-overlay slide-up">
           <div className="big-icon">⏳</div>
-          <div className="big-msg">Esperando al host...</div>
-          <div className="sub-msg">Sala {sessionCode}</div>
+          <div className="big-msg">Waiting for the host...</div>
+          <div className="sub-msg">Room {sessionCode}</div>
           <div className="waiting-anim" style={{marginTop:'.5rem'}}>
             <div className="waiting-dot"/><div className="waiting-dot"/><div className="waiting-dot"/>
           </div>
@@ -1648,9 +1709,9 @@ function PlayerGameScreen({ user, sessionCode, onSessionClosed }) {
       <div className="page">
         <div className="waiting-overlay slide-up">
           <div className="big-icon">🏆</div>
-          <div className="big-msg">¡Juego terminado!</div>
-          <div className="sub-msg">El host está eligiendo el siguiente juego...</div>
-          <div style={{marginTop:'1rem',fontSize:'.9rem',color:'var(--acc)',fontFamily:"'Bricolage Grotesque',sans-serif",fontWeight:800}}>Tu puntuación: {myScore} pts</div>
+          <div className="big-msg">Game over!</div>
+          <div className="sub-msg">The host is choosing the next game...</div>
+          <div style={{marginTop:'1rem',fontSize:'.9rem',color:'var(--acc)',fontFamily:"'Bricolage Grotesque',sans-serif",fontWeight:800}}>Your score: {myScore} pts</div>
           <div className="waiting-anim" style={{marginTop:'.5rem'}}>
             <div className="waiting-dot"/><div className="waiting-dot"/><div className="waiting-dot"/>
           </div>
@@ -1669,8 +1730,8 @@ function PlayerGameScreen({ user, sessionCode, onSessionClosed }) {
         <div className="phud">
           <div className="phud-left">
             <div className="pname">{user}</div>
-            <div className="proom">{g.icon} {g.name} · Sala {sessionCode}</div>
-            <div className="pscore">Puntuación <b>{myScore}</b></div>
+            <div className="proom">{g.icon} {g.name} · Room {sessionCode}</div>
+            <div className="pscore">Score <b>{myScore}</b></div>
           </div>
         </div>
 
@@ -1681,7 +1742,7 @@ function PlayerGameScreen({ user, sessionCode, onSessionClosed }) {
         <CountdownTimer timeLeft={timeLeft} totalTime={rs.timePerRound||20} color={g.color}/>
 
         <div className="round-meta" style={{marginTop:'.7rem'}}>
-          <span className="round-lbl">Pregunta {(rs.currentRound||0)+1}/{rs.totalRounds}</span>
+          <span className="round-lbl">Question {(rs.currentRound||0)+1}/{rs.totalRounds}</span>
           <DiffPill diff={round.d}/>
         </div>
 
@@ -1699,7 +1760,7 @@ function PlayerGameScreen({ user, sessionCode, onSessionClosed }) {
         {hasAnswered && (
           <div style={{textAlign:'center',fontSize:'.72rem',color:'var(--mut)',marginTop:'.5rem'}}>
             <div className="waiting-anim"><div className="waiting-dot"/><div className="waiting-dot"/><div className="waiting-dot"/>
-              <span style={{marginLeft:'.5rem'}}>Esperando la siguiente pregunta...</span>
+              <span style={{marginLeft:'.5rem'}}>Waiting for the next question...</span>
             </div>
           </div>
         )}
@@ -1746,7 +1807,7 @@ function PodiumScreen({ user }) {
   return (
     <div className="page podium-page">
       <div className="podium-title">🏆 Leaderboard</div>
-      <div className="podium-sub">Mejores puntuaciones</div>
+      <div className="podium-sub">Top scores</div>
       <div className="tab-row">
         {PODIUM_TABS.map(t=>(
           <div key={t.id} className={`tab${activeTab===t.id?' active':''}`}
@@ -1754,8 +1815,8 @@ function PodiumScreen({ user }) {
             onClick={()=>setActiveTab(t.id)}>{t.label}</div>
         ))}
       </div>
-      {loading?<div className="status"><span className="spinner"/>Cargando...</div>
-        :!entries.length?<div className="status">Sin puntuaciones aún</div>
+      {loading?<div className="status"><span className="spinner"/>Loading...</div>
+        :!entries.length?<div className="status">No scores yet</div>
         :<>
           <div className="podium-stand slide-up">
             {podOrder.map((e,i)=>(
@@ -1777,7 +1838,7 @@ function PodiumScreen({ user }) {
               ))}
             </div>
           )}
-          <button className="btn secondary" style={{maxWidth:240,marginTop:'.5rem'}} onClick={fetchAll}>↻ Actualizar</button>
+          <button className="btn secondary" style={{maxWidth:240,marginTop:'.5rem'}} onClick={fetchAll}>↻ Refresh</button>
         </>
       }
     </div>
@@ -1835,7 +1896,7 @@ export default function App() {
       {/* ── Floating mute button ── */}
       <button
         onClick={toggleMute}
-        title={muted ? 'Activar sonido' : 'Silenciar'}
+        title={muted ? 'Enable sound' : 'Mute'}
         style={{
           position:'fixed', bottom:'1rem', right:'1rem', zIndex:9999,
           width:'2.8rem', height:'2.8rem', borderRadius:'50%',

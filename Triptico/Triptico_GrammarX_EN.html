@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GRAMMARX — Informational Trifold</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..60,400;12..60,600;12..60,800&family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <style>
+    /* ── TOKENS ──────────────────────────────────────────────── */
+    :root {
+      --bg:  #080810; --s1: #111118; --s2: #1a1a26;
+      --acc: #f0c040; --red: #e05a5a; --grn: #5ae0a0;
+      --blu: #60c0f0; --pur: #a080f0; --mut: #55556a;
+      --bdr: #2a2a44; --txt: #eeeae2;
+    }
+
+    @page { size: A4 landscape; margin: 0; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ── BODY ────────────────────────────────────────────────── */
+    @media screen {
+      body {
+        background: #05050d;
+        display: flex; flex-direction: column; align-items: center;
+        padding: 18px 0; gap: 0;
+        font-family: 'JetBrains Mono', monospace;
+      }
+    }
+    @media print {
+      body { background: transparent; display: block; padding: 0; margin: 0; }
+      .page-sep { display: none; }
+      .page + .page { page-break-before: always; }
+    }
+
+    /* ── PAGE ────────────────────────────────────────────────── */
+    .page {
+      width: 297mm; height: 210mm;
+      background: var(--bg);
+      display: flex; overflow: hidden; flex-shrink: 0;
+    }
+
+    /* ── PANEL ───────────────────────────────────────────────── */
+    .panel {
+      width: 99mm; height: 210mm;
+      padding: 6.5mm 6mm 5.5mm;
+      position: relative; overflow: hidden; flex-shrink: 0;
+      color: var(--txt);
+    }
+    .panel:not(:last-child)::after {
+      content: ''; position: absolute; top: 0; right: 0;
+      width: 0; height: 100%;
+      border-right: 1px dashed rgba(42,42,68,.9);
+      z-index: 10;
+    }
+    .panel::before { /* grid bg */
+      content: ''; position: absolute; inset: 0;
+      background-image: linear-gradient(var(--bdr) 1px, transparent 1px),
+                        linear-gradient(90deg, var(--bdr) 1px, transparent 1px);
+      background-size: 7mm 7mm; opacity: 0.07;
+      pointer-events: none; z-index: 0;
+    }
+    .panel > * { position: relative; z-index: 1; }
+
+    /* ── DECORATIVE ORBS ─────────────────────────────────────── */
+    .orb {
+      position: absolute; border-radius: 50%;
+      pointer-events: none; z-index: 0;
+    }
+
+    /* ── ACCENT BAR ──────────────────────────────────────────── */
+    .bar { height: 2px; border-radius: 1px; margin-bottom: 5mm; }
+
+    /* ── TYPOGRAPHY ──────────────────────────────────────────── */
+    .lbl   { font-size:4.5pt; letter-spacing:.2em; text-transform:uppercase; color:var(--mut); margin-bottom:1.5mm; }
+    .lbl-s { font-size:4pt;   letter-spacing:.18em; text-transform:uppercase; color:var(--mut); }
+
+    .brand-xl {
+      font-family:'Bricolage Grotesque',sans-serif;
+      font-size:36pt; font-weight:800;
+      letter-spacing:-.05em; line-height:.92;
+      color:var(--acc); margin-bottom:1.5mm;
+    }
+    .brand-xl em { color:var(--txt); font-style:normal; }
+
+    .brand-sm {
+      font-family:'Bricolage Grotesque',sans-serif;
+      font-size:14pt; font-weight:800;
+      letter-spacing:-.04em; color:var(--acc); line-height:1;
+    }
+    .brand-sm em { color:var(--txt); font-style:normal; }
+
+    .h2 {
+      font-family:'Bricolage Grotesque',sans-serif;
+      font-size:12.5pt; font-weight:800;
+      letter-spacing:-.02em; line-height:1.15;
+      color:var(--txt); margin-bottom:3.5mm;
+    }
+    .h3 {
+      font-family:'Bricolage Grotesque',sans-serif;
+      font-size:7.5pt; font-weight:800;
+      color:var(--acc); margin-bottom:1.5mm;
+      padding-bottom:.8mm;
+      border-bottom:1px solid rgba(240,192,64,.2);
+    }
+    .h3.grn { color:var(--grn); border-color:rgba(90,224,160,.2); }
+    .h3.blu { color:var(--blu); border-color:rgba(96,192,240,.2); }
+    .h3.pur { color:var(--pur); border-color:rgba(160,128,240,.2); }
+
+    .body  { font-size:6pt;   line-height:1.65; color:var(--txt); opacity:.82; }
+    .small { font-size:5.5pt; line-height:1.5;  color:var(--txt); opacity:.75; }
+    .tiny  { font-size:5pt;   line-height:1.45; color:var(--txt); opacity:.7; }
+
+    /* ── BADGES ──────────────────────────────────────────────── */
+    .badges { display:flex; flex-wrap:wrap; gap:1.5mm; margin-bottom:3.5mm; }
+    .badge {
+      display:inline-flex; font-size:4.5pt;
+      padding:.8mm 2mm; border-radius:1.5mm;
+      letter-spacing:.1em; text-transform:uppercase; font-weight:700;
+    }
+    .b-gold { background:rgba(240,192,64,.09); border:1px solid rgba(240,192,64,.3); color:var(--acc); }
+    .b-grn  { background:rgba(90,224,160,.09);  border:1px solid rgba(90,224,160,.3);  color:var(--grn); }
+    .b-blu  { background:rgba(96,192,240,.09);  border:1px solid rgba(96,192,240,.3);  color:var(--blu); }
+    .b-pur  { background:rgba(160,128,240,.09); border:1px solid rgba(160,128,240,.3); color:var(--pur); }
+    .b-red  { background:rgba(224,90,90,.09);   border:1px solid rgba(224,90,90,.3);   color:var(--red); }
+
+    /* ── DIVIDER ─────────────────────────────────────────────── */
+    .div { height:1px; background:var(--bdr); margin:3mm 0; }
+
+    /* ── STEP LIST ───────────────────────────────────────────── */
+    .step {
+      display:flex; align-items:flex-start; gap:2mm;
+      padding:1.2mm 0; font-size:5.5pt; line-height:1.4;
+      border-bottom:1px solid rgba(42,42,68,.4);
+    }
+    .step:last-child { border-bottom:none; }
+    .step-n {
+      font-family:'Bricolage Grotesque',sans-serif;
+      font-weight:800; font-size:6pt; color:var(--acc);
+      min-width:3.5mm; flex-shrink:0;
+    }
+    .step-n.grn { color:var(--grn); }
+
+    /* ── GAME CARDS ──────────────────────────────────────────── */
+    .gc {
+      background:var(--s1); border:1px solid var(--bdr);
+      border-left:3px solid; border-radius:2mm;
+      padding:2mm 2.5mm; margin-bottom:1.8mm;
+    }
+    .gc-head { display:flex; align-items:center; gap:2mm; margin-bottom:.8mm; }
+    .gc-icon { font-size:9pt; line-height:1; }
+    .gc-name { font-family:'Bricolage Grotesque',sans-serif; font-size:7.5pt; font-weight:800; color:var(--txt); }
+    .gc-topic { font-size:4.5pt; letter-spacing:.12em; text-transform:uppercase; color:var(--mut); }
+    .gc-desc  { font-size:5.5pt; line-height:1.5; color:var(--txt); opacity:.75; margin-bottom:.8mm; }
+    .gc-chips { display:flex; flex-wrap:wrap; gap:1mm; }
+    .chip {
+      font-size:4pt; padding:.4mm 1.5mm;
+      border-radius:1mm; opacity:.85;
+    }
+
+    /* ── STATS ROW ───────────────────────────────────────────── */
+    .stats { display:flex; gap:1.8mm; }
+    .stat {
+      flex:1; background:var(--s2); border:1px solid var(--bdr);
+      border-radius:1.5mm; padding:1.8mm 1.5mm; text-align:center;
+    }
+    .stat-n { font-family:'Bricolage Grotesque',sans-serif; font-size:11pt; font-weight:800; color:var(--acc); line-height:1; }
+    .stat-l { font-size:3.8pt; letter-spacing:.08em; text-transform:uppercase; color:var(--mut); margin-top:.8mm; line-height:1.3; }
+
+    /* ── TECH ROWS ───────────────────────────────────────────── */
+    .tech {
+      display:flex; align-items:center; gap:2mm;
+      padding:1.2mm 0; font-size:5.5pt;
+      border-bottom:1px solid rgba(42,42,68,.35);
+    }
+    .tech:last-child { border-bottom:none; }
+    .dot { width:1.8mm; height:1.8mm; border-radius:50%; flex-shrink:0; }
+    .tn  { color:var(--txt); font-weight:700; flex:1; }
+    .td  { color:var(--mut); font-size:5pt; text-align:right; }
+
+    /* ── FEATURE LIST ────────────────────────────────────────── */
+    .feat {
+      display:flex; gap:2mm; font-size:5.5pt; line-height:1.4;
+      padding:.9mm 0; color:var(--txt); opacity:.8;
+      border-bottom:1px solid rgba(42,42,68,.3);
+    }
+    .feat:last-child { border-bottom:none; }
+    .fa { color:var(--grn); flex-shrink:0; font-weight:700; }
+
+    /* ── BULLET LIST ─────────────────────────────────────────── */
+    .bul { display:flex; gap:1.5mm; font-size:5.5pt; line-height:1.45; padding:.7mm 0; color:var(--txt); opacity:.78; }
+    .bd  { color:var(--acc); flex-shrink:0; }
+    .bd.g { color:var(--grn); } .bd.b { color:var(--blu); } .bd.p { color:var(--pur); } .bd.r { color:var(--red); }
+
+    /* ── INFO TABLE ──────────────────────────────────────────── */
+    .irow  { display:flex; padding:1.2mm 0; font-size:5.5pt; border-bottom:1px solid rgba(42,42,68,.3); gap:2mm; }
+    .irow:last-child { border-bottom:none; }
+    .ikey  { color:var(--mut); min-width:17mm; flex-shrink:0; }
+    .ival  { color:var(--txt); }
+    .ival-g { color:var(--acc); font-weight:700; }
+
+    /* ── CARD ────────────────────────────────────────────────── */
+    .card { background:var(--s1); border:1px solid var(--bdr); border-radius:2mm; padding:2.5mm 3mm; }
+
+    /* ── URL BOX ─────────────────────────────────────────────── */
+    .url-box {
+      background:var(--s2); border:1px solid var(--bdr);
+      border-top:2px solid rgba(240,192,64,.45);
+      border-radius:2mm; padding:2.5mm 3mm;
+    }
+    .url-lbl { font-size:4.5pt; letter-spacing:.18em; text-transform:uppercase; color:var(--mut); margin-bottom:1mm; }
+    .url-val { font-size:5.5pt; color:var(--acc); font-weight:700; }
+
+    /* ── QUOTE ───────────────────────────────────────────────── */
+    .quote {
+      background:linear-gradient(135deg,rgba(240,192,64,.06),rgba(96,192,240,.03));
+      border:1px solid rgba(240,192,64,.2); border-left:3px solid var(--acc);
+      border-radius:0 2mm 2mm 0; padding:2.5mm 3mm;
+      font-size:5.5pt; font-style:italic; line-height:1.55;
+      color:var(--txt); opacity:.9;
+    }
+
+    /* ── FOOTER ANCHOR ───────────────────────────────────────── */
+    .pf { position:absolute; bottom:5.5mm; left:6mm; right:6mm; }
+
+    /* ── GAME TILES (front cover) ────────────────────────────── */
+    .game-tiles { display:grid; grid-template-columns:1fr 1fr; gap:2mm; margin-bottom:3.5mm; }
+    .gt {
+      background:var(--s1); border:1.5px solid; border-radius:2mm;
+      padding:2.5mm; text-align:center; position:relative; overflow:hidden;
+    }
+    .gt::before {
+      content:''; position:absolute; top:0; left:0; right:0; height:1px;
+      background:linear-gradient(90deg,transparent,currentColor,transparent);
+      opacity:.4;
+    }
+    .gt-icon  { font-size:14pt; display:block; margin-bottom:1mm; }
+    .gt-name  { font-family:'Bricolage Grotesque',sans-serif; font-size:6.5pt; font-weight:800; color:var(--txt); }
+    .gt-topic { font-size:4.5pt; letter-spacing:.08em; text-transform:uppercase; color:var(--mut); margin-top:.5mm; }
+
+    /* ── ARCH DIAGRAM ────────────────────────────────────────── */
+    .arch {
+      background:var(--s2); border:1px solid var(--bdr); border-radius:2mm;
+      padding:2.5mm 3mm; font-size:5pt; line-height:1.8;
+      color:var(--txt); opacity:.85; font-family:'JetBrains Mono',monospace;
+      letter-spacing:.02em;
+    }
+    .arch .hl  { color:var(--acc); font-weight:700; }
+    .arch .hg  { color:var(--grn); }
+    .arch .hb  { color:var(--blu); }
+    .arch .hp  { color:var(--pur); }
+    .arch .hm  { color:var(--mut); }
+
+    /* ── DIFF BARS ───────────────────────────────────────────── */
+    .diff-row { display:flex; gap:1.5mm; margin:1.5mm 0 .8mm; }
+    .dbar { flex:1; height:2mm; border-radius:1mm; }
+    .diff-lbl { display:flex; justify-content:space-between; }
+    .diff-txt { font-size:4pt; letter-spacing:.04em; }
+
+    /* ── PAGE SEPARATOR (screen only) ───────────────────────── */
+    .page-sep {
+      width:297mm; padding:5px 0; text-align:center;
+      color:rgba(240,192,64,.45); font-size:8px;
+      letter-spacing:5px; font-family:'JetBrains Mono',monospace;
+      text-transform:uppercase;
+      background:rgba(240,192,64,.025);
+      border-top:1px dashed rgba(240,192,64,.2);
+      border-bottom:1px dashed rgba(240,192,64,.2);
+      margin:8px 0;
+    }
+    @media print { .page-sep { display:none; } }
+
+    /* ── OBJECTIVE CHIPS ─────────────────────────────────────── */
+    .obj-row { display:flex; align-items:flex-start; gap:2mm; padding:1mm 0; font-size:5.5pt; line-height:1.4; }
+    .obj-icon { font-size:7pt; flex-shrink:0; }
+
+    /* Context section */
+    .section-block { margin-bottom:3.5mm; }
+
+    /* Highlight box */
+    .hbox {
+      background:rgba(240,192,64,.06); border:1px solid rgba(240,192,64,.2);
+      border-radius:2mm; padding:2mm 2.5mm;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║  PAGE 1 — EXTERIOR FACE                                     ║
+     ║  [Inner flap] | [Back cover] | [Front cover]                ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+<div class="page">
+
+  <!-- ══════════ E1: INNER FLAP — "How to participate" ══════════ -->
+  <div class="panel">
+    <div class="orb" style="width:40mm;height:40mm;top:-12mm;right:-8mm;background:radial-gradient(circle,rgba(90,224,160,.1),transparent 70%);"></div>
+    <div class="orb" style="width:30mm;height:30mm;bottom:15mm;left:-5mm;background:radial-gradient(circle,rgba(240,192,64,.07),transparent 70%);"></div>
+
+    <div class="bar" style="background:linear-gradient(90deg,transparent,var(--grn),transparent);"></div>
+
+    <div class="lbl">Getting started</div>
+    <div class="h2" style="font-size:11pt;">Join a game<br>in minutes</div>
+
+    <!-- For Players -->
+    <div class="h3 grn" style="margin-bottom:2mm;">🎮 For the Player</div>
+    <div style="margin-bottom:3.5mm;">
+      <div class="step"><span class="step-n grn">①</span><span style="color:var(--txt);">Open <strong style="color:var(--grn);">grammarx.onrender.com</strong> in your browser</span></div>
+      <div class="step"><span class="step-n grn">②</span><span style="color:var(--txt);">Enter your player name and press <strong style="color:var(--acc);">Join</strong></span></div>
+      <div class="step"><span class="step-n grn">③</span><span style="color:var(--txt);">Select the <strong style="color:var(--acc);">Player</strong> role on the welcome screen</span></div>
+      <div class="step"><span class="step-n grn">④</span><span style="color:var(--txt);">Enter the <strong style="color:var(--acc);">6-character room code</strong> shared by the host</span></div>
+      <div class="step"><span class="step-n grn">⑤</span><span style="color:var(--txt);">Wait in the lobby until the host starts the game</span></div>
+      <div class="step"><span class="step-n grn">⑥</span><span style="color:var(--txt);">Answer fast and correctly — points depend on speed!</span></div>
+    </div>
+
+    <!-- For Host -->
+    <div class="h3" style="margin-bottom:2mm;">🏫 For the Teacher / Host</div>
+    <div style="margin-bottom:3mm;">
+      <div class="step"><span class="step-n">①</span><span style="color:var(--txt);">Enter your name and select the <strong style="color:var(--acc);">Host</strong> role</span></div>
+      <div class="step"><span class="step-n">②</span><span style="color:var(--txt);">A <strong style="color:var(--acc);">room code</strong> and QR code are generated automatically</span></div>
+      <div class="step"><span class="step-n">③</span><span style="color:var(--txt);">Display or share the QR code — players scan it with their phone</span></div>
+      <div class="step"><span class="step-n">④</span><span style="color:var(--txt);">Choose the <strong style="color:var(--acc);">game mode</strong> and time per round (10s – 60s)</span></div>
+      <div class="step"><span class="step-n">⑤</span><span style="color:var(--txt);">Press <strong style="color:var(--acc);">▶ START</strong> and advance round by round from the dashboard</span></div>
+    </div>
+
+    <!-- Compatibility -->
+    <div class="card" style="padding:2mm 2.5mm;">
+      <div class="lbl" style="margin-bottom:1mm;">Compatible with</div>
+      <div class="small">
+        <span style="color:var(--grn);">✓</span> Chrome · Firefox · Safari · Edge<br>
+        <span style="color:var(--grn);">✓</span> PC / Mac · Tablet · Smartphone<br>
+        <span style="color:var(--grn);">✓</span> No install needed — just a browser
+      </div>
+    </div>
+
+    <div class="pf">
+      <div style="display:flex;align-items:center;gap:3mm;background:var(--s2);border:1px solid var(--bdr);border-top:2px solid rgba(90,224,160,.4);border-radius:2mm;padding:2.5mm 3mm;">
+        <div id="qr-flap" style="flex-shrink:0;width:28mm;height:28mm;border-radius:1.5mm;overflow:hidden;"></div>
+        <div>
+          <div class="lbl-s" style="color:var(--grn);margin-bottom:1mm;">Access right now</div>
+          <div style="font-size:5.5pt;color:var(--txt);font-weight:700;line-height:1.5;">grammarx<br>.onrender.com</div>
+        </div>
+      </div>
+    </div>
+  </div><!-- /E1 -->
+
+
+  <!-- ══════════ E2: BACK COVER — Credits & summary ══════════ -->
+  <div class="panel">
+    <div class="orb" style="width:50mm;height:25mm;top:-8mm;left:50%;transform:translateX(-50%);background:radial-gradient(ellipse,rgba(240,192,64,.08),transparent 70%);"></div>
+
+    <div class="bar" style="background:linear-gradient(90deg,transparent,var(--acc),var(--pur),transparent);"></div>
+
+    <!-- Small logo -->
+    <div style="display:flex;align-items:baseline;gap:2mm;margin-bottom:.5mm;">
+      <div class="brand-sm">GRAMMAR<em>X</em></div>
+      <div class="lbl-s" style="margin-bottom:0;">v1.0 · 2026</div>
+    </div>
+    <div class="lbl" style="margin-bottom:3.5mm;">English Grammar Educational Platform</div>
+
+    <p class="body" style="margin-bottom:3.5mm;">
+      A multiplayer web application that gamifies English grammar learning.
+      Designed for classroom use, it lets teachers and students practise
+      four key grammar structures through competitive real-time matches.
+    </p>
+
+    <!-- Project info -->
+    <div class="h3" style="margin-bottom:2mm;">📋 Project Information</div>
+    <div style="margin-bottom:3mm;">
+      <div class="irow"><span class="ikey">Subject</span><span class="ival">English 2</span></div>
+      <div class="irow"><span class="ikey">Institution</span><span class="ival">Universidad Privada Domingo Savio</span></div>
+      <div class="irow"><span class="ikey">Lecturer</span><span class="ival">Ruth Gascher</span></div>
+      <div class="irow" style="align-items:flex-start;"><span class="ikey">Team</span><span class="ival ival-g" style="line-height:1.7;">Jonathan Campos<br>Luis Rodrigo Vargas Melgar<br>Carla Noelia Cano<br>Diego Justiniano Viera</span></div>
+      <div class="irow"><span class="ikey">Year</span><span class="ival">2026</span></div>
+      <div class="irow"><span class="ikey">Deploy</span><span class="ival" style="color:var(--grn);">Render Cloud ↗</span></div>
+    </div>
+
+    <!-- Tech summary badges -->
+    <div class="h3 blu" style="margin-bottom:2mm;">⚙️ Technologies used</div>
+    <div class="badges" style="margin-bottom:3mm;">
+      <span class="badge b-gold">React + Vite</span>
+      <span class="badge b-grn">Node.js</span>
+      <span class="badge b-blu">Socket.io</span>
+      <span class="badge b-pur">Express</span>
+      <span class="badge b-red">SQLite</span>
+      <span class="badge b-gold">Render</span>
+    </div>
+
+    <!-- Scope -->
+    <div class="h3 pur" style="margin-bottom:2mm;">🎯 Project objectives</div>
+    <div class="bul"><span class="bd">◆</span><span>Build an engaging and fully functional educational tool</span></div>
+    <div class="bul"><span class="bd">◆</span><span>Apply modern full-stack technologies (React + Node.js)</span></div>
+    <div class="bul"><span class="bd g">◆</span><span>Demonstrate bidirectional real-time communication</span></div>
+    <div class="bul"><span class="bd b">◆</span><span>Deploy a complete SPA to a production environment</span></div>
+
+    <div class="pf">
+      <div class="quote">
+        "Technology doesn't replace the teacher — it gives them superpowers."
+      </div>
+    </div>
+  </div><!-- /E2 -->
+
+
+  <!-- ══════════ E3: FRONT COVER — Visual impact ══════════ -->
+  <div class="panel" style="border-right:none; padding:6mm 6mm 5.5mm;">
+    <!-- Glow orbs -->
+    <div class="orb" style="width:65mm;height:65mm;top:-20mm;right:-15mm;background:radial-gradient(circle,rgba(240,192,64,.14),transparent 70%);"></div>
+    <div class="orb" style="width:50mm;height:50mm;bottom:-15mm;left:-10mm;background:radial-gradient(circle,rgba(96,192,240,.1),transparent 70%);"></div>
+    <div class="orb" style="width:30mm;height:30mm;bottom:40mm;right:5mm;background:radial-gradient(circle,rgba(160,128,240,.08),transparent 70%);"></div>
+
+    <div class="bar" style="background:linear-gradient(90deg,transparent,var(--acc),transparent);"></div>
+
+    <!-- Brand -->
+    <div class="brand-xl">GRAMMAR<em>X</em></div>
+    <div class="lbl" style="margin-bottom:3mm;">Educational Platform · English Grammar</div>
+
+    <!-- Tagline -->
+    <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:9pt;font-weight:600;color:var(--txt);line-height:1.35;margin-bottom:1.5mm;">
+      Master English grammar<br>while competing in real time
+    </div>
+    <div class="small" style="margin-bottom:4mm;opacity:.6;">
+      Kahoot-style · Multiplayer · 4 modes · 5 levels
+    </div>
+
+    <!-- Game tiles 2×2 -->
+    <div class="game-tiles">
+      <div class="gt" style="border-color:var(--acc);color:var(--acc);">
+        <span class="gt-icon">⏰</span>
+        <div class="gt-name">Time Machine</div>
+        <div class="gt-topic">Past Simple</div>
+      </div>
+      <div class="gt" style="border-color:var(--red);color:var(--red);">
+        <span class="gt-icon">⚔️</span>
+        <div class="gt-name">Duel Mode</div>
+        <div class="gt-topic">Comparatives</div>
+      </div>
+      <div class="gt" style="border-color:var(--grn);color:var(--grn);">
+        <span class="gt-icon">🔍</span>
+        <div class="gt-name">Evidence File</div>
+        <div class="gt-topic">Present Perfect</div>
+      </div>
+      <div class="gt" style="border-color:var(--pur);color:var(--pur);">
+        <span class="gt-icon">🔮</span>
+        <div class="gt-name">Crystal Ball</div>
+        <div class="gt-topic">Future Tense</div>
+      </div>
+    </div>
+
+    <!-- Diff bars -->
+    <div class="lbl">5 difficulty levels</div>
+    <div class="diff-row">
+      <div class="dbar" style="background:var(--grn);"></div>
+      <div class="dbar" style="background:var(--blu);"></div>
+      <div class="dbar" style="background:var(--acc);"></div>
+      <div class="dbar" style="background:#f0a040;"></div>
+      <div class="dbar" style="background:var(--red);"></div>
+    </div>
+    <div class="diff-lbl" style="margin-bottom:4mm;">
+      <span class="diff-txt" style="color:var(--grn);">Beginner</span>
+      <span class="diff-txt" style="color:var(--blu);">Easy</span>
+      <span class="diff-txt" style="color:var(--acc);">Medium</span>
+      <span class="diff-txt" style="color:#f0a040;">Hard</span>
+      <span class="diff-txt" style="color:var(--red);">Expert</span>
+    </div>
+
+    <!-- Bottom badges -->
+    <div class="badges" style="margin-bottom:3.5mm;">
+      <span class="badge b-gold">Multiplayer</span>
+      <span class="badge b-grn">Real Time</span>
+      <span class="badge b-blu">No Sign-up</span>
+      <span class="badge b-pur">Open Source</span>
+    </div>
+
+    <!-- Stats row -->
+    <div class="stats" style="margin-bottom:3.5mm;">
+      <div class="stat"><div class="stat-n">4</div><div class="stat-l">Game<br>modes</div></div>
+      <div class="stat"><div class="stat-n">40+</div><div class="stat-l">Questions<br>per mode</div></div>
+      <div class="stat"><div class="stat-n">5</div><div class="stat-l">Difficulty<br>levels</div></div>
+      <div class="stat"><div class="stat-n">∞</div><div class="stat-l">Unique<br>sessions</div></div>
+    </div>
+
+    <!-- Mini how-it-works -->
+    <div class="h3" style="font-size:6.5pt;margin-bottom:1.5mm;">How does it work?</div>
+    <div class="step"><span class="step-n">①</span><span>Host creates a room — a 6-character code and QR are generated</span></div>
+    <div class="step"><span class="step-n">②</span><span>Players join from their phone or PC, no installation needed</span></div>
+    <div class="step"><span class="step-n">③</span><span>Host picks the game mode and time per round (10s – 60s)</span></div>
+    <div class="step"><span class="step-n">④</span><span>10 rounds of random questions — fastest and most accurate player wins</span></div>
+
+    <div class="pf">
+      <div style="display:flex;align-items:center;gap:3mm;background:var(--s2);border:1px solid var(--bdr);border-top:2px solid var(--acc);border-radius:2mm;padding:2.5mm 3mm;">
+        <div id="qr-front" style="flex-shrink:0;width:28mm;height:28mm;border-radius:1.5mm;overflow:hidden;"></div>
+        <div>
+          <div class="lbl-s" style="margin-bottom:1.5mm;">Scan to play now</div>
+          <div style="font-size:5.5pt;color:var(--acc);font-weight:700;line-height:1.5;">grammarx<br>.onrender.com</div>
+          <div style="font-size:4.5pt;color:var(--mut);margin-top:1.5mm;">No sign-up · Just a browser</div>
+        </div>
+      </div>
+    </div>
+  </div><!-- /E3 -->
+
+</div><!-- /exterior page -->
+
+
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║  PAGE SEPARATOR (visible on screen only)                    ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+<div class="page-sep">◦ REVERSE · PRINT INNER FACE · FOLD IN THREE ◦</div>
+
+
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║  PAGE 2 — INTERIOR FACE                                     ║
+     ║  [Context & Objectives] | [The 4 Games] | [Technology]      ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+<div class="page">
+
+  <!-- ══════════ I1: LEFT PANEL — Context and objectives ══════════ -->
+  <div class="panel">
+    <div class="orb" style="width:45mm;height:45mm;top:-10mm;right:-5mm;background:radial-gradient(circle,rgba(96,192,240,.09),transparent 70%);"></div>
+
+    <div class="bar" style="background:linear-gradient(90deg,transparent,var(--blu),transparent);"></div>
+
+    <div class="lbl">The Project</div>
+    <div class="h2" style="font-size:11pt;margin-bottom:3mm;">Context and<br>motivation</div>
+
+    <!-- Problem -->
+    <div class="section-block">
+      <div class="h3" style="color:var(--red);border-color:rgba(224,90,90,.2);margin-bottom:1.5mm;">⚡ The Problem</div>
+      <p class="body">
+        English grammar is often taught through repetitive, static exercises
+        that generate low motivation in students. The lack of immediate
+        feedback and the absence of game-like elements limit the retention
+        of key concepts.
+      </p>
+    </div>
+
+    <div class="div" style="margin:2.5mm 0;"></div>
+
+    <!-- Solution -->
+    <div class="section-block">
+      <div class="h3 grn" style="margin-bottom:1.5mm;">✅ The Solution: Gamification</div>
+      <p class="body" style="margin-bottom:1.5mm;">
+        GRAMMARX transforms grammar practice into a competitive and
+        collaborative real-time experience, where speed and accuracy
+        are both rewarded.
+      </p>
+      <div class="feat"><span class="fa">→</span><span>Instant feedback per answer (correct / wrong)</span></div>
+      <div class="feat"><span class="fa">→</span><span>Configurable time pressure that boosts concentration</span></div>
+      <div class="feat"><span class="fa">→</span><span>Friendly competition between peers in the same classroom</span></div>
+      <div class="feat"><span class="fa">→</span><span>100% random questions — every game is unique</span></div>
+    </div>
+
+    <div class="div" style="margin:2.5mm 0;"></div>
+
+    <!-- Target audience -->
+    <div class="section-block">
+      <div class="h3 blu" style="margin-bottom:1.5mm;">👥 Target audience</div>
+      <div class="obj-row"><span class="obj-icon">📚</span><span class="small">English students at A2–B2 level (CEFR)</span></div>
+      <div class="obj-row"><span class="obj-icon">🏫</span><span class="small">English teachers in in-person or hybrid environments</span></div>
+      <div class="obj-row"><span class="obj-icon">💻</span><span class="small">Continuing education courses and self-study learners</span></div>
+    </div>
+
+    <div class="div" style="margin:2.5mm 0;"></div>
+
+    <!-- Grammar outcomes -->
+    <div class="section-block">
+      <div class="h3 pur" style="margin-bottom:1.5mm;">🎓 Grammar content</div>
+      <div class="bul"><span class="bd">⏰</span><span><strong style="color:var(--acc);">Past Simple</strong> — regular &amp; irregular verbs, sentence order</span></div>
+      <div class="bul"><span class="bd r">⚔️</span><span><strong style="color:var(--red);">Comparatives &amp; Superlatives</strong> — formation rules, exceptions</span></div>
+      <div class="bul"><span class="bd g">🔍</span><span><strong style="color:var(--grn);">Present Perfect</strong> — have/has + past participle, reading comprehension</span></div>
+      <div class="bul"><span class="bd p">🔮</span><span><strong style="color:var(--pur);">Future Tense</strong> — will vs. going to, predictions and plans</span></div>
+    </div>
+
+  </div><!-- /I1 -->
+
+
+  <!-- ══════════ I2: CENTRE PANEL — The 4 Games (hero) ══════════ -->
+  <div class="panel">
+    <div class="orb" style="width:60mm;height:25mm;top:-8mm;left:50%;transform:translateX(-50%);background:radial-gradient(ellipse,rgba(160,128,240,.07),transparent 70%);"></div>
+
+    <div class="bar" style="background:linear-gradient(90deg,transparent,var(--acc),var(--grn),var(--pur),transparent);"></div>
+
+    <div class="lbl">Game modes</div>
+    <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:20pt;font-weight:800;letter-spacing:-.04em;line-height:1;margin-bottom:1mm;"><span style="color:var(--acc);">GRAMMAR</span><span style="color:var(--txt);">X</span></div>
+    <div class="h2" style="font-size:9pt;font-weight:600;color:var(--mut);margin-bottom:3.5mm;letter-spacing:.01em;">The 4 game modes</div>
+
+    <!-- Game 1: Time Machine -->
+    <div class="gc" style="border-left-color:var(--acc);">
+      <div class="gc-head">
+        <span class="gc-icon">⏰</span>
+        <div>
+          <div class="gc-name">Time Machine</div>
+          <div class="gc-topic">Past Simple · Syntax</div>
+        </div>
+      </div>
+      <div class="gc-desc">
+        The words of a Past Simple sentence are shuffled. The player must
+        tap the words in the correct order to reconstruct the sentence
+        before time runs out.
+      </div>
+      <div class="gc-chips">
+        <span class="chip" style="background:rgba(240,192,64,.1);color:var(--acc);border:1px solid rgba(240,192,64,.25);">Regular verbs</span>
+        <span class="chip" style="background:rgba(240,192,64,.1);color:var(--acc);border:1px solid rgba(240,192,64,.25);">Irregular verbs</span>
+        <span class="chip" style="background:rgba(240,192,64,.1);color:var(--acc);border:1px solid rgba(240,192,64,.25);">Word order</span>
+      </div>
+    </div>
+
+    <!-- Game 2: Duel Mode -->
+    <div class="gc" style="border-left-color:var(--red);">
+      <div class="gc-head">
+        <span class="gc-icon">⚔️</span>
+        <div>
+          <div class="gc-name">Duel Mode</div>
+          <div class="gc-topic">Comparatives &amp; Superlatives</div>
+        </div>
+      </div>
+      <div class="gc-desc">
+        Four answer choices appear on screen. The player selects the correct
+        comparative or superlative form of the given adjective, applying the
+        rules for short and long adjectives.
+      </div>
+      <div class="gc-chips">
+        <span class="chip" style="background:rgba(224,90,90,.1);color:var(--red);border:1px solid rgba(224,90,90,.25);">ADJer than</span>
+        <span class="chip" style="background:rgba(224,90,90,.1);color:var(--red);border:1px solid rgba(224,90,90,.25);">the ADJest</span>
+        <span class="chip" style="background:rgba(224,90,90,.1);color:var(--red);border:1px solid rgba(224,90,90,.25);">more / most ADJ</span>
+      </div>
+    </div>
+
+    <!-- Game 3: Evidence File -->
+    <div class="gc" style="border-left-color:var(--grn);">
+      <div class="gc-head">
+        <span class="gc-icon">🔍</span>
+        <div>
+          <div class="gc-name">Evidence File</div>
+          <div class="gc-topic">Present Perfect · Comprehension</div>
+        </div>
+      </div>
+      <div class="gc-desc">
+        A short professional-context passage is shown. The player reads it
+        and answers a comprehension question related to completed actions
+        using the Present Perfect.
+      </div>
+      <div class="gc-chips">
+        <span class="chip" style="background:rgba(90,224,160,.1);color:var(--grn);border:1px solid rgba(90,224,160,.25);">have / has + PP</span>
+        <span class="chip" style="background:rgba(90,224,160,.1);color:var(--grn);border:1px solid rgba(90,224,160,.25);">Comprehension</span>
+        <span class="chip" style="background:rgba(90,224,160,.1);color:var(--grn);border:1px solid rgba(90,224,160,.25);">Work context</span>
+      </div>
+    </div>
+
+    <!-- Game 4: Crystal Ball -->
+    <div class="gc" style="border-left-color:var(--pur);">
+      <div class="gc-head">
+        <span class="gc-icon">🔮</span>
+        <div>
+          <div class="gc-name">Crystal Ball</div>
+          <div class="gc-topic">Future Tense · Selection</div>
+        </div>
+      </div>
+      <div class="gc-desc">
+        An incomplete sentence with a blank is presented. The player
+        selects the correct future form from four options: will,
+        going to, won't, or other variants.
+      </div>
+      <div class="gc-chips">
+        <span class="chip" style="background:rgba(160,128,240,.1);color:var(--pur);border:1px solid rgba(160,128,240,.25);">will / won't</span>
+        <span class="chip" style="background:rgba(160,128,240,.1);color:var(--pur);border:1px solid rgba(160,128,240,.25);">going to</span>
+        <span class="chip" style="background:rgba(160,128,240,.1);color:var(--pur);border:1px solid rgba(160,128,240,.25);">Predictions</span>
+      </div>
+    </div>
+
+    <!-- Stats footer -->
+    <div class="pf">
+      <div class="stats">
+        <div class="stat"><div class="stat-n">40+</div><div class="stat-l">Questions<br>per game</div></div>
+        <div class="stat"><div class="stat-n">5</div><div class="stat-l">Difficulty<br>levels</div></div>
+        <div class="stat"><div class="stat-n">10</div><div class="stat-l">Rounds per<br>match</div></div>
+        <div class="stat"><div class="stat-n">∞</div><div class="stat-l">Unique<br>sessions</div></div>
+      </div>
+    </div>
+
+  </div><!-- /I2 -->
+
+
+  <!-- ══════════ I3: RIGHT PANEL — Technology & Architecture ══════════ -->
+  <div class="panel" style="border-right:none;">
+    <div class="orb" style="width:45mm;height:45mm;bottom:5mm;right:-8mm;background:radial-gradient(circle,rgba(160,128,240,.1),transparent 70%);"></div>
+
+    <div class="bar" style="background:linear-gradient(90deg,transparent,var(--pur),transparent);"></div>
+
+    <div class="lbl">Tech stack</div>
+    <div class="h2" style="font-size:11pt;margin-bottom:3mm;">Architecture and<br>technology</div>
+
+    <!-- Architecture diagram -->
+    <div class="arch" style="margin-bottom:3mm;">
+      <span class="hl">[ React SPA ]</span><span class="hm">  ←── HTTP ──→  </span><span class="hb">[ Express API ]</span><br>
+      <span class="hm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↕ WebSocket ↕</span><br>
+      <span class="hm">  Vite Dev / Build  </span><span class="hg">[ Socket.io ]</span><br>
+      <span class="hm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓</span><br>
+      <span class="hm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="hp">[ SQLite DB ]</span>
+    </div>
+
+    <!-- Frontend -->
+    <div class="h3" style="margin-bottom:1.5mm;">Frontend</div>
+    <div style="margin-bottom:2.5mm;">
+      <div class="tech"><div class="dot" style="background:var(--acc);"></div><span class="tn">React 18 + Vite 5</span><span class="td">Single-file SPA</span></div>
+      <div class="tech"><div class="dot" style="background:var(--grn);"></div><span class="tn">Socket.io Client</span><span class="td">Real-time WebSocket</span></div>
+      <div class="tech"><div class="dot" style="background:var(--blu);"></div><span class="tn">Bricolage Grotesque</span><span class="td">Display typeface</span></div>
+      <div class="tech"><div class="dot" style="background:var(--mut);"></div><span class="tn">JetBrains Mono</span><span class="td">Monospace typeface</span></div>
+    </div>
+
+    <!-- Backend -->
+    <div class="h3 grn" style="margin-bottom:1.5mm;">Backend</div>
+    <div style="margin-bottom:2.5mm;">
+      <div class="tech"><div class="dot" style="background:var(--pur);"></div><span class="tn">Node.js + Express</span><span class="td">HTTP + WS server</span></div>
+      <div class="tech"><div class="dot" style="background:var(--red);"></div><span class="tn">Socket.io Server</span><span class="td">Bidirectional events</span></div>
+      <div class="tech"><div class="dot" style="background:var(--acc);"></div><span class="tn">SQLite (node:sqlite)</span><span class="td">Native persistence</span></div>
+      <div class="tech"><div class="dot" style="background:var(--grn);"></div><span class="tn">Render</span><span class="td">Production deploy</span></div>
+    </div>
+
+    <!-- Features -->
+    <div class="h3 pur" style="margin-bottom:1.5mm;">Technical features</div>
+    <div style="margin-bottom:3mm;">
+      <div class="feat"><span class="fa">→</span><span>Randomly generated 6-character room code per session</span></div>
+      <div class="feat"><span class="fa">→</span><span>Auto-rendered QR code via QRCode.js library</span></div>
+      <div class="feat"><span class="fa">→</span><span>2 random questions per difficulty level selected (10 rounds)</span></div>
+      <div class="feat"><span class="fa">→</span><span>Timer synchronised between host and players via Socket</span></div>
+      <div class="feat"><span class="fa">→</span><span>Full dark palette: background #080810, gold accent #f0c040</span></div>
+      <div class="feat"><span class="fa">→</span><span>Responsive design: host on desktop, players on mobile</span></div>
+    </div>
+
+    <div class="pf">
+      <div class="quote">
+        "The combination of Socket.io and React enables real-time
+        synchronisation that makes every match dynamic and smooth,
+        with no reloads or noticeable latency."
+      </div>
+    </div>
+
+  </div><!-- /I3 -->
+
+</div><!-- /interior page -->
+
+
+<script>
+  const URL_APP = 'https://grammarx.onrender.com/';
+
+  // Large QR on front cover (E3)
+  new QRCode(document.getElementById('qr-front'), {
+    text: URL_APP,
+    width: 106, height: 106,
+    colorDark:  '#f0c040',
+    colorLight: '#111118',
+    correctLevel: QRCode.CorrectLevel.M
+  });
+
+  // QR on inner flap (E1)
+  new QRCode(document.getElementById('qr-flap'), {
+    text: URL_APP,
+    width: 106, height: 106,
+    colorDark:  '#5ae0a0',
+    colorLight: '#111118',
+    correctLevel: QRCode.CorrectLevel.M
+  });
+</script>
+</body>
+</html>
