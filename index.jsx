@@ -82,22 +82,22 @@ const GAME_INSTRUCTIONS = {
   G3: {
     color: '#5ae0a0',
     en: {
-      how: 'Read the text and choose the correct answer to the comprehension question.',
+      how: 'Find the grammar error in the sentence and choose the corrected version.',
       steps: [
-        'Read the text passage carefully (top box).',
-        'A question about what you read appears below.',
-        'Choose the option that best answers the question.',
+        'A Present Perfect sentence with one grammar error is shown in red.',
+        'Read all four options carefully.',
+        'Choose the option that fixes the error correctly.',
       ],
-      tip: '💡 Look for have/has + past participle — that\'s Present Perfect (e.g. "has finished").',
+      tip: "💡 Common errors: wrong have/has · wrong past participle · since vs for · word order.",
     },
     es: {
-      how: 'Lee el texto y elige la respuesta correcta a la pregunta de comprensión.',
+      how: 'Encuentra el error gramatical en la oración y elige la versión corregida.',
       steps: [
-        'Lee con atención el pasaje de texto (cuadro superior).',
-        'Debajo aparece una pregunta sobre lo que leíste.',
-        'Elige la opción que mejor responde la pregunta.',
+        'Se muestra en rojo una oración en Present Perfect con un error gramatical.',
+        'Lee con atención las cuatro opciones disponibles.',
+        'Elige la opción que corrige el error correctamente.',
       ],
-      tip: '💡 Fíjate en have/has + participio pasado — eso es Present Perfect (ej. "has finished").',
+      tip: "💡 Errores comunes: have/has incorrecto · participio pasado erróneo · since vs for · orden de palabras.",
     },
   },
   G4: {
@@ -232,37 +232,54 @@ const G2_DATA = [
 ];
 
 // ── G3 DATA ────────────────────────────────────────────────────────────────────
+// Format: { wrong: "sentence with one grammar error", opts: ["correct","wrong1","wrong2","wrong3"], d }
+// opts[0] is always the correct version (buildOpts shuffles and marks index 0 as correct)
 const G3_DATA = [
-  // d:1
-  {title:'The New Developer',passage:'Alex has just joined the team. He has never worked with TypeScript before, but he has already read the documentation twice. The team has welcomed him warmly.',q:'What has Alex done with the documentation?',opts:['Read it twice','Written it once','Deleted it','Never touched it'],d:1},
-  {title:'The Production Bug',passage:'The QA team has found a critical bug in production. They have already notified the developers and have written a detailed report. No one has fixed it yet.',q:'Has the bug been fixed?',opts:['No, not yet','Yes, already','Yes, twice','The text does not say'],d:1},
-  {title:'The Bug Report',passage:'The QA engineer has just filed a new bug report. She has attached three screenshots and has labeled it as critical priority. The development team has not read it yet.',q:'What has the QA engineer attached to the report?',opts:['Three screenshots','Two videos','A PDF','Nothing'],d:1},
-  {title:'The First Commit',passage:'The intern has made his first commit to the project. He has written a clear commit message and has followed the team\'s style guide perfectly. His mentor has already approved it.',q:'Who has approved the intern\'s commit?',opts:['His mentor','The QA team','The CEO','No one yet'],d:1},
-  {title:'The New Password',passage:'The IT department has sent a password reset email to all employees. Most users have already changed their passwords. Two people have not responded yet.',q:'Have all employees changed their passwords?',opts:['No, two have not','Yes, all of them','Only IT has','The text does not say'],d:1},
-  // d:2
-  {title:'The Database Migration',passage:'The operations team has successfully migrated the database to a new cluster. They have been working on it for three weeks. The CEO has praised their effort.',q:'How long has the team been working on the migration?',opts:['Three weeks','Two days','One month','A sprint'],d:2},
-  {title:'The Open-Source Project',passage:'Maria has published her first open-source library. Over 200 developers have starred the repository since Monday. Three companies have already reached out to sponsor it.',q:'How many developers have starred the repository?',opts:['Over 200','Exactly 200','Three','The text does not say'],d:2},
-  {title:'The Sprint Review',passage:'The team has completed its third sprint. They have delivered all eight user stories and have received positive feedback from the product owner. The velocity has increased by twenty percent.',q:'By how much has the velocity increased?',opts:['Twenty percent','Eight percent','Three percent','The text does not say'],d:2},
-  {title:'The App Update',passage:'The developers have released version 3.0 of the app. They have fixed over thirty bugs and have added five new features. Users have already left hundreds of positive reviews.',q:'How many bugs have been fixed in version 3.0?',opts:['Over thirty','Five','Hundreds','The text does not say'],d:2},
-  {title:'The New Office',passage:'The company has moved to a new office downtown. They have installed faster internet and have set up twelve new workstations. Employees have not yet received their access cards.',q:'What have employees not received yet?',opts:['Their access cards','New computers','Faster internet','A new desk'],d:2},
-  // d:3
-  {title:'The Security Audit',passage:'The security team has conducted a full audit of the application. They have identified five vulnerabilities. Two of them have already been patched by the backend team.',q:'How many vulnerabilities have been patched so far?',opts:['Two','Five','All of them','None'],d:3},
-  {title:'The AI Model',passage:'Researchers at the lab have trained a new language model. It has outperformed every previous benchmark. The team has not yet published the paper, but they have submitted it for review.',q:'What has the team done with the paper?',opts:['Submitted it for review','Published it','Deleted it','Written it twice'],d:3},
-  {title:'The Remote Team',passage:'The company has hired twelve remote engineers over the past year. They have set up asynchronous communication channels and have adopted a flexible schedule policy. Productivity has never been higher.',q:'What has the company set up for communication?',opts:['Asynchronous channels','Daily meetings','An office space','Video calls only'],d:3},
-  {title:'The API Integration',passage:'The backend team has integrated three external APIs into the platform. They have documented every endpoint and have written unit tests for each one. No integration errors have been reported so far.',q:'Have any integration errors been reported?',opts:['No, none so far','Yes, three errors','Yes, one error','The text does not say'],d:3},
-  {title:'The Hackathon',passage:'Twenty teams have participated in the annual hackathon. The winning team has built an AI tool that helps doctors diagnose rare diseases. The judges have called it the most innovative project in five years.',q:'What has the winning team built?',opts:['An AI tool for doctors','A new mobile app','A website','A database system'],d:3},
-  // d:4
-  {title:'The Startup Launch',passage:'The startup has raised $5 million in Series A funding. The founders have hired ten engineers and have signed contracts with two major clients. They have not yet launched the product publicly.',q:'Has the product been launched publicly?',opts:['No, not yet','Yes, last week','Yes, to two clients','The text does not say'],d:4},
-  {title:'The Cloud Architecture',passage:'The infrastructure team has redesigned the entire cloud architecture. They have replaced the monolith with microservices, have adopted Kubernetes, and have reduced costs by 40%. No downtime has been reported during the transition.',q:'What has been achieved during the transition?',opts:['Zero downtime','40% more cost','One hour of downtime','Three outages'],d:4},
-  {title:'The Data Breach',passage:'Security analysts have discovered a data breach affecting 50,000 users. The company has notified all affected accounts and has reset every password. Regulators have been informed as required by law.',q:'How many users have been affected by the breach?',opts:['50,000','All users','Only employees','The text does not say'],d:4},
-  {title:'The New Framework',passage:'The frontend team has adopted a new component framework. They have refactored sixty percent of the codebase and have reduced bundle size by half. Three developers have already published tutorials about it.',q:'What has happened to the bundle size?',opts:['It has been reduced by half','It has doubled','It stayed the same','The text does not say'],d:4},
-  {title:'The Certification',passage:'The engineering team has completed an AWS certification program. Fifteen engineers have passed the exam on their first attempt. The company has increased their cloud budget as a result.',q:'How many engineers passed the exam on the first attempt?',opts:['Fifteen','All of them','Five','The text does not say'],d:4},
-  // d:5
-  {title:'The Code Review',passage:'The senior engineer has reviewed over fifty pull requests this quarter. She has left detailed comments on each one. Several junior developers have told her it has been the most helpful feedback they have ever received.',q:'What have junior developers said about the feedback?',opts:["It's the most helpful they've received",'It was too harsh','It was not enough','They have not commented'],d:5},
-  {title:'The Performance Optimization',passage:'The engineering team has spent the last month optimizing the platform. They have reduced average API response time from 800ms to 95ms. The product has never performed this well in its three-year history.',q:'What was the original average API response time?',opts:['800ms','95ms','Three years','The text does not say'],d:5},
-  {title:'The Microservices Migration',passage:'The platform team has spent eight months migrating the monolith to microservices. They have decomposed the system into fourteen independent services and have introduced event-driven communication. Deployment frequency has increased from monthly to daily.',q:'How has deployment frequency changed after the migration?',opts:['From monthly to daily','From daily to monthly','From weekly to monthly','The text does not say'],d:5},
-  {title:'The ML Pipeline',passage:'Data scientists have built an automated machine learning pipeline. They have trained the model on two million data points and have achieved ninety-four percent accuracy on the test set. The model has already been deployed to the production recommendation engine.',q:'Where has the model been deployed?',opts:['The production recommendation engine','The test environment','A staging server','The text does not say'],d:5},
-  {title:'The Global Rollout',passage:'The DevOps team has orchestrated a global rollout across twelve regions. They have configured automated failover and have monitored over two billion requests without a single outage. The CTO has called it the smoothest deployment in company history.',q:'How many regions has the rollout covered?',opts:['Twelve','Two billion','One','The text does not say'],d:5},
+  // d:1 — have / has subject-agreement error
+  {wrong:"She have solved the problem.",opts:["She has solved the problem.","She have solves the problem.","She has solve the problem.","She had solved the problem."],d:1},
+  {wrong:"He have finished the report.",opts:["He has finished the report.","He have finish the report.","He has finishing the report.","He had finished the report."],d:1},
+  {wrong:"Alex have reviewed all the pull requests.",opts:["Alex has reviewed all the pull requests.","Alex have reviews all the pull requests.","Alex has review all the pull requests.","Alex had reviewed all the pull requests."],d:1},
+  {wrong:"The server have crashed twice this week.",opts:["The server has crashed twice this week.","The server have crash twice this week.","The server has crashing twice this week.","The server had crashed twice this week."],d:1},
+  {wrong:"Maria have deployed the new version.",opts:["Maria has deployed the new version.","Maria have deploy the new version.","Maria has deploying the new version.","Maria had deployed the new version."],d:1},
+  {wrong:"They has fixed the bug already.",opts:["They have fixed the bug already.","They has fix the bug already.","They have fixing the bug already.","They had fixed the bug already."],d:1},
+  {wrong:"We has completed the migration.",opts:["We have completed the migration.","We has complete the migration.","We have completing the migration.","We had completed the migration."],d:1},
+  {wrong:"The developers has released a patch.",opts:["The developers have released a patch.","The developers has release a patch.","The developers have releasing a patch.","The developers had released a patch."],d:1},
+  // d:2 — wrong past participle (regular verbs — base form used instead of -ed)
+  {wrong:"They have finish the migration.",opts:["They have finished the migration.","They has finished the migration.","They have finishing the migration.","They had finished the migration."],d:2},
+  {wrong:"She has deploy the application to production.",opts:["She has deployed the application to production.","She have deployed the application to production.","She has deploying the application to production.","She had deployed the application to production."],d:2},
+  {wrong:"The team has test all the endpoints.",opts:["The team has tested all the endpoints.","The team have tested all the endpoints.","The team has testing all the endpoints.","The team had tested all the endpoints."],d:2},
+  {wrong:"He has fix three bugs this morning.",opts:["He has fixed three bugs this morning.","He have fixed three bugs this morning.","He has fixing three bugs this morning.","He had fixed three bugs this morning."],d:2},
+  {wrong:"We have add a new authentication layer.",opts:["We have added a new authentication layer.","We has added a new authentication layer.","We have adding a new authentication layer.","We had added a new authentication layer."],d:2},
+  {wrong:"The system has detect an unusual pattern.",opts:["The system has detected an unusual pattern.","The system have detected an unusual pattern.","The system has detecting an unusual pattern.","The system had detected an unusual pattern."],d:2},
+  {wrong:"The engineers have implement the new API.",opts:["The engineers have implemented the new API.","The engineers has implemented the new API.","The engineers have implementing the new API.","The engineers had implemented the new API."],d:2},
+  {wrong:"She has review the code for two hours.",opts:["She has reviewed the code for two hours.","She have reviewed the code for two hours.","She has reviewing the code for two hours.","She had reviewed the code for two hours."],d:2},
+  // d:3 — wrong past participle (irregular verbs — simple past used instead of past participle)
+  {wrong:"She has wrote the final report.",opts:["She has written the final report.","She have written the final report.","She has write the final report.","She had written the final report."],d:3},
+  {wrong:"The team has broke the build again.",opts:["The team has broken the build again.","The team have broken the build again.","The team has break the build again.","The team had broken the build again."],d:3},
+  {wrong:"He has ran the tests three times.",opts:["He has run the tests three times.","He have run the tests three times.","He has runned the tests three times.","He had run the tests three times."],d:3},
+  {wrong:"We have builded a new CI/CD pipeline.",opts:["We have built a new CI/CD pipeline.","We has built a new CI/CD pipeline.","We have building a new CI/CD pipeline.","We had built a new CI/CD pipeline."],d:3},
+  {wrong:"The developer has chose a different framework.",opts:["The developer has chosen a different framework.","The developer have chosen a different framework.","The developer has choose a different framework.","The developer had chosen a different framework."],d:3},
+  {wrong:"They have took the wrong approach.",opts:["They have taken the wrong approach.","They has taken the wrong approach.","They have taking the wrong approach.","They had taken the wrong approach."],d:3},
+  {wrong:"She has speaked at three conferences this year.",opts:["She has spoken at three conferences this year.","She have spoken at three conferences this year.","She has speaking at three conferences this year.","She had spoken at three conferences this year."],d:3},
+  {wrong:"The project has grew by fifty percent.",opts:["The project has grown by fifty percent.","The project have grown by fifty percent.","The project has grow by fifty percent.","The project had grown by fifty percent."],d:3},
+  // d:4 — since/for confusion · adverb placement · still vs yet · negation order
+  {wrong:"She has worked here since five years.",opts:["She has worked here for five years.","She have worked here for five years.","She has worked here since five year.","She has work here for five years."],d:4},
+  {wrong:"He has been on the team for last Monday.",opts:["He has been on the team since last Monday.","He have been on the team since last Monday.","He has been on the team for Monday.","He had been on the team since last Monday."],d:4},
+  {wrong:"The platform has been running since two hours.",opts:["The platform has been running for two hours.","The platform have been running for two hours.","The platform has run for two hours.","The platform had been running for two hours."],d:4},
+  {wrong:"They never have deployed on a Friday.",opts:["They have never deployed on a Friday.","They has never deployed on a Friday.","They have deployed never on a Friday.","They had never deployed on a Friday."],d:4},
+  {wrong:"The QA team has yet not approved the release.",opts:["The QA team has not yet approved the release.","The QA team have not yet approved the release.","The QA team has not approved yet the release.","The QA team had not yet approved the release."],d:4},
+  {wrong:"She has yet received the confirmation email.",opts:["She has already received the confirmation email.","She have already received the confirmation email.","She has receive already the confirmation email.","She had already received the confirmation email."],d:4},
+  {wrong:"He has completed not the onboarding process.",opts:["He has not completed the onboarding process.","He have not completed the onboarding process.","He has completed the onboarding process not.","He had not completed the onboarding process."],d:4},
+  {wrong:"We have worked on this project since three months.",opts:["We have worked on this project for three months.","We has worked on this project for three months.","We have work on this project for three months.","We had worked on this project for three months."],d:4},
+  // d:5 — Present Perfect Continuous errors · question inversion errors
+  {wrong:"She has working on this feature for three sprints.",opts:["She has been working on this feature for three sprints.","She have been working on this feature for three sprints.","She has been worked on this feature for three sprints.","She had been working on this feature for three sprints."],d:5},
+  {wrong:"They have been reviewed the code all afternoon.",opts:["They have been reviewing the code all afternoon.","They has been reviewing the code all afternoon.","They have reviewed the code all afternoon.","They had been reviewing the code all afternoon."],d:5},
+  {wrong:"He have been debugging the system for hours.",opts:["He has been debugging the system for hours.","He has been debug the system for hours.","He has been debugged the system for hours.","He had been debugging the system for hours."],d:5},
+  {wrong:"How long you have been learning to code?",opts:["How long have you been learning to code?","How long have been you learning to code?","How long you have been learn to code?","How long you had been learning to code?"],d:5},
+  {wrong:"The team has been work on the refactor since January.",opts:["The team has been working on the refactor since January.","The team have been working on the refactor since January.","The team has been worked on the refactor since January.","The team had been working on the refactor since January."],d:5},
+  {wrong:"Has they improved the algorithm?",opts:["Have they improved the algorithm?","Have they improve the algorithm?","Has they improve the algorithm?","Had they improved the algorithm?"],d:5},
+  {wrong:"She has been wrote reports since the merger.",opts:["She has been writing reports since the merger.","She have been writing reports since the merger.","She has been written reports since the merger.","She had been writing reports since the merger."],d:5},
+  {wrong:"How many bugs you have fixed this sprint?",opts:["How many bugs have you fixed this sprint?","How many bugs have you fix this sprint?","How many bugs you have fix this sprint?","How many bugs you had fixed this sprint?"],d:5},
 ];
 
 // ── G4 DATA ────────────────────────────────────────────────────────────────────
@@ -1134,7 +1151,7 @@ function HostGameScreen({ sessionCode, onGameOver }) {
             <div className="q-preview-text">
               {rs.gameId==='G1' && <span style={{color:'var(--mut)',fontSize:'.8rem'}}>⏰ {round.s.split(' ').length} palabras — ordénalas correctamente</span>}
               {rs.gameId==='G2' && <>{round.tpl.replace('___','______')}</>}
-              {rs.gameId==='G3' && <><b>{round.title}</b> — {round.q}</>}
+              {rs.gameId==='G3' && <><b>Error:</b> <em style={{color:'#e05a5a'}}>{round.wrong}</em></>}
               {rs.gameId==='G4' && <><b>Situation:</b> {round.ctx}<br/>{round.tpl.replace('___','______')}</>}
             </div>
             {canAdvance && (
@@ -1499,8 +1516,11 @@ function QuestionMCQ({ round, gameId, onAnswer, locked, chosenIdx, opts, reveale
       )}
       {gameId==='G3' && (
         <>
-          <div className="passage-box"><div className="passage-title">🔍 {round.title}</div><div className="passage-text">{round.passage}</div></div>
-          <div className="question-box"><div className="q-label">Question</div>{round.q}</div>
+          <div style={{background:'rgba(224,90,90,.07)',border:'1px solid rgba(224,90,90,.35)',borderLeft:'3px solid #e05a5a',borderRadius:'6px',padding:'1rem 1.3rem',marginBottom:'.6rem'}}>
+            <div style={{fontSize:'.58rem',letterSpacing:'.15em',textTransform:'uppercase',color:'#e05a5a',marginBottom:'.55rem',fontWeight:700}}>⚠️ Find the grammar error</div>
+            <div style={{fontSize:'.92rem',lineHeight:1.6,color:'var(--txt)',fontFamily:"'JetBrains Mono',monospace"}}>{round.wrong}</div>
+          </div>
+          <div style={{fontSize:'.6rem',letterSpacing:'.15em',textTransform:'uppercase',color:'var(--mut)',marginBottom:'.55rem',textAlign:'center'}}>↓ Choose the correct version ↓</div>
         </>
       )}
       {gameId==='G4' && (
