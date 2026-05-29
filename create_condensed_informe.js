@@ -1,6 +1,7 @@
-const { Document, Packer, Paragraph, TextRun, Table, TableRow, TableCell, HeadingLevel, AlignmentType, BorderStyle, WidthType, ShadingType, PageBreak } = require('docx');
-const fs = require('fs');
+import { Document, Packer, Paragraph, TextRun, HeadingLevel, AlignmentType, PageBreak } from 'docx';
+import fs from 'fs';
 
+(async () => {
 const doc = new Document({
   styles: {
     default: {
@@ -106,7 +107,11 @@ const doc = new Document({
         spacing: { after: 0 }
       }),
 
-      new PageBreak(),
+      // PAGE BREAK
+      new Paragraph({
+        pageBreakBefore: true,
+        text: ""
+      }),
 
       // ═════════════════════════════════════════════════════════════════
       // ÍNDICE
@@ -123,7 +128,11 @@ const doc = new Document({
       new Paragraph({ text: "4. Conclusión ............................................................... 12" }),
       new Paragraph({ text: "5. Bibliografía ............................................................... 13", spacing: { after: 240 } }),
 
-      new PageBreak(),
+      // PAGE BREAK
+      new Paragraph({
+        pageBreakBefore: true,
+        text: ""
+      }),
 
       // ═════════════════════════════════════════════════════════════════
       // 1. INTRODUCCIÓN
@@ -146,7 +155,11 @@ const doc = new Document({
         spacing: { after: 0 }
       }),
 
-      new PageBreak(),
+      // PAGE BREAK
+      new Paragraph({
+        pageBreakBefore: true,
+        text: ""
+      }),
 
       // ═════════════════════════════════════════════════════════════════
       // 2. DESARROLLO
@@ -203,7 +216,11 @@ const doc = new Document({
         spacing: { after: 0 }
       }),
 
-      new PageBreak(),
+      // PAGE BREAK
+      new Paragraph({
+        pageBreakBefore: true,
+        text: ""
+      }),
 
       // ═════════════════════════════════════════════════════════════════
       // 3. RESULTADOS
@@ -228,7 +245,11 @@ const doc = new Document({
         spacing: { after: 0 }
       }),
 
-      new PageBreak(),
+      // PAGE BREAK
+      new Paragraph({
+        pageBreakBefore: true,
+        text: ""
+      }),
 
       // ═════════════════════════════════════════════════════════════════
       // 4. CONCLUSIÓN
@@ -247,7 +268,11 @@ const doc = new Document({
         spacing: { after: 0 }
       }),
 
-      new PageBreak(),
+      // PAGE BREAK
+      new Paragraph({
+        pageBreakBefore: true,
+        text: ""
+      }),
 
       // ═════════════════════════════════════════════════════════════════
       // 5. BIBLIOGRAFÍA
@@ -285,7 +310,7 @@ const doc = new Document({
   }]
 });
 
-Packer.toBuffer(doc).then(buffer => {
-  fs.writeFileSync("C:\\Users\\Jonathan\\Desktop\\GrammarX\\Informe\\Informe_Condensado.docx", buffer);
-  console.log("✓ Informe condensado creado: Informe_Condensado.docx (13 páginas)");
-});
+const buffer = await Packer.toBuffer(doc);
+fs.writeFileSync("C:\\Users\\Jonathan\\Desktop\\GrammarX\\Informe\\Informe_Condensado.docx", buffer);
+console.log("✓ Informe condensado creado: Informe_Condensado.docx (13 páginas)");
+})();

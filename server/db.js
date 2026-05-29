@@ -62,6 +62,7 @@ const q = {
   prestartSession: db.prepare(`UPDATE sessions SET status='instructions', game_id=?, rounds=?, time_per_round=? WHERE code=?`),
   scoresByGame:    db.prepare('SELECT name, SUM(score) as score FROM scores WHERE game_id=? GROUP BY name ORDER BY score DESC'),
   scoresAll:       db.prepare('SELECT name, SUM(score) as score FROM scores GROUP BY name ORDER BY score DESC'),
+  removePlayer:    db.prepare('DELETE FROM players WHERE session_code=? AND name=?'),
 };
 
 // ── Public API ─────────────────────────────────────────────────────────────────
@@ -115,6 +116,10 @@ export function endGame(code) {
   return players
     .map(p => ({ name: p.name, score: scoreMap[p.name] || 0 }))
     .sort((a, b) => b.score - a.score);
+}
+
+export function removePlayer(code, name) {
+  q.removePlayer.run(code, name);
 }
 
 export function closeSession(code) {

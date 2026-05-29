@@ -13,6 +13,7 @@
     "node": ">=22"
   },
   "dependencies": {
+    "docx": "^9.7.1",
     "express": "^4.21.0",
     "jsqr": "^1.4.0",
     "puppeteer-core": "^25.0.4",

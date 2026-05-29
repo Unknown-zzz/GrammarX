@@ -909,6 +909,8 @@ function JoinScreen({ user, initialCode='', onJoined, onBack }) {
 }
 
 // ── Screen: Host Lobby ─────────────────────────────────────────────────────────
+const INSTRUCTIONS_TIME = 120; // 2 minutes for instructions
+
 function HostLobbyScreen({ user, sessionCode, onStart, onCancel }) {
   const [players, setPlayers]           = useState([]);
   const [gameId, setGameId]             = useState('G1');
@@ -918,8 +920,10 @@ function HostLobbyScreen({ user, sessionCode, onStart, onCancel }) {
   const [phase, setPhaseState]          = useState('lobby'); // 'lobby' | 'instructions'
   const [readyPlayers, setReadyPlayers] = useState([]);
   const [launching, setLaunching]       = useState(false);
+  const [instrTimeLeft, setInstrTimeLeft] = useState(INSTRUCTIONS_TIME);
   const prevPlayerCount = useRef(0);
   const phaseRef        = useRef('lobby');
+  const instrTimerRef   = useRef(null);
   const setPhase = v => { phaseRef.current = v; setPhaseState(v); };
 
   useEffect(() => {
@@ -930,7 +934,10 @@ function HostLobbyScreen({ user, sessionCode, onStart, onCancel }) {
         setPlayers(list);
       }
       if (state?.readyPlayers) setReadyPlayers(state.readyPlayers);
-      if (state?.status === 'instructions') setPhase('instructions');
+      if (state?.status === 'instructions') {
+        setPhase('instructions');
+        setInstrTimeLeft(INSTRUCTIONS_TIME);
+      }
     });
     const onState = state => {
       const list = state.players?.map(p => ({ name: p.name })) || [];
@@ -938,11 +945,33 @@ function HostLobbyScreen({ user, sessionCode, onStart, onCancel }) {
       prevPlayerCount.current = list.length;
       setPlayers(list);
       if (state.readyPlayers) setReadyPlayers(state.readyPlayers);
-      if (state.status === 'instructions') setPhase('instructions');
+      if (state.status === 'instructions') {
+        setPhase('instructions');
+        setInstrTimeLeft(INSTRUCTIONS_TIME);
+      }
     };
     socket.on('state', onState);
     return () => socket.off('state', onState);
   }, [sessionCode]);
+
+  // ── Instructions timer ─────────────────────────────────────────────────────────
+  useEffect(() => {
+    if (phase === 'instructions') {
+      setInstrTimeLeft(INSTRUCTIONS_TIME);
+      instrTimerRef.current = setInterval(() => {
+        setInstrTimeLeft(t => {
+          if (t <= 1) {
+            clearInterval(instrTimerRef.current);
+            return 0;
+          }
+          return t - 1;
+        });
+      }, 1000);
+      return () => clearInterval(instrTimerRef.current);
+    } else {
+      if (instrTimerRef.current) clearInterval(instrTimerRef.current);
+    }
+  }, [phase]);
 
   const handleStart = async () => {
     if (!players.length) return;
@@ -977,6 +1006,7 @@ function HostLobbyScreen({ user, sessionCode, onStart, onCancel }) {
   if (phase === 'instructions') {
     const g = GAMES[gameId];
     const allReady = players.length > 0 && readyPlayers.length >= players.length;
+    const timeColor = instrTimeLeft <= 30 ? 'var(--red)' : instrTimeLeft <= 60 ? 'var(--yel)' : 'var(--acc)';
     return (
       <div className="page">
         <div className="lobby-wrap slide-up">
@@ -985,8 +1015,8 @@ function HostLobbyScreen({ user, sessionCode, onStart, onCancel }) {
               <div className="brand" style={{fontSize:'1.4rem',marginBottom:0}}>GRAMMAR <em>X</em></div>
               <div className="host-badge">🎮 HOST: {user}</div>
             </div>
-            <div style={{fontSize:'.7rem',color:g.color,background:`${g.color}15`,border:`1px solid ${g.color}40`,padding:'.3rem .8rem',borderRadius:'20px',fontWeight:700}}>
-              {g.icon} {g.name}
+            <div style={{fontSize:'1rem',color:timeColor,background:`${timeColor}15`,border:`1px solid ${timeColor}40`,padding:'.4rem .8rem',borderRadius:'20px',fontWeight:700}}>
+              ⏱ {Math.floor(instrTimeLeft / 60)}:{String(instrTimeLeft % 60).padStart(2, '0')}
             </div>
           </div>
           <div className="code-display" style={{marginBottom:'1rem'}}>
@@ -1027,11 +1057,12 @@ function HostLobbyScreen({ user, sessionCode, onStart, onCancel }) {
             ))}
             {!players.length&&<div style={{color:'var(--mut)',fontSize:'.72rem',padding:'.5rem',textAlign:'center'}}>No players</div>}
           </div>
-          <button className={`launch-btn${allReady?' ready':' waiting'}`}
-            onClick={allReady&&!launching?handleLaunch:undefined}
-            disabled={launching||!allReady}>
+          <button className={`launch-btn${allReady||instrTimeLeft===0?' ready':' waiting'}`}
+            onClick={(allReady||instrTimeLeft===0)&&!launching?handleLaunch:undefined}
+            disabled={launching||(!allReady&&instrTimeLeft>0)}>
             {launching?<><span className="spinner"/>Starting...</>
               :allReady?'▶ All ready! Start game'
+              :instrTimeLeft===0?'▶ Time up! Start game'
               :`⏳ Waiting (${readyPlayers.length}/${players.length} ready)`}
           </button>
         </div>
@@ -1292,9 +1323,18 @@ function HostResultsScreen({ sessionCode, players, onNewGame, onClose }) {
 }
 
 // ── Screen: Player Instructions (full page, with ready system) ───────────────
-function PlayerInstructionsScreen({ user, sessionCode, gameId, timePerRound, players, readyPlayers }) {
+function PlayerInstructionsScreen({ user, sessionCode, gameId, timePerRound, players, readyPlayers, onKicked }) {
   const [confirmed, setConfirmed] = useState(false);
   const [lang, setLang]           = useState('en'); // 'en' | 'es'
+
+  useEffect(() => {
+    // Listen for kick notification
+    const onKick = ({ name }) => {
+      if (name === user) onKicked?.();
+    };
+    socket.on('player_kicked', onKick);
+    return () => socket.off('player_kicked', onKick);
+  }, [user, onKicked]);
 
   const handleReady = async () => {
     if (confirmed) return;
@@ -1407,7 +1447,7 @@ function PlayerInstructionsScreen({ user, sessionCode, gameId, timePerRound, pla
 }
 
 // ── Screen: Player Lobby ───────────────────────────────────────────────────────
-function PlayerLobbyScreen({ user, sessionCode, onStart }) {
+function PlayerLobbyScreen({ user, sessionCode, onStart, onKicked }) {
   const [players, setPlayers]           = useState([]);
   const [hostName, setHostName]         = useState('');
   const [gameInfo, setGameInfo]         = useState(null);
@@ -1433,8 +1473,18 @@ function PlayerLobbyScreen({ user, sessionCode, onStart }) {
     };
     socket.emit('rejoin', { code: sessionCode }, applyState);
     socket.on('state', applyState);
-    return () => socket.off('state', applyState);
-  }, [sessionCode]); // eslint-disable-line react-hooks/exhaustive-deps
+
+    // Listen for kick notification
+    const onKick = ({ name }) => {
+      if (name === user) onKicked?.();
+    };
+    socket.on('player_kicked', onKick);
+
+    return () => {
+      socket.off('state', applyState);
+      socket.off('player_kicked', onKick);
+    };
+  }, [sessionCode, user, onKicked]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Instructions screen — shown for every player while status = 'instructions'
   if (status === 'instructions' && gameData) {
@@ -1445,6 +1495,7 @@ function PlayerLobbyScreen({ user, sessionCode, onStart }) {
       timePerRound={gameData.timePerRound}
       players={players}
       readyPlayers={readyPlayers}
+      onKicked={onKicked}
     />;
   }
 
@@ -1584,7 +1635,7 @@ function QuestionMCQ({ round, gameId, onAnswer, locked, chosenIdx, opts, reveale
 }
 
 // ── Screen: Player Game ────────────────────────────────────────────────────────
-function PlayerGameScreen({ user, sessionCode, onSessionClosed, onBackToLobby }) {
+function PlayerGameScreen({ user, sessionCode, onSessionClosed, onBackToLobby, onKicked }) {
   const [rs, setRs] = useState(null);
   const [timeLeft, setTimeLeft] = useState(20);
   const [myScore, setMyScore] = useState(0);
@@ -1660,11 +1711,19 @@ function PlayerGameScreen({ user, sessionCode, onSessionClosed, onBackToLobby })
 
     socket.emit('rejoin', { code: sessionCode }, applyState);
     socket.on('state', applyState);
+
+    // Listen for kick notification
+    const onKick = ({ name }) => {
+      if (name === user) onKicked?.();
+    };
+    socket.on('player_kicked', onKick);
+
     return () => {
       socket.off('state', applyState);
+      socket.off('player_kicked', onKick);
       SFX.stopMusic(); // stop music when PlayerGameScreen unmounts
     };
-  }, [sessionCode]);
+  }, [sessionCode, user, onKicked]);
 
   // Victory sound when game ends
   useEffect(() => {
@@ -1966,6 +2025,7 @@ export default function App() {
   const handleClose    = ()     => setScreen('podium');
   const handleSessionClosed = () => setScreen('podium');
   const handleBackToLobby = () => setScreen('player-lobby');
+  const handleKicked = () => { setCode(''); setScreen('login'); };
 
   return (
     <>
@@ -1975,8 +2035,8 @@ export default function App() {
       {screen==='host-lobby'   && <HostLobbyScreen user={user} sessionCode={code} onStart={()=>setScreen('host-game')} onCancel={()=>setScreen('login')}/>}
       {screen==='host-game'    && <HostGameScreen sessionCode={code} onGameOver={handleGameOver}/>}
       {screen==='host-results' && <HostResultsScreen sessionCode={code} players={gameOver} onNewGame={handleNewGame} onClose={handleClose}/>}
-      {screen==='player-lobby' && <PlayerLobbyScreen user={user} sessionCode={code} onStart={()=>setScreen('player-game')}/>}
-      {screen==='player-game'  && <PlayerGameScreen user={user} sessionCode={code} onSessionClosed={handleSessionClosed} onBackToLobby={handleBackToLobby} key={code}/>}
+      {screen==='player-lobby' && <PlayerLobbyScreen user={user} sessionCode={code} onStart={()=>setScreen('player-game')} onKicked={handleKicked}/>}
+      {screen==='player-game'  && <PlayerGameScreen user={user} sessionCode={code} onSessionClosed={handleSessionClosed} onBackToLobby={handleBackToLobby} onKicked={handleKicked} key={code}/>}
       {screen==='podium'       && <PodiumScreen user={user}/>}
 
       {/* ── Floating mute button ── */}

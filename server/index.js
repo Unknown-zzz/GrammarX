@@ -87,6 +87,16 @@ io.on('connection', socket => {
     push(code);
   });
 
+  socket.on('kick_player', ({ code, name }, ack) => {
+    try {
+      db.removePlayer(code, name);
+      ack?.({ ok: true });
+      // Notify the kicked player
+      io.to(code).emit('player_kicked', { name });
+      push(code);
+    } catch (e) { ack?.({ error: e.message }); }
+  });
+
   socket.on('start', ({ code, gameId, rounds, tpr }, ack) => {
     try {
       db.startSession(code, gameId, rounds, tpr);
