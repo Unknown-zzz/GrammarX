@@ -964,6 +964,15 @@ function HostLobbyScreen({ user, sessionCode, onStart, onCancel }) {
     } catch { setLaunching(false); }
   };
 
+  const handleKickPlayer = async (playerName) => {
+    try {
+      await emit('kick_player', { code: sessionCode, name: playerName });
+      SFX.click();
+    } catch (e) {
+      console.error('Failed to kick player:', e.message);
+    }
+  };
+
   // ── Instructions-waiting phase (all players must confirm ready) ───────────────
   if (phase === 'instructions') {
     const g = GAMES[gameId];
@@ -993,14 +1002,27 @@ function HostLobbyScreen({ user, sessionCode, onStart, onCancel }) {
               </span>
             </div>
             {players.map((p,i)=>(
-              <div key={i} className="instr-host-item">
-                <span style={{fontSize:'1.1rem',minWidth:'1.6rem',textAlign:'center'}}>
-                  {readyPlayers.includes(p.name)?'✅':'⏳'}
-                </span>
-                <span style={{fontFamily:"'Bricolage Grotesque',sans-serif",fontWeight:700,flex:1}}>{p.name}</span>
-                <span style={{fontSize:'.7rem',color:readyPlayers.includes(p.name)?'var(--grn)':'var(--mut)'}}>
-                  {readyPlayers.includes(p.name)?'Ready':'Reading...'}
-                </span>
+              <div key={i} className="instr-host-item" style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
+                <div style={{display:'flex',alignItems:'center',gap:'.5rem',flex:1}}>
+                  <span style={{fontSize:'1.1rem',minWidth:'1.6rem',textAlign:'center'}}>
+                    {readyPlayers.includes(p.name)?'✅':'⏳'}
+                  </span>
+                  <span style={{fontFamily:"'Bricolage Grotesque',sans-serif",fontWeight:700,flex:1}}>{p.name}</span>
+                  <span style={{fontSize:'.7rem',color:readyPlayers.includes(p.name)?'var(--grn)':'var(--mut)'}}>
+                    {readyPlayers.includes(p.name)?'Ready':'Reading...'}
+                  </span>
+                </div>
+                <button
+                  onClick={() => handleKickPlayer(p.name)}
+                  style={{
+                    background:'none', border:'none', color:'var(--red)',
+                    cursor:'pointer', fontSize:'.85rem', padding:'.2rem .3rem',
+                    transition:'opacity .15s', opacity:0.5
+                  }}
+                  onMouseEnter={e => e.target.style.opacity = '1'}
+                  onMouseLeave={e => e.target.style.opacity = '0.5'}
+                  title={`Remove ${p.name}`}
+                >✕</button>
               </div>
             ))}
             {!players.length&&<div style={{color:'var(--mut)',fontSize:'.72rem',padding:'.5rem',textAlign:'center'}}>No players</div>}
@@ -1057,7 +1079,24 @@ function HostLobbyScreen({ user, sessionCode, onStart, onCancel }) {
           <div className="players-header"><span className="players-title">Connected players</span><span className="players-count">{players.length}</span></div>
           <div className="player-list">
             {!players.length?<div className="player-empty">Waiting for players...</div>
-              :players.map((p,i)=><div key={i} className="player-item"><div className="player-dot"/><span>{p.name}</span></div>)}
+              :players.map((p,i)=>(
+                <div key={i} className="player-item" style={{justifyContent:'space-between'}}>
+                  <div style={{display:'flex',alignItems:'center',gap:'.6rem'}}>
+                    <div className="player-dot"/><span>{p.name}</span>
+                  </div>
+                  <button
+                    onClick={() => handleKickPlayer(p.name)}
+                    style={{
+                      background:'none', border:'none', color:'var(--red)',
+                      cursor:'pointer', fontSize:'1rem', padding:'.2rem .4rem',
+                      transition:'opacity .15s', opacity:0.6
+                    }}
+                    onMouseEnter={e => e.target.style.opacity = '1'}
+                    onMouseLeave={e => e.target.style.opacity = '0.6'}
+                    title={`Remove ${p.name}`}
+                  >✕</button>
+                </div>
+              ))}
           </div>
         </div>
         <button className="btn" onClick={handleStart} disabled={!players.length||starting}
@@ -1545,7 +1584,7 @@ function QuestionMCQ({ round, gameId, onAnswer, locked, chosenIdx, opts, reveale
 }
 
 // ── Screen: Player Game ────────────────────────────────────────────────────────
-function PlayerGameScreen({ user, sessionCode, onSessionClosed }) {
+function PlayerGameScreen({ user, sessionCode, onSessionClosed, onBackToLobby }) {
   const [rs, setRs] = useState(null);
   const [timeLeft, setTimeLeft] = useState(20);
   const [myScore, setMyScore] = useState(0);
@@ -1633,6 +1672,15 @@ function PlayerGameScreen({ user, sessionCode, onSessionClosed }) {
       setTimeout(() => SFX.victory(), 400);
     }
   }, [rs?.status]);
+
+  // When host starts new game, status changes to 'instructions'
+  // Return to lobby to see the new instructions screen
+  useEffect(() => {
+    if (rs?.status === 'instructions' && onBackToLobby) {
+      const timer = setTimeout(() => onBackToLobby(), 800);
+      return () => clearTimeout(timer);
+    }
+  }, [rs?.status, onBackToLobby]);
 
   // Client-side countdown timer — reads refs directly, no stale closure issues
   useEffect(() => {
@@ -1732,6 +1780,23 @@ function PlayerGameScreen({ user, sessionCode, onSessionClosed }) {
           <div className="big-msg">Game over!</div>
           <div className="sub-msg">The host is choosing the next game...</div>
           <div style={{marginTop:'1rem',fontSize:'.9rem',color:'var(--acc)',fontFamily:"'Bricolage Grotesque',sans-serif",fontWeight:800}}>Your score: {myScore} pts</div>
+          <div className="waiting-anim" style={{marginTop:'.5rem'}}>
+            <div className="waiting-dot"/><div className="waiting-dot"/><div className="waiting-dot"/>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // When host starts a new game, status changes to 'instructions'
+  // Player should return to lobby to see instructions screen
+  if (rs.status==='instructions') {
+    return (
+      <div className="page">
+        <div className="waiting-overlay slide-up">
+          <div className="big-icon">📚</div>
+          <div className="big-msg">New game starting!</div>
+          <div className="sub-msg">Loading instructions...</div>
           <div className="waiting-anim" style={{marginTop:'.5rem'}}>
             <div className="waiting-dot"/><div className="waiting-dot"/><div className="waiting-dot"/>
           </div>
@@ -1900,6 +1965,7 @@ export default function App() {
   const handleNewGame  = ()     => setScreen('host-lobby');
   const handleClose    = ()     => setScreen('podium');
   const handleSessionClosed = () => setScreen('podium');
+  const handleBackToLobby = () => setScreen('player-lobby');
 
   return (
     <>
@@ -1910,7 +1976,7 @@ export default function App() {
       {screen==='host-game'    && <HostGameScreen sessionCode={code} onGameOver={handleGameOver}/>}
       {screen==='host-results' && <HostResultsScreen sessionCode={code} players={gameOver} onNewGame={handleNewGame} onClose={handleClose}/>}
       {screen==='player-lobby' && <PlayerLobbyScreen user={user} sessionCode={code} onStart={()=>setScreen('player-game')}/>}
-      {screen==='player-game'  && <PlayerGameScreen user={user} sessionCode={code} onSessionClosed={handleSessionClosed} key={code}/>}
+      {screen==='player-game'  && <PlayerGameScreen user={user} sessionCode={code} onSessionClosed={handleSessionClosed} onBackToLobby={handleBackToLobby} key={code}/>}
       {screen==='podium'       && <PodiumScreen user={user}/>}
 
       {/* ── Floating mute button ── */}

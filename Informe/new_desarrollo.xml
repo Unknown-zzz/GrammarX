@@ -1,0 +1,1665 @@
+    <w:p w14:paraId="0B000001" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr><w:pStyle w:val="Ttulo2"/></w:pPr>
+      <w:bookmarkStart w:id="6" w:name="_Toc230634521"/>
+      <w:r><w:t>2.1 Descripción del Sistema</w:t></w:r>
+      <w:bookmarkEnd w:id="6"/>
+    </w:p>
+    <w:p w14:paraId="0B000002" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r><w:t xml:space="preserve">Grammar X es una Single Page Application (SPA) de tipo cliente-servidor que permite a un docente crear salas de juego multijugador en tiempo real. El sistema diferencia dos roles: el host (docente), quien configura y controla la partida desde un panel de administración proyectable, y los jugadores (estudiantes), quienes se unen mediante un código único de seis caracteres alfanuméricos o escaneando un código QR generado automáticamente.</w:t></w:r>
+    </w:p>
+    <w:p w14:paraId="0B000003" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r><w:t xml:space="preserve">Cada partida consta de diez rondas seleccionadas aleatoriamente de un banco de preguntas estructurado en cinco niveles de dificultad (Beginner, Easy, Medium, Hard y Expert), garantizando que cada sesión sea única. El flujo de una sesión es: el host crea la sala; los jugadores se unen; el host configura el minijuego y el tiempo por ronda; todos leen las instrucciones y confirman que están listos; la partida transcurre con temporizador sincronizado; al finalizar se muestra el podio de resultados. El servidor mantiene el estado autoritativo; los clientes son consumidores puros de ese estado.</w:t></w:r>
+    </w:p>
+    <w:p w14:paraId="0B000004" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr><w:pStyle w:val="Ttulo2"/></w:pPr>
+      <w:bookmarkStart w:id="7" w:name="_Toc230634522"/>
+      <w:r><w:t>2.2 Decisiones de Stack Tecnológico</w:t></w:r>
+      <w:bookmarkEnd w:id="7"/>
+    </w:p>
+    <w:p w14:paraId="0B000005" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r><w:t xml:space="preserve">La selección de cada tecnología respondió a criterios específicos de funcionalidad, costo y facilidad de integración. A continuación se justifica la elección de cada componente del stack:</w:t></w:r>
+    </w:p>
+    <w:p w14:paraId="0B000006" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r><w:rPr><w:b/><w:bCs/></w:rPr><w:t xml:space="preserve">React 18 + Vite 5 (Frontend). </w:t></w:r>
+      <w:r><w:t xml:space="preserve">React 18 fue elegido porque permite construir interfaces reactivas mediante componentes declarativos: cuando el estado cambia (por ejemplo, llega un nuevo estado del juego vía Socket.io), solo se re-renderizan los componentes afectados. Esto es crítico en un juego donde el temporizador, el contador de respuestas y el marcador se actualizan simultáneamente. Vite 5 reemplaza a webpack: el servidor de desarrollo arranca en menos de 300 ms (frente a los 10–30 s de webpack) y genera bundles optimizados mediante tree-shaking automático.</w:t></w:r>
+    </w:p>
+    <w:p w14:paraId="0B000007" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r><w:rPr><w:b/><w:bCs/></w:rPr><w:t xml:space="preserve">Node.js 24 + Express.js (Backend). </w:t></w:r>
+      <w:r><w:t xml:space="preserve">Node.js es idóneo para tiempo real por su modelo de I/O no bloqueante. A diferencia de servidores que crean un hilo por conexión, Node.js maneja miles de conexiones WebSocket en un único hilo mediante su event loop. Express.js simplifica la definición de rutas HTTP, permitiendo servir los archivos estáticos del frontend compilado y la lógica del juego desde el mismo proceso.</w:t></w:r>
+    </w:p>
+    <w:p w14:paraId="0B000008" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r><w:rPr><w:b/><w:bCs/></w:rPr><w:t xml:space="preserve">Socket.io 4.x (Comunicación en Tiempo Real). </w:t></w:r>
+      <w:r><w:t xml:space="preserve">HTTP es un protocolo petición-respuesta; en un juego multijugador necesitamos el patrón inverso: el servidor debe notificar a todos los clientes cuando ocurre un evento. Socket.io implementa WebSockets con fallback automático a long-polling y añade salas virtuales (rooms) que permiten emitir mensajes selectivamente a todos los participantes de una partida con una única llamada io.to(code).emit().</w:t></w:r>
+    </w:p>
+    <w:p w14:paraId="0B000009" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r><w:rPr><w:b/><w:bCs/></w:rPr><w:t xml:space="preserve">SQLite + node:sqlite (Persistencia). </w:t></w:r>
+      <w:r><w:t xml:space="preserve">SQLite fue elegido sobre PostgreSQL o MongoDB porque es serverless: la base de datos es un archivo en disco, sin proceso separado ni credenciales. Node.js 22+ incluye soporte nativo vía node:sqlite sin instalar librerías adicionales. Para una aplicación de aula con sesiones cortas y sin necesidad de escalado horizontal, SQLite ofrece la relación funcionalidad/complejidad óptima.</w:t></w:r>
+    </w:p>
+    <w:p w14:paraId="0B00000A" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r><w:rPr><w:b/><w:bCs/></w:rPr><w:t xml:space="preserve">Web Audio API (Sistema de Sonido). </w:t></w:r>
+      <w:r><w:t xml:space="preserve">En lugar de cargar archivos .mp3 o .wav, Grammar X sintetiza todos los sonidos en tiempo real en el navegador. Esto elimina peticiones HTTP adicionales, garantiza funcionamiento offline y permite personalizar cada sonido por código. La API está disponible en todos los navegadores modernos sin dependencias ni licencias.</w:t></w:r>
+    </w:p>
+    <w:p w14:paraId="0B00000B" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr><w:pStyle w:val="Ttulo2"/></w:pPr>
+      <w:bookmarkStart w:id="8" w:name="_Toc230634523"/>
+      <w:r><w:t>2.3 Arquitectura del Sistema</w:t></w:r>
+      <w:bookmarkEnd w:id="8"/>
+    </w:p>
+    <w:p w14:paraId="0B00000C" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r><w:t xml:space="preserve">La arquitectura sigue el patrón cliente-servidor con un único proceso Node.js que cumple tres funciones: servir los archivos estáticos del frontend (carpeta dist/ generada por Vite), gestionar la lógica del juego y mantener conexiones WebSocket con todos los clientes. La base de datos SQLite corre embebida en el mismo proceso, eliminando la necesidad de infraestructura adicional.</w:t></w:r>
+    </w:p>
+    <w:p w14:paraId="0B00000D" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r><w:t xml:space="preserve">El estado de la partida vive exclusivamente en el servidor. Los clientes son apátridas (stateless) respecto al juego: su única fuente de verdad es el último mensaje ‘state’ recibido por Socket.io. Si un jugador pierde conexión y se reconecta, solicita el estado actual con el evento ‘rejoin’ y retoma la partida desde donde estaba. La función push(code) centraliza toda la distribución de estado:</w:t></w:r>
+    </w:p>
+    <w:p w14:paraId="0B00000E" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">// server/index.js</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00000F" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">function push(code) {</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000010" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  const state = db.getRoundState(code);</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000011" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  if (state) io.to(code).emit('state', state);</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000012" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">}</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000013" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve"></w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000014" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">// Se invoca tras cualquier cambio: respuesta, avance de ronda, fin de juego</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000015" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">socket.on('answer', ({ code, name, roundIndex, score, gameToken }) =&gt; {</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000016" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  db.submitAnswer(code, name, roundIndex, score, gameToken);</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000017" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  push(code);  // notifica a todos los participantes de la sala</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000018" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">});</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000019" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr><w:pStyle w:val="Ttulo2"/></w:pPr>
+      <w:r><w:t>2.4 Comunicación en Tiempo Real: Socket.io</w:t></w:r>
+    </w:p>
+    <w:p w14:paraId="0B00001A" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r><w:t xml:space="preserve">La capa de comunicación define eventos específicos para cada acción del juego. Todos siguen el mismo patrón: el cliente emite un evento con datos y un callback de confirmación (ack), el servidor valida y persiste el cambio en SQLite, y llama a push() para distribuir el nuevo estado a todos los participantes de la sala.</w:t></w:r>
+    </w:p>
+    <w:p w14:paraId="0B00001B" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r><w:t xml:space="preserve">En el cliente se usa un patrón dual ref + state de React: el estado (useState) gestiona el re-render de la UI, mientras que la ref (useRef) garantiza que el temporizador, que corre en un setInterval independiente, siempre lea el valor más reciente sin problemas de closures obsoletas:</w:t></w:r>
+    </w:p>
+    <w:p w14:paraId="0B00001C" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">// index.jsx — PlayerGameScreen</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00001D" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">const rsRef = useRef(null);          // para el intervalo del timer</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00001E" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">const [rs, setRs] = useState(null);  // para el renderizado de React</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00001F" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve"></w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000020" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">useEffect(() =&gt; {</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000021" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  socket.on('state', data =&gt; {</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000022" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">    rsRef.current = data;  // actualiza la ref inmediatamente</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000023" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">    setRs(data);           // dispara re-render de la UI</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000024" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  });</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000025" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  return () =&gt; socket.off('state');</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000026" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">}, [sessionCode]);</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000027" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve"></w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000028" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">// El timer lee rsRef.current, nunca el estado de React directamente</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000029" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">setInterval(() =&gt; {</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00002A" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  const cur = rsRef.current;</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00002B" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  const left = cur.timePerRound - (syncedNow - cur.roundStartedAt) / 1000;</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00002C" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  setTimeLeft(Math.max(0, left));</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00002D" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">}, 200);</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00002E" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr><w:pStyle w:val="Ttulo2"/></w:pPr>
+      <w:r><w:t>2.5 Persistencia con SQLite Nativo</w:t></w:r>
+    </w:p>
+    <w:p w14:paraId="0B00002F" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r><w:t xml:space="preserve">La base de datos tiene tres tablas principales. La tabla sessions almacena el estado global de cada partida: código de sala, status del ciclo de vida (waiting / instructions / playing / ended / closed), las rondas serializadas como JSON, la ronda actual y el timestamp de inicio de ronda activa. La tabla players registra a los participantes. La tabla answers guarda cada respuesta individual:</w:t></w:r>
+    </w:p>
+    <w:p w14:paraId="0B000030" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">-- server/db.js — esquema SQLite</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000031" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">CREATE TABLE sessions (</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000032" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  code             TEXT PRIMARY KEY,</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000033" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  status           TEXT DEFAULT 'waiting',</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000034" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  game_id          TEXT NOT NULL,</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000035" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  rounds           TEXT NOT NULL DEFAULT '[]',   -- JSON array de rondas</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000036" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  current_round    INTEGER DEFAULT 0,</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000037" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  round_started_at INTEGER DEFAULT 0,            -- timestamp ms</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000038" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  time_per_round   INTEGER DEFAULT 20,</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000039" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  game_token       TEXT NOT NULL DEFAULT ''      -- aislador entre partidas</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00003A" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">);</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00003B" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve"></w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00003C" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">CREATE TABLE answers (</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00003D" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  session_code TEXT,    player_name  TEXT,</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00003E" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  round_index  INTEGER, score        INTEGER,</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00003F" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  game_token   TEXT,</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000040" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  PRIMARY KEY (session_code, player_name, round_index, game_token)</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000041" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">);</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000042" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r><w:t xml:space="preserve">El campo game_token es un timestamp en milisegundos generado al iniciar cada partida. Permite jugar múltiples partidas consecutivas en la misma sala sin que las respuestas de una contaminen las puntuaciones de la siguiente: al calcular resultados, solo se consideran las respuestas cuyo game_token coincida con el de la partida activa.</w:t></w:r>
+    </w:p>
+    <w:p w14:paraId="0B000043" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr><w:pStyle w:val="Ttulo2"/></w:pPr>
+      <w:r><w:t>2.6 Corrección de Desfase de Reloj (Clock Skew)</w:t></w:r>
+    </w:p>
+    <w:p w14:paraId="0B000044" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r><w:t xml:space="preserve">En un juego multijugador con temporizador compartido, cada dispositivo tiene su propio reloj del sistema, que puede diferir del servidor por decenas o cientos de milisegundos. Sin corrección, un jugador podría ver 3 segundos restantes mientras otro ve 1 segundo, creando una ventaja injusta.</w:t></w:r>
+    </w:p>
+    <w:p w14:paraId="0B000045" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r><w:t xml:space="preserve">Grammar X implementa corrección de desfase en el cliente: el servidor incluye su timestamp (serverTime) en cada mensaje de estado. El cliente calcula la diferencia entre su reloj local y el del servidor (clockOffset) y la aplica en cada tick del temporizador:</w:t></w:r>
+    </w:p>
+    <w:p w14:paraId="0B000046" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">// index.jsx — al recibir cualquier estado del servidor</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000047" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">if (data.serverTime) {</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000048" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  clockOffset.current = Date.now() - data.serverTime;</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000049" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">}</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00004A" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve"></w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00004B" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">// En el intervalo del temporizador (ejecuta cada 200 ms)</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00004C" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">const syncedNow = Date.now() - clockOffset.current;</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00004D" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">const left = Math.max(0,</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00004E" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  data.timePerRound - (syncedNow - data.roundStartedAt) / 1000</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00004F" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">);</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000050" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">setTimeLeft(left);</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000051" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve"></w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000052" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">// Si el reloj del dispositivo está +500 ms adelantado:</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000053" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">// clockOffset = +500  =&gt;  syncedNow = ahora - 500 aprox. tiempo del servidor</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000054" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr><w:pStyle w:val="Ttulo2"/></w:pPr>
+      <w:r><w:t>2.7 Sistema de Sonido: Web Audio API</w:t></w:r>
+    </w:p>
+    <w:p w14:paraId="0B000055" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r><w:t xml:space="preserve">Todos los efectos de sonido y la música de fondo se generan por síntesis de audio directamente en el navegador, sin archivos externos. La función base tone() crea un oscilador (fuente de sonido), lo conecta a un nodo de ganancia (volumen) y programa su inicio y fin con precisión de microsegundos mediante la API de tiempo del AudioContext:</w:t></w:r>
+    </w:p>
+    <w:p w14:paraId="0B000056" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">// src/sounds.js</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000057" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">function tone(type, freq, startT, dur, vol, freqEnd = null) {</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000058" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  const o = ctx.createOscillator();  // genera la onda sonora</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000059" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  const g = ctx.createGain();        // controla el volumen</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00005A" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  o.connect(g); g.connect(ctx.destination);</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00005B" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  o.type = type;  // 'sine' | 'square' | 'sawtooth' | 'triangle'</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00005C" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  o.frequency.setValueAtTime(freq, startT);</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00005D" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  if (freqEnd != null)</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00005E" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">    o.frequency.exponentialRampToValueAtTime(freqEnd, startT + dur * 0.88);</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00005F" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  g.gain.setValueAtTime(vol, startT);</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000060" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  g.gain.exponentialRampToValueAtTime(0.0001, startT + dur * 0.92);</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000061" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  o.start(startT); o.stop(startT + dur + 0.05);</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000062" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">}</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000063" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r><w:t xml:space="preserve">Sobre esta función base se construyen todos los sonidos. El acorde de respuesta correcta encadena cuatro tonos sinusoidales en Do mayor ascendente (523, 659, 784, 1047 Hz con intervalos de 80 ms). El sonido de error usa una onda diente de sierra con glissando descendente de 230 a 95 Hz. La música de fondo es un bucle de 4.5 segundos: 24 notas en pentátonica de Do mayor (onda triangular, vol. 0.055) con línea de bajo de 8 notas (onda seno, vol. 0.07), reprogramadas automáticamente via setTimeout antes de que termine cada ciclo.</w:t></w:r>
+    </w:p>
+    <w:p w14:paraId="0B000064" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr><w:pStyle w:val="Ttulo2"/></w:pPr>
+      <w:bookmarkStart w:id="9" w:name="_Toc230634524"/>
+      <w:r><w:t>2.8 Sistema de Puntuación Dinámico</w:t></w:r>
+      <w:bookmarkEnd w:id="9"/>
+    </w:p>
+    <w:p w14:paraId="0B000065" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r><w:t xml:space="preserve">La puntuación de cada respuesta combina la dificultad de la pregunta y la velocidad de respuesta. La fórmula implementada en el cliente es:</w:t></w:r>
+    </w:p>
+    <w:p w14:paraId="0B000066" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">// index.jsx</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000067" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">function calcScore(correct, timeLeft, tpr, diff) {</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000068" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  if (!correct) return 0;</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000069" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  return diff * 100 + Math.round((timeLeft / tpr) * diff * 50);</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00006A" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">}</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00006B" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">// diff     : nivel de dificultad (1 a 5)</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00006C" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">// tpr      : tiempo total de la ronda en segundos</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00006D" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">// timeLeft : segundos restantes al momento de responder</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00006E" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve"></w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00006F" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">// Ejemplo con dificultad 5 y ronda de 20 s:</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000070" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">// Responder al instante : 5x100 + (20/20)x5x50 = 750 pts</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000071" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">// Responder al ultimo s : 5x100 + (1/20)x5x50  = 512 pts</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000072" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">// Respuesta incorrecta  : 0 pts</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000073" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r><w:t xml:space="preserve">El bono de velocidad va de 0 a diff×50 puntos, decreciendo linealmente con el tiempo transcurrido. Al finalizar, el servidor suma todas las puntuaciones via SQL, las persiste en la tabla scores y las devuelve ordenadas de mayor a menor para construir el podio.</w:t></w:r>
+    </w:p>
+    <w:p w14:paraId="0B000074" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr><w:pStyle w:val="Ttulo2"/></w:pPr>
+      <w:r><w:t>2.9 Arquitectura de Componentes React</w:t></w:r>
+    </w:p>
+    <w:p w14:paraId="0B000075" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r><w:t xml:space="preserve">La interfaz está organizada como una máquina de estados controlada por el componente raíz App. La variable screen determina qué pantalla se renderiza; las transiciones ocurren cuando los componentes hijos invocan callbacks que App les pasa como props:</w:t></w:r>
+    </w:p>
+    <w:p w14:paraId="0B000076" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">// App (index.jsx) — máquina de estados de navegación</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000077" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">'login'         =&gt;  LoginScreen        // selección de rol (host / jugador)</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000078" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">'join'          =&gt;  JoinScreen         // ingresar código de sala</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000079" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">'host-lobby'    =&gt;  HostLobbyScreen    // configurar y esperar jugadores</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00007A" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">'host-game'     =&gt;  HostGameScreen     // dashboard durante la partida</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00007B" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">'host-results'  =&gt;  HostResultsScreen  // podio final del host</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00007C" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">'player-lobby'  =&gt;  PlayerLobbyScreen  // esperar + pantalla instrucciones</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00007D" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">'player-game'   =&gt;  PlayerGameScreen   // responder preguntas</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00007E" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">'podium'        =&gt;  PodiumScreen       // leaderboard histórico global</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00007F" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r><w:t xml:space="preserve">Los minijuegos G1 (ordenar palabras) y G2–G4 (opción múltiple) están encapsulados en componentes separados (QuestionG1 y QuestionMCQ) que reciben la ronda actual como prop y emiten un callback onAnswer con el resultado, manteniendo separada la lógica de presentación de la lógica de puntuación. Todos los estilos CSS se inyectan mediante la función injectCSS() en el head del documento al montar la app, eliminando archivos CSS externos y garantizando que el bundle de producción generado por Vite sea un único archivo JavaScript autocontenido.</w:t></w:r>
+    </w:p>

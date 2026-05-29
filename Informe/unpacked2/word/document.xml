@@ -1,0 +1,4235 @@
+<?xml version="1.0" encoding="UTF-8"?><w:document xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex" xmlns:cx1="http://schemas.microsoft.com/office/drawing/2015/9/8/chartex" xmlns:cx2="http://schemas.microsoft.com/office/drawing/2015/10/21/chartex" xmlns:cx3="http://schemas.microsoft.com/office/drawing/2016/5/9/chartex" xmlns:cx4="http://schemas.microsoft.com/office/drawing/2016/5/10/chartex" xmlns:cx5="http://schemas.microsoft.com/office/drawing/2016/5/11/chartex" xmlns:cx6="http://schemas.microsoft.com/office/drawing/2016/5/12/chartex" xmlns:cx7="http://schemas.microsoft.com/office/drawing/2016/5/13/chartex" xmlns:cx8="http://schemas.microsoft.com/office/drawing/2016/5/14/chartex" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:aink="http://schemas.microsoft.com/office/drawing/2016/ink" xmlns:am3d="http://schemas.microsoft.com/office/drawing/2017/model3d" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:oel="http://schemas.microsoft.com/office/2019/extlst" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml" xmlns:w16cex="http://schemas.microsoft.com/office/word/2018/wordml/cex" xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid" xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml" xmlns:w16du="http://schemas.microsoft.com/office/word/2023/wordml/word16du" xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash" xmlns:w16sdtfl="http://schemas.microsoft.com/office/word/2024/wordml/sdtformatlock" xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape" mc:Ignorable="w14 w15 w16se w16cid w16 w16cex w16sdtdh w16sdtfl w16du wp14">
+  <w:body>
+    <w:p w14:paraId="4DAAA739" w14:textId="31485591" w:rsidR="00B35A5C" w:rsidRDefault="008509E7">
+      <w:pPr>
+        <w:spacing w:before="240" w:after="240"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+          <w:sz w:val="28"/>
+          <w:szCs w:val="28"/>
+        </w:rPr>
+        <w:t xml:space="preserve">UNIVERSIDAD PRIVADA DOMINGO SAVIO </w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="26DE1D43" w14:textId="613A81B0" w:rsidR="00B35A5C" w:rsidRDefault="008509E7" w:rsidP="008509E7">
+      <w:pPr>
+        <w:spacing w:before="240" w:after="240"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:noProof/>
+          <w:sz w:val="48"/>
+          <w:szCs w:val="48"/>
+          <w:lang w:val="en-US"/>
+        </w:rPr>
+        <w:drawing>
+          <wp:inline distT="0" distB="0" distL="0" distR="0" wp14:anchorId="6DF25100" wp14:editId="53362513">
+            <wp:extent cx="2324100" cy="2324100"/>
+            <wp:effectExtent l="0" t="0" r="0" b="0"/>
+            <wp:docPr id="1063240091" name="Imagen 1" descr="Universidad Privada Domingo Savio - UPDS | LinkedIn"/>
+            <wp:cNvGraphicFramePr>
+              <a:graphicFrameLocks xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" noChangeAspect="1"/>
+            </wp:cNvGraphicFramePr>
+            <a:graphic xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+              <a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture">
+                <pic:pic xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture">
+                  <pic:nvPicPr>
+                    <pic:cNvPr id="0" name="Picture 1" descr="Universidad Privada Domingo Savio - UPDS | LinkedIn"/>
+                    <pic:cNvPicPr>
+                      <a:picLocks noChangeAspect="1" noChangeArrowheads="1"/>
+                    </pic:cNvPicPr>
+                  </pic:nvPicPr>
+                  <pic:blipFill>
+                    <a:blip r:embed="rId7">
+                      <a:extLst>
+                        <a:ext uri="{28A0092B-C50C-407E-A947-70E740481C1C}">
+                          <a14:useLocalDpi xmlns:a14="http://schemas.microsoft.com/office/drawing/2010/main" val="0"/>
+                        </a:ext>
+                      </a:extLst>
+                    </a:blip>
+                    <a:srcRect/>
+                    <a:stretch>
+                      <a:fillRect/>
+                    </a:stretch>
+                  </pic:blipFill>
+                  <pic:spPr bwMode="auto">
+                    <a:xfrm>
+                      <a:off x="0" y="0"/>
+                      <a:ext cx="2324100" cy="2324100"/>
+                    </a:xfrm>
+                    <a:prstGeom prst="rect">
+                      <a:avLst/>
+                    </a:prstGeom>
+                    <a:noFill/>
+                    <a:ln>
+                      <a:noFill/>
+                    </a:ln>
+                  </pic:spPr>
+                </pic:pic>
+              </a:graphicData>
+            </a:graphic>
+          </wp:inline>
+        </w:drawing>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="7572CFC9" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:spacing w:before="480" w:after="480"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+          <w:sz w:val="40"/>
+          <w:szCs w:val="40"/>
+        </w:rPr>
+        <w:t>GRAMMAR X</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="4A9FDD5D" w14:textId="3F07664E" w:rsidR="00B35A5C" w:rsidRDefault="00E46669" w:rsidP="008509E7">
+      <w:pPr>
+        <w:spacing w:before="240" w:after="240"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:sz w:val="28"/>
+          <w:szCs w:val="28"/>
+        </w:rPr>
+        <w:t>Juego Interactivo de Gramática Inglesa</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0985C7D9" w14:textId="57E735BB" w:rsidR="00B35A5C" w:rsidRDefault="00E46669" w:rsidP="008509E7">
+      <w:pPr>
+        <w:spacing w:before="240" w:after="240"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:t>Informe de Proyecto</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="6C507A04" w14:textId="346BE2C8" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:spacing w:before="240" w:after="240"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:t>Asignatura: Inglés</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="6665CF68" w14:textId="2005A83A" w:rsidR="00B35A5C" w:rsidRDefault="00E46669" w:rsidP="008509E7">
+      <w:pPr>
+        <w:spacing w:before="240" w:after="240"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:t>Docente: Ruth Gascher Portales</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="4BAA5EE5" w14:textId="155F0C5C" w:rsidR="008509E7" w:rsidRDefault="008509E7" w:rsidP="008509E7">
+      <w:pPr>
+        <w:spacing w:before="240" w:after="240"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:t>Carrera: Ingenieria en Sistemas</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="260321B6" w14:textId="77777777" w:rsidR="008509E7" w:rsidRDefault="008509E7" w:rsidP="008509E7">
+      <w:pPr>
+        <w:spacing w:before="240" w:after="240"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Autores: </w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="2127B3D7" w14:textId="096C97AB" w:rsidR="008509E7" w:rsidRDefault="008509E7" w:rsidP="008509E7">
+      <w:pPr>
+        <w:pStyle w:val="Prrafodelista"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="2"/>
+        </w:numPr>
+        <w:spacing w:before="240" w:after="240"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Jonathan campos </w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B2B06F7" w14:textId="77777777" w:rsidR="008509E7" w:rsidRDefault="008509E7" w:rsidP="008509E7">
+      <w:pPr>
+        <w:pStyle w:val="Prrafodelista"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="2"/>
+        </w:numPr>
+        <w:spacing w:before="240" w:after="240"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Luis Rodrigo Vargas </w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0CB6ECA1" w14:textId="77777777" w:rsidR="008509E7" w:rsidRDefault="008509E7" w:rsidP="008509E7">
+      <w:pPr>
+        <w:pStyle w:val="Prrafodelista"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="2"/>
+        </w:numPr>
+        <w:spacing w:before="240" w:after="240"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Carla Nohelia Cano </w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="689F34CB" w14:textId="60A0871F" w:rsidR="008509E7" w:rsidRDefault="008509E7" w:rsidP="008509E7">
+      <w:pPr>
+        <w:pStyle w:val="Prrafodelista"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="2"/>
+        </w:numPr>
+        <w:spacing w:before="240" w:after="240"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:t>Diego Justiniano Viera</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="6AD2AE9B" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00B35A5C">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+      </w:pPr>
+    </w:p>
+    <w:p w14:paraId="12E8CD5F" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00B35A5C">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+      </w:pPr>
+    </w:p>
+    <w:p w14:paraId="73E40340" w14:textId="77777777" w:rsidR="008509E7" w:rsidRPr="00495341" w:rsidRDefault="008509E7" w:rsidP="008509E7">
+      <w:pPr>
+        <w:jc w:val="center"/>
+        <w:rPr>
+          <w:lang w:val="es-ES"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:lang w:val="es-ES"/>
+        </w:rPr>
+        <w:t xml:space="preserve">Santa cruz –Bolivia </w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0D5DA311" w14:textId="50F1E79A" w:rsidR="008509E7" w:rsidRDefault="008509E7" w:rsidP="008509E7">
+      <w:pPr>
+        <w:jc w:val="center"/>
+        <w:rPr>
+          <w:lang w:val="es-ES"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:lang w:val="es-ES"/>
+        </w:rPr>
+        <w:t>Mayo -2026</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="222C7A54" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00B35A5C">
+      <w:pPr>
+        <w:sectPr w:rsidR="00B35A5C">
+          <w:headerReference w:type="default" r:id="rId8"/>
+          <w:headerReference w:type="first" r:id="rId9"/>
+          <w:pgSz w:w="12240" w:h="15840"/>
+          <w:pgMar w:top="1440" w:right="1440" w:bottom="1440" w:left="1440" w:header="708" w:footer="708" w:gutter="0"/>
+          <w:cols w:space="720"/>
+          <w:titlePg/>
+          <w:docGrid w:linePitch="360"/>
+        </w:sectPr>
+      </w:pPr>
+    </w:p>
+    <w:p w14:paraId="1F5DB7A4" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:pStyle w:val="Ttulo1"/>
+        <w:spacing w:after="480"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="0" w:name="_Toc230634515"/>
+      <w:r>
+        <w:rPr>
+          <w:caps/>
+        </w:rPr>
+        <w:lastRenderedPageBreak/>
+        <w:t>ÍNDICE</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="0"/>
+    </w:p>
+    <w:p w14:paraId="3B77EF72" w14:textId="331BBFB3" w:rsidR="00CC49EA" w:rsidRDefault="00CC49EA">
+      <w:pPr>
+        <w:pStyle w:val="TDC1"/>
+        <w:tabs>
+          <w:tab w:val="right" w:leader="dot" w:pos="9350"/>
+        </w:tabs>
+        <w:rPr>
+          <w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi"/>
+          <w:noProof/>
+          <w:kern w:val="2"/>
+          <w14:ligatures w14:val="standardContextual"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:fldChar w:fldCharType="begin"/>
+      <w:instrText xml:space="preserve"> TOC \o &quot;1-3&quot; \h \u </w:instrText><w:fldChar w:fldCharType="separate"/></w:r>
+      
+      
+      <w:hyperlink w:anchor="_Toc230634515" w:history="1">
+        <w:r>
+          <w:rPr>
+            <w:rStyle w:val="Hipervnculo"/>
+            <w:caps/>
+            <w:noProof/>
+          </w:rPr>
+          <w:t>ÍNDICE</w:t>
+        </w:r>
+        <w:r>
+          <w:rPr>
+            <w:noProof/>
+          </w:rPr>
+          <w:tab/>
+        <w:fldChar w:fldCharType="begin"/><w:instrText xml:space="preserve"> PAGEREF _Toc230634515 \h </w:instrText><w:fldChar w:fldCharType="separate"/><w:t>2</w:t><w:fldChar w:fldCharType="end"/></w:r>
+        
+        
+        
+        
+        
+        
+      </w:hyperlink>
+    </w:p>
+    <w:p w14:paraId="0329CBD9" w14:textId="78C93661" w:rsidR="00CC49EA" w:rsidRDefault="00CC49EA">
+      <w:pPr>
+        <w:pStyle w:val="TDC1"/>
+        <w:tabs>
+          <w:tab w:val="right" w:leader="dot" w:pos="9350"/>
+        </w:tabs>
+        <w:rPr>
+          <w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi"/>
+          <w:noProof/>
+          <w:kern w:val="2"/>
+          <w14:ligatures w14:val="standardContextual"/>
+        </w:rPr>
+      </w:pPr>
+      <w:hyperlink w:anchor="_Toc230634516" w:history="1">
+        <w:r>
+          <w:rPr>
+            <w:rStyle w:val="Hipervnculo"/>
+            <w:caps/>
+            <w:noProof/>
+          </w:rPr>
+          <w:t>1. Introducción</w:t>
+        </w:r>
+        <w:r>
+          <w:rPr>
+            <w:noProof/>
+          </w:rPr>
+          <w:tab/>
+        <w:fldChar w:fldCharType="begin"/><w:instrText xml:space="preserve"> PAGEREF _Toc230634516 \h </w:instrText><w:fldChar w:fldCharType="separate"/><w:t>3</w:t><w:fldChar w:fldCharType="end"/></w:r>
+        
+        
+        
+        
+        
+        
+      </w:hyperlink>
+    </w:p>
+    <w:p w14:paraId="757DF8BA" w14:textId="365F5675" w:rsidR="00CC49EA" w:rsidRDefault="00CC49EA">
+      <w:pPr>
+        <w:pStyle w:val="TDC2"/>
+        <w:tabs>
+          <w:tab w:val="right" w:leader="dot" w:pos="9350"/>
+        </w:tabs>
+        <w:rPr>
+          <w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi"/>
+          <w:noProof/>
+          <w:kern w:val="2"/>
+          <w14:ligatures w14:val="standardContextual"/>
+        </w:rPr>
+      </w:pPr>
+      <w:hyperlink w:anchor="_Toc230634517" w:history="1">
+        <w:r>
+          <w:rPr>
+            <w:rStyle w:val="Hipervnculo"/>
+            <w:noProof/>
+          </w:rPr>
+          <w:t>Antecedentes: de los videojuegos al aula</w:t>
+        </w:r>
+        <w:r>
+          <w:rPr>
+            <w:noProof/>
+          </w:rPr>
+          <w:tab/>
+        <w:fldChar w:fldCharType="begin"/><w:instrText xml:space="preserve"> PAGEREF _Toc230634517 \h </w:instrText><w:fldChar w:fldCharType="separate"/><w:t>3</w:t><w:fldChar w:fldCharType="end"/></w:r>
+        
+        
+        
+        
+        
+        
+      </w:hyperlink>
+    </w:p>
+    <w:p w14:paraId="7CBC00EA" w14:textId="347B47FB" w:rsidR="00CC49EA" w:rsidRDefault="00CC49EA">
+      <w:pPr>
+        <w:pStyle w:val="TDC2"/>
+        <w:tabs>
+          <w:tab w:val="right" w:leader="dot" w:pos="9350"/>
+        </w:tabs>
+        <w:rPr>
+          <w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi"/>
+          <w:noProof/>
+          <w:kern w:val="2"/>
+          <w14:ligatures w14:val="standardContextual"/>
+        </w:rPr>
+      </w:pPr>
+      <w:hyperlink w:anchor="_Toc230634518" w:history="1">
+        <w:r>
+          <w:rPr>
+            <w:rStyle w:val="Hipervnculo"/>
+            <w:noProof/>
+          </w:rPr>
+          <w:t>Concepto y naturaleza del proyecto</w:t>
+        </w:r>
+        <w:r>
+          <w:rPr>
+            <w:noProof/>
+          </w:rPr>
+          <w:tab/>
+        <w:fldChar w:fldCharType="begin"/><w:instrText xml:space="preserve"> PAGEREF _Toc230634518 \h </w:instrText><w:fldChar w:fldCharType="separate"/><w:t>5</w:t><w:fldChar w:fldCharType="end"/></w:r>
+        
+        
+        
+        
+        
+        
+      </w:hyperlink>
+    </w:p>
+    <w:p w14:paraId="537BFFD3" w14:textId="26F5DA63" w:rsidR="00CC49EA" w:rsidRDefault="00CC49EA">
+      <w:pPr>
+        <w:pStyle w:val="TDC2"/>
+        <w:tabs>
+          <w:tab w:val="right" w:leader="dot" w:pos="9350"/>
+        </w:tabs>
+        <w:rPr>
+          <w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi"/>
+          <w:noProof/>
+          <w:kern w:val="2"/>
+          <w14:ligatures w14:val="standardContextual"/>
+        </w:rPr>
+      </w:pPr>
+      <w:hyperlink w:anchor="_Toc230634519" w:history="1">
+        <w:r>
+          <w:rPr>
+            <w:rStyle w:val="Hipervnculo"/>
+            <w:noProof/>
+          </w:rPr>
+          <w:t>Contexto institucional y justificación</w:t>
+        </w:r>
+        <w:r>
+          <w:rPr>
+            <w:noProof/>
+          </w:rPr>
+          <w:tab/>
+        <w:fldChar w:fldCharType="begin"/><w:instrText xml:space="preserve"> PAGEREF _Toc230634519 \h </w:instrText><w:fldChar w:fldCharType="separate"/><w:t>6</w:t><w:fldChar w:fldCharType="end"/></w:r>
+        
+        
+        
+        
+        
+        
+      </w:hyperlink>
+    </w:p>
+    <w:p w14:paraId="5712345E" w14:textId="4E98F43B" w:rsidR="00CC49EA" w:rsidRDefault="00CC49EA">
+      <w:pPr>
+        <w:pStyle w:val="TDC1"/>
+        <w:tabs>
+          <w:tab w:val="right" w:leader="dot" w:pos="9350"/>
+        </w:tabs>
+        <w:rPr>
+          <w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi"/>
+          <w:noProof/>
+          <w:kern w:val="2"/>
+          <w14:ligatures w14:val="standardContextual"/>
+        </w:rPr>
+      </w:pPr>
+      <w:hyperlink w:anchor="_Toc230634520" w:history="1">
+        <w:r>
+          <w:rPr>
+            <w:rStyle w:val="Hipervnculo"/>
+            <w:caps/>
+            <w:noProof/>
+          </w:rPr>
+          <w:t>2. Desarrollo</w:t>
+        </w:r>
+        <w:r>
+          <w:rPr>
+            <w:noProof/>
+          </w:rPr>
+          <w:tab/>
+        <w:fldChar w:fldCharType="begin"/><w:instrText xml:space="preserve"> PAGEREF _Toc230634520 \h </w:instrText><w:fldChar w:fldCharType="separate"/><w:t>8</w:t><w:fldChar w:fldCharType="end"/></w:r>
+        
+        
+        
+        
+        
+        
+      </w:hyperlink>
+    </w:p>
+    <w:p w14:paraId="706FD782" w14:textId="5BC74A14" w:rsidR="00CC49EA" w:rsidRDefault="00CC49EA">
+      <w:pPr>
+        <w:pStyle w:val="TDC2"/>
+        <w:tabs>
+          <w:tab w:val="right" w:leader="dot" w:pos="9350"/>
+        </w:tabs>
+        <w:rPr>
+          <w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi"/>
+          <w:noProof/>
+          <w:kern w:val="2"/>
+          <w14:ligatures w14:val="standardContextual"/>
+        </w:rPr>
+      </w:pPr>
+      <w:hyperlink w:anchor="_Toc230634521" w:history="1">
+        <w:r>
+          <w:rPr>
+            <w:rStyle w:val="Hipervnculo"/>
+            <w:noProof/>
+          </w:rPr>
+          <w:t>2.1 Descripción del Sistema</w:t>
+        </w:r>
+        <w:r>
+          <w:rPr>
+            <w:noProof/>
+          </w:rPr>
+          <w:tab/>
+        <w:fldChar w:fldCharType="begin"/><w:instrText xml:space="preserve"> PAGEREF _Toc230634521 \h </w:instrText><w:fldChar w:fldCharType="separate"/><w:t>8</w:t><w:fldChar w:fldCharType="end"/></w:r>
+        
+        
+        
+        
+        
+        
+      </w:hyperlink>
+    </w:p>
+    <w:p w14:paraId="0DAB7C82" w14:textId="3379B195" w:rsidR="00CC49EA" w:rsidRDefault="00CC49EA">
+      <w:pPr>
+        <w:pStyle w:val="TDC2"/>
+        <w:tabs>
+          <w:tab w:val="right" w:leader="dot" w:pos="9350"/>
+        </w:tabs>
+        <w:rPr>
+          <w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi"/>
+          <w:noProof/>
+          <w:kern w:val="2"/>
+          <w14:ligatures w14:val="standardContextual"/>
+        </w:rPr>
+      </w:pPr>
+      <w:hyperlink w:anchor="_Toc230634522" w:history="1">
+        <w:r>
+          <w:rPr>
+            <w:rStyle w:val="Hipervnculo"/>
+            <w:noProof/>
+          </w:rPr>
+          <w:t>2.2 Stack Tecnológico</w:t>
+        </w:r>
+        <w:r>
+          <w:rPr>
+            <w:noProof/>
+          </w:rPr>
+          <w:tab/>
+        <w:fldChar w:fldCharType="begin"/><w:instrText xml:space="preserve"> PAGEREF _Toc230634522 \h </w:instrText><w:fldChar w:fldCharType="separate"/><w:t>8</w:t><w:fldChar w:fldCharType="end"/></w:r>
+        
+        
+        
+        
+        
+        
+      </w:hyperlink>
+    </w:p>
+    <w:p w14:paraId="06D43875" w14:textId="7ED5254D" w:rsidR="00CC49EA" w:rsidRDefault="00CC49EA">
+      <w:pPr>
+        <w:pStyle w:val="TDC2"/>
+        <w:tabs>
+          <w:tab w:val="right" w:leader="dot" w:pos="9350"/>
+        </w:tabs>
+        <w:rPr>
+          <w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi"/>
+          <w:noProof/>
+          <w:kern w:val="2"/>
+          <w14:ligatures w14:val="standardContextual"/>
+        </w:rPr>
+      </w:pPr>
+      <w:hyperlink w:anchor="_Toc230634523" w:history="1">
+        <w:r>
+          <w:rPr>
+            <w:rStyle w:val="Hipervnculo"/>
+            <w:noProof/>
+          </w:rPr>
+          <w:t>2.3 Arquitectura</w:t>
+        </w:r>
+        <w:r>
+          <w:rPr>
+            <w:noProof/>
+          </w:rPr>
+          <w:tab/>
+        <w:fldChar w:fldCharType="begin"/><w:instrText xml:space="preserve"> PAGEREF _Toc230634523 \h </w:instrText><w:fldChar w:fldCharType="separate"/><w:t>9</w:t><w:fldChar w:fldCharType="end"/></w:r>
+        
+        
+        
+        
+        
+        
+      </w:hyperlink>
+    </w:p>
+    <w:p w14:paraId="1686A0F2" w14:textId="217E5D9E" w:rsidR="00CC49EA" w:rsidRDefault="00CC49EA">
+      <w:pPr>
+        <w:pStyle w:val="TDC2"/>
+        <w:tabs>
+          <w:tab w:val="right" w:leader="dot" w:pos="9350"/>
+        </w:tabs>
+        <w:rPr>
+          <w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi"/>
+          <w:noProof/>
+          <w:kern w:val="2"/>
+          <w14:ligatures w14:val="standardContextual"/>
+        </w:rPr>
+      </w:pPr>
+      <w:hyperlink w:anchor="_Toc230634524" w:history="1">
+        <w:r>
+          <w:rPr>
+            <w:rStyle w:val="Hipervnculo"/>
+            <w:noProof/>
+          </w:rPr>
+          <w:t>2.4 Funcionalidades</w:t>
+        </w:r>
+        <w:r>
+          <w:rPr>
+            <w:noProof/>
+          </w:rPr>
+          <w:tab/>
+        <w:fldChar w:fldCharType="begin"/><w:instrText xml:space="preserve"> PAGEREF _Toc230634524 \h </w:instrText><w:fldChar w:fldCharType="separate"/><w:t>9</w:t><w:fldChar w:fldCharType="end"/></w:r>
+        
+        
+        
+        
+        
+        
+      </w:hyperlink>
+    </w:p>
+    <w:p w14:paraId="45D91F7B" w14:textId="5A84C584" w:rsidR="00CC49EA" w:rsidRDefault="00CC49EA">
+      <w:pPr>
+        <w:pStyle w:val="TDC1"/>
+        <w:tabs>
+          <w:tab w:val="right" w:leader="dot" w:pos="9350"/>
+        </w:tabs>
+        <w:rPr>
+          <w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi"/>
+          <w:noProof/>
+          <w:kern w:val="2"/>
+          <w14:ligatures w14:val="standardContextual"/>
+        </w:rPr>
+      </w:pPr>
+      <w:hyperlink w:anchor="_Toc230634525" w:history="1">
+        <w:r>
+          <w:rPr>
+            <w:rStyle w:val="Hipervnculo"/>
+            <w:caps/>
+            <w:noProof/>
+          </w:rPr>
+          <w:t>3. Capturas de Pantalla</w:t>
+        </w:r>
+        <w:r>
+          <w:rPr>
+            <w:noProof/>
+          </w:rPr>
+          <w:tab/>
+        <w:fldChar w:fldCharType="begin"/><w:instrText xml:space="preserve"> PAGEREF _Toc230634525 \h </w:instrText><w:fldChar w:fldCharType="separate"/><w:t>11</w:t><w:fldChar w:fldCharType="end"/></w:r>
+        
+        
+        
+        
+        
+        
+      </w:hyperlink>
+    </w:p>
+    <w:p w14:paraId="35999B09" w14:textId="625EB31D" w:rsidR="00CC49EA" w:rsidRDefault="00CC49EA">
+      <w:pPr>
+        <w:pStyle w:val="TDC2"/>
+        <w:tabs>
+          <w:tab w:val="right" w:leader="dot" w:pos="9350"/>
+        </w:tabs>
+        <w:rPr>
+          <w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi"/>
+          <w:noProof/>
+          <w:kern w:val="2"/>
+          <w14:ligatures w14:val="standardContextual"/>
+        </w:rPr>
+      </w:pPr>
+      <w:hyperlink w:anchor="_Toc230634526" w:history="1">
+        <w:r>
+          <w:rPr>
+            <w:rStyle w:val="Hipervnculo"/>
+            <w:noProof/>
+          </w:rPr>
+          <w:t>3.1 Pantalla de Inicio</w:t>
+        </w:r>
+        <w:r>
+          <w:rPr>
+            <w:noProof/>
+          </w:rPr>
+          <w:tab/>
+        <w:fldChar w:fldCharType="begin"/><w:instrText xml:space="preserve"> PAGEREF _Toc230634526 \h </w:instrText><w:fldChar w:fldCharType="separate"/><w:t>11</w:t><w:fldChar w:fldCharType="end"/></w:r>
+        
+        
+        
+        
+        
+        
+      </w:hyperlink>
+    </w:p>
+    <w:p w14:paraId="60DD6A94" w14:textId="31FD0167" w:rsidR="00CC49EA" w:rsidRDefault="00CC49EA">
+      <w:pPr>
+        <w:pStyle w:val="TDC2"/>
+        <w:tabs>
+          <w:tab w:val="right" w:leader="dot" w:pos="9350"/>
+        </w:tabs>
+        <w:rPr>
+          <w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi"/>
+          <w:noProof/>
+          <w:kern w:val="2"/>
+          <w14:ligatures w14:val="standardContextual"/>
+        </w:rPr>
+      </w:pPr>
+      <w:hyperlink w:anchor="_Toc230634527" w:history="1">
+        <w:r>
+          <w:rPr>
+            <w:rStyle w:val="Hipervnculo"/>
+            <w:noProof/>
+          </w:rPr>
+          <w:t>3.2 Sala de Espera (Lobby)</w:t>
+        </w:r>
+        <w:r>
+          <w:rPr>
+            <w:noProof/>
+          </w:rPr>
+          <w:tab/>
+        <w:fldChar w:fldCharType="begin"/><w:instrText xml:space="preserve"> PAGEREF _Toc230634527 \h </w:instrText><w:fldChar w:fldCharType="separate"/><w:t>12</w:t><w:fldChar w:fldCharType="end"/></w:r>
+        
+        
+        
+        
+        
+        
+      </w:hyperlink>
+    </w:p>
+    <w:p w14:paraId="294EA674" w14:textId="6B1B173F" w:rsidR="00CC49EA" w:rsidRDefault="00CC49EA">
+      <w:pPr>
+        <w:pStyle w:val="TDC2"/>
+        <w:tabs>
+          <w:tab w:val="right" w:leader="dot" w:pos="9350"/>
+        </w:tabs>
+        <w:rPr>
+          <w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi"/>
+          <w:noProof/>
+          <w:kern w:val="2"/>
+          <w14:ligatures w14:val="standardContextual"/>
+        </w:rPr>
+      </w:pPr>
+      <w:hyperlink w:anchor="_Toc230634528" w:history="1">
+        <w:r>
+          <w:rPr>
+            <w:rStyle w:val="Hipervnculo"/>
+            <w:noProof/>
+          </w:rPr>
+          <w:t>3.3 Vista del Host Durante el Juego</w:t>
+        </w:r>
+        <w:r>
+          <w:rPr>
+            <w:noProof/>
+          </w:rPr>
+          <w:tab/>
+        <w:fldChar w:fldCharType="begin"/><w:instrText xml:space="preserve"> PAGEREF _Toc230634528 \h </w:instrText><w:fldChar w:fldCharType="separate"/><w:t>14</w:t><w:fldChar w:fldCharType="end"/></w:r>
+        
+        
+        
+        
+        
+        
+      </w:hyperlink>
+    </w:p>
+    <w:p w14:paraId="49547F31" w14:textId="07600A24" w:rsidR="00CC49EA" w:rsidRDefault="00CC49EA">
+      <w:pPr>
+        <w:pStyle w:val="TDC2"/>
+        <w:tabs>
+          <w:tab w:val="right" w:leader="dot" w:pos="9350"/>
+        </w:tabs>
+        <w:rPr>
+          <w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi"/>
+          <w:noProof/>
+          <w:kern w:val="2"/>
+          <w14:ligatures w14:val="standardContextual"/>
+        </w:rPr>
+      </w:pPr>
+      <w:hyperlink w:anchor="_Toc230634529" w:history="1">
+        <w:r>
+          <w:rPr>
+            <w:rStyle w:val="Hipervnculo"/>
+            <w:noProof/>
+          </w:rPr>
+          <w:t>3.4 Vista del Jugador Durante el Juego</w:t>
+        </w:r>
+        <w:r>
+          <w:rPr>
+            <w:noProof/>
+          </w:rPr>
+          <w:tab/>
+        <w:fldChar w:fldCharType="begin"/><w:instrText xml:space="preserve"> PAGEREF _Toc230634529 \h </w:instrText><w:fldChar w:fldCharType="separate"/><w:t>15</w:t><w:fldChar w:fldCharType="end"/></w:r>
+        
+        
+        
+        
+        
+        
+      </w:hyperlink>
+    </w:p>
+    <w:p w14:paraId="49A0467A" w14:textId="45E3E438" w:rsidR="00CC49EA" w:rsidRDefault="00CC49EA">
+      <w:pPr>
+        <w:pStyle w:val="TDC2"/>
+        <w:tabs>
+          <w:tab w:val="right" w:leader="dot" w:pos="9350"/>
+        </w:tabs>
+        <w:rPr>
+          <w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi"/>
+          <w:noProof/>
+          <w:kern w:val="2"/>
+          <w14:ligatures w14:val="standardContextual"/>
+        </w:rPr>
+      </w:pPr>
+      <w:hyperlink w:anchor="_Toc230634530" w:history="1">
+        <w:r>
+          <w:rPr>
+            <w:rStyle w:val="Hipervnculo"/>
+            <w:noProof/>
+          </w:rPr>
+          <w:t>3.5 Resultados Finales</w:t>
+        </w:r>
+        <w:r>
+          <w:rPr>
+            <w:noProof/>
+          </w:rPr>
+          <w:tab/>
+        <w:fldChar w:fldCharType="begin"/><w:instrText xml:space="preserve"> PAGEREF _Toc230634530 \h </w:instrText><w:fldChar w:fldCharType="separate"/><w:t>17</w:t><w:fldChar w:fldCharType="end"/></w:r>
+        
+        
+        
+        
+        
+        
+      </w:hyperlink>
+    </w:p>
+    <w:p w14:paraId="24BCA1B2" w14:textId="52A6593D" w:rsidR="00CC49EA" w:rsidRDefault="00CC49EA">
+      <w:pPr>
+        <w:pStyle w:val="TDC1"/>
+        <w:tabs>
+          <w:tab w:val="right" w:leader="dot" w:pos="9350"/>
+        </w:tabs>
+        <w:rPr>
+          <w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi"/>
+          <w:noProof/>
+          <w:kern w:val="2"/>
+          <w14:ligatures w14:val="standardContextual"/>
+        </w:rPr>
+      </w:pPr>
+      <w:hyperlink w:anchor="_Toc230634531" w:history="1">
+        <w:r>
+          <w:rPr>
+            <w:rStyle w:val="Hipervnculo"/>
+            <w:caps/>
+            <w:noProof/>
+          </w:rPr>
+          <w:t>4. Conclusión</w:t>
+        </w:r>
+        <w:r>
+          <w:rPr>
+            <w:noProof/>
+          </w:rPr>
+          <w:tab/>
+        <w:fldChar w:fldCharType="begin"/><w:instrText xml:space="preserve"> PAGEREF _Toc230634531 \h </w:instrText><w:fldChar w:fldCharType="separate"/><w:t>20</w:t><w:fldChar w:fldCharType="end"/></w:r>
+        
+        
+        
+        
+        
+        
+      </w:hyperlink>
+    </w:p>
+    <w:p w14:paraId="7393E84D" w14:textId="53118186" w:rsidR="00CC49EA" w:rsidRDefault="00CC49EA">
+      <w:pPr>
+        <w:pStyle w:val="TDC1"/>
+        <w:tabs>
+          <w:tab w:val="right" w:leader="dot" w:pos="9350"/>
+        </w:tabs>
+        <w:rPr>
+          <w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi"/>
+          <w:noProof/>
+          <w:kern w:val="2"/>
+          <w14:ligatures w14:val="standardContextual"/>
+        </w:rPr>
+      </w:pPr>
+      <w:hyperlink w:anchor="_Toc230634532" w:history="1">
+        <w:r>
+          <w:rPr>
+            <w:rStyle w:val="Hipervnculo"/>
+            <w:caps/>
+            <w:noProof/>
+          </w:rPr>
+          <w:t>5. Bibliografía</w:t>
+        </w:r>
+        <w:r>
+          <w:rPr>
+            <w:noProof/>
+          </w:rPr>
+          <w:tab/>
+        <w:fldChar w:fldCharType="begin"/><w:instrText xml:space="preserve"> PAGEREF _Toc230634532 \h </w:instrText><w:fldChar w:fldCharType="separate"/><w:t>21</w:t><w:fldChar w:fldCharType="end"/></w:r>
+        
+        
+        
+        
+        
+        
+      </w:hyperlink>
+    </w:p>
+    <w:p w14:paraId="46EDAB48" w14:textId="0C43CC7C" w:rsidR="00B35A5C" w:rsidRDefault="00CC49EA">
+      <w:pPr>
+        <w:sectPr w:rsidR="00B35A5C">
+          <w:headerReference w:type="default" r:id="rId10"/>
+          <w:pgSz w:w="12240" w:h="15840"/>
+          <w:pgMar w:top="1440" w:right="1440" w:bottom="1440" w:left="1440" w:header="708" w:footer="708" w:gutter="0"/>
+          <w:cols w:space="720"/>
+          <w:docGrid w:linePitch="360"/>
+        </w:sectPr>
+      </w:pPr>
+      <w:r>
+        <w:fldChar w:fldCharType="end"/>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="26D0CF23" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:pStyle w:val="Ttulo1"/>
+        <w:pageBreakBefore/>
+      </w:pPr>
+      <w:bookmarkStart w:id="1" w:name="_Toc230634516"/>
+      <w:r>
+        <w:rPr>
+          <w:caps/>
+        </w:rPr>
+        <w:lastRenderedPageBreak/>
+        <w:t>1. Introducción</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="1"/>
+    </w:p>
+    <w:p w14:paraId="0A000001" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r>
+        <w:t>El aprendizaje de idiomas extranjeros ha sido históricamente uno de los campos más desafiantes dentro de la educación formal. En particular, la gramática inglesa presenta dificultades específicas para hablantes nativos del español, tanto por las diferencias estructurales entre ambas lenguas como por la naturaleza abstracta de sus reglas morfosintácticas. Durante décadas, la enseñanza de la gramática se apoyó casi exclusivamente en métodos tradicionales: ejercicios escritos de completar espacios en blanco, conjugación de verbos en tablas y traducción de oraciones descontextualizadas. Si bien estos enfoques desarrollan cierto conocimiento declarativo de las reglas gramaticales, han demostrado ser insuficientes para lograr una apropiación activa y duradera del idioma, especialmente en entornos donde el tiempo de exposición al inglés fuera del aula es limitado.</w:t>
+      </w:r>
+      
+    </w:p>
+    <w:p w14:paraId="0A000002" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r>
+        <w:t>Frente a este panorama, las neurociencias cognitivas y la psicología del aprendizaje han aportado evidencia relevante en las últimas décadas. Autores como John Medina (</w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:i/>
+          <w:iCs/>
+        </w:rPr>
+        <w:t>Brain Rules</w:t>
+      </w:r>
+      <w:r>
+        <w:t>, 2008) y Stanislas Dehaene (</w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:i/>
+          <w:iCs/>
+        </w:rPr>
+        <w:t>How We Learn</w:t>
+      </w:r>
+      <w:r>
+        <w:t xml:space="preserve">, 2019) señalan que el cerebro humano aprende con mayor eficacia cuando el contenido va acompañado de emoción, repetición espaciada, retroalimentación inmediata y un sentido de logro o recompensa. Estos principios, bien conocidos en el diseño de videojuegos desde los años 70, comenzaron a aplicarse sistemáticamente al campo educativo a principios del siglo XXI bajo el concepto de </w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>gamificación</w:t>
+      </w:r>
+      <w:r>
+        <w:t>.</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0A000003" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:pStyle w:val="Ttulo2"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="2" w:name="_Toc230634517"/>
+      <w:r>
+        <w:t>Antecedentes: de los videojuegos al aula</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="2"/>
+    </w:p>
+    <w:p w14:paraId="0A000004" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">La gamificación educativa no es un fenómeno reciente. Sus raíces se remontan a los primeros simuladores de entrenamiento militar desarrollados en los años 50 y 60, que utilizaban mecánicas de juego para replicar situaciones reales en entornos seguros. En el ámbito civil, los primeros juegos educativos por computadora —como </w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:i/>
+          <w:iCs/>
+        </w:rPr>
+        <w:t>The Oregon Trail</w:t>
+      </w:r>
+      <w:r>
+        <w:t xml:space="preserve"> (1971) y </w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:i/>
+          <w:iCs/>
+        </w:rPr>
+        <w:t>Reader Rabbit</w:t>
+      </w:r>
+      <w:r>
+        <w:t xml:space="preserve"> </w:t>
+      <w:lastRenderedPageBreak/><w:t>(1984)— demostraron que los estudiantes podían mantener sesiones de práctica prolongadas cuando el contenido estaba integrado en una narrativa o mecánica lúdica, superando con creces la atención que prestaban a materiales didácticos convencionales.</w:t></w:r>
+      
+    </w:p>
+    <w:p w14:paraId="0A000005" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Con la masificación del acceso a internet a finales de los años 90 y la consolidación de la Web 2.0 en la década de 2000, surgieron plataformas que trasladaron esta lógica al entorno en línea. </w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>Duolingo</w:t>
+      </w:r>
+      <w:r>
+        <w:t xml:space="preserve"> (fundada en 2011 por Luis von Ahn) se convirtió en el referente global del aprendizaje de idiomas gamificado, incorporando sistemas de puntos, rachas diarias, vidas y tablas de clasificación. Sin embargo, Duolingo fue concebido para el autoaprendizaje individual y asíncrono, lo que limita su utilidad en un contexto de aula donde el docente necesita coordinar y guiar el aprendizaje colectivo en tiempo real.</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0A000006" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Fue </w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>Kahoot!</w:t>
+      </w:r>
+      <w:r>
+        <w:t xml:space="preserve"> (lanzada en 2013 por investigadores de la Universidad Noruega de Ciencia y Tecnología) la que revolucionó la dinámica del aula al introducir el modelo de </w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:i/>
+          <w:iCs/>
+        </w:rPr>
+        <w:t>audience response system</w:t>
+      </w:r>
+      <w:r>
+        <w:t xml:space="preserve"> (sistema de respuesta de audiencia) en formato de juego multijugador sincrónico. Su propuesta fue simple pero poderosa: el docente proyecta preguntas de opción múltiple en una pantalla compartida mientras los estudiantes responden desde sus dispositivos personales, obteniendo puntos según la rapidez y precisión de sus respuestas. Estudios posteriores (Wang &amp; Lieberoth, 2016; Plump &amp; LaRosa, 2017) documentaron mejoras significativas en la motivación, el compromiso y la retención de contenidos en grupos que usaban Kahoot! en comparación con clases expositivas tradicionales. Plataformas similares como </w:t>
+      </w:r>
+      
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>Quizizz</w:t>
+      </w:r>
+      <w:r>
+        <w:t xml:space="preserve">, </w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>Blooket</w:t>
+      </w:r>
+      <w:r>
+        <w:t xml:space="preserve">, </w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>Gimkit</w:t>
+      </w:r>
+      <w:r>
+        <w:t xml:space="preserve"> y </w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>Quizlet Live</w:t>
+      </w:r>
+      <w:r>
+        <w:t xml:space="preserve"> siguieron este modelo con variaciones en la mecánica, la estética y el nivel de personalización pedagógica.</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0A000007" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">No obstante, todas estas plataformas comparten una limitación estructural importante desde la perspectiva del docente de inglés: están diseñadas como herramientas de evaluación de </w:t>
+      <w:lastRenderedPageBreak/><w:t xml:space="preserve">conocimiento declarativo (es decir, ¿sabe el estudiante la respuesta correcta?), pero no están orientadas a desarrollar habilidades gramaticales específicas con mecánicas diferenciadas por estructura lingüística. Un estudiante puede responder correctamente a una pregunta sobre el </w:t></w:r>
+      
+      <w:r>
+        <w:rPr>
+          <w:i/>
+          <w:iCs/>
+        </w:rPr>
+        <w:t>Past Simple</w:t>
+      </w:r>
+      <w:r>
+        <w:t xml:space="preserve"> en Kahoot! por azar entre cuatro opciones, sin haber procesado genuinamente la regla gramatical implicada. Esta brecha entre motivación superficial y aprendizaje profundo fue la motivación central para el desarrollo de </w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>Grammar X</w:t>
+      </w:r>
+      <w:r>
+        <w:t>.</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0A000008" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:pStyle w:val="Ttulo2"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="3" w:name="_Toc230634518"/>
+      <w:r>
+        <w:t>Concepto y naturaleza del proyecto</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="3"/>
+    </w:p>
+    <w:p w14:paraId="0A000009" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t xml:space="preserve">Grammar X </w:t>
+      </w:r>
+      <w:r>
+        <w:t>es una aplicación web de tipo multijugador en tiempo real (</w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:i/>
+          <w:iCs/>
+        </w:rPr>
+        <w:t>real-time multiplayer web application</w:t>
+      </w:r>
+      <w:r>
+        <w:t xml:space="preserve">), desarrollada íntegramente con tecnologías de código abierto, que implementa cuatro minijuegos temáticos diseñados específicamente para practicar estructuras gramaticales del inglés. A diferencia de las plataformas de trivia mencionadas, cada modo de juego en Grammar X no solo evalúa el conocimiento de una estructura gramatical, sino que requiere que el jugador la manipule activamente: ordenar palabras para construir oraciones, seleccionar la forma correcta de un adjetivo comparativo, leer un fragmento contextualizado en </w:t>
+      </w:r>
+      
+      <w:r>
+        <w:rPr>
+          <w:i/>
+          <w:iCs/>
+        </w:rPr>
+        <w:t>Present Perfect</w:t>
+      </w:r>
+      <w:r>
+        <w:t xml:space="preserve"> o elegir entre variantes del tiempo futuro.</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0A000010" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Desde la perspectiva de la teoría del aprendizaje, Grammar X se apoya en tres pilares fundamentales. El primero es el </w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>aprendizaje basado en juegos</w:t>
+      </w:r>
+      <w:r>
+        <w:t xml:space="preserve"> (</w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:i/>
+          <w:iCs/>
+        </w:rPr>
+        <w:t>Game-Based Learning</w:t>
+      </w:r>
+      <w:r>
+        <w:t xml:space="preserve">, GBL), definido por Prensky (2001) como el uso de juegos digitales diseñados con propósitos pedagógicos explícitos, en contraposición al entretenimiento puro. El segundo es la </w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>teoría del flujo</w:t>
+      </w:r>
+      <w:r>
+        <w:t xml:space="preserve"> (</w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:i/>
+          <w:iCs/>
+        </w:rPr>
+        <w:t>Flow Theory</w:t>
+      </w:r>
+      <w:r>
+        <w:t xml:space="preserve">) de Mihaly Csikszentmihalyi (1990), que postula que el aprendizaje óptimo ocurre cuando el nivel de desafío de una tarea se equilibra con el nivel de habilidad del participante, generando un estado de concentración total y motivación intrínseca; en Grammar X, esto se implementa a través de cinco niveles de dificultad progresivos que adaptan la complejidad de las preguntas al </w:t>
+      <w:lastRenderedPageBreak/><w:t xml:space="preserve">avance del grupo. El tercer pilar es el </w:t></w:r>
+      
+      
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>aprendizaje colaborativo competitivo</w:t>
+      </w:r>
+      <w:r>
+        <w:t>: la presencia de otros jugadores en la misma sala virtual activa mecanismos sociales de comparación y motivación que potencian el compromiso individual con la tarea.</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0A000011" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">En términos de arquitectura de juego, Grammar X adopta el modelo </w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>host-cliente sincrónico</w:t>
+      </w:r>
+      <w:r>
+        <w:t xml:space="preserve">: un único usuario con rol de </w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:i/>
+          <w:iCs/>
+        </w:rPr>
+        <w:t>host</w:t>
+      </w:r>
+      <w:r>
+        <w:t xml:space="preserve"> (típicamente el docente) controla el flujo de la partida desde un panel de administración en escritorio, mientras que los participantes con rol de </w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:i/>
+          <w:iCs/>
+        </w:rPr>
+        <w:t>jugador</w:t>
+      </w:r>
+      <w:r>
+        <w:t xml:space="preserve"> se unen desde cualquier dispositivo mediante un código de sala de seis caracteres o un código QR generado automáticamente. Esta asimetría de roles garantiza que el docente mantenga el control pedagógico de la sesión —pudiendo seleccionar el modo de juego, el nivel de dificultad y el tiempo por ronda— sin renunciar a la interactividad y la autonomía de respuesta de cada estudiante.</w:t>
+      </w:r>
+      
+    </w:p>
+    <w:p w14:paraId="0A000012" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:pStyle w:val="Ttulo2"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="4" w:name="_Toc230634519"/>
+      <w:r>
+        <w:t>Contexto institucional y justificación</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="4"/>
+    </w:p>
+    <w:p w14:paraId="0A000013" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">El presente informe describe el desarrollo de Grammar X como proyecto final de la asignatura de </w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>Inglés 2</w:t>
+      </w:r>
+      <w:r>
+        <w:t xml:space="preserve"> en la </w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>Universidad Privada Domingo Savio</w:t>
+      </w:r>
+      <w:r>
+        <w:t>. La elección de una plataforma web multijugador como entregable académico responde a la confluencia de dos dimensiones del plan de estudios: la práctica del idioma inglés como lengua extranjera y la aplicación de competencias en desarrollo de software para la construcción de soluciones digitales con impacto educativo real.</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0A000014" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">La aplicación cubre cuatro estructuras gramaticales fundamentales del nivel A2–B1 del Marco Común Europeo de Referencia para las Lenguas (MCER): el </w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:i/>
+          <w:iCs/>
+        </w:rPr>
+        <w:t>Past Simple</w:t>
+      </w:r>
+      <w:r>
+        <w:t xml:space="preserve">, los comparativos y superlativos, el </w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:i/>
+          <w:iCs/>
+        </w:rPr>
+        <w:t>Present Perfect</w:t>
+      </w:r>
+      <w:r>
+        <w:t xml:space="preserve"> y el </w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:i/>
+          <w:iCs/>
+        </w:rPr>
+        <w:t>Future Tense</w:t>
+      </w:r>
+      <w:r>
+        <w:t xml:space="preserve"> con </w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:i/>
+          <w:iCs/>
+        </w:rPr>
+        <w:t>will</w:t>
+      </w:r>
+      <w:r>
+        <w:t xml:space="preserve"> y </w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:i/>
+          <w:iCs/>
+        </w:rPr>
+        <w:t>going to</w:t>
+      </w:r>
+      <w:r>
+        <w:t>. Estas estructuras fueron seleccionadas por su alta frecuencia de aparición en los contenidos del curso de Inglés 2 y por su nivel de dificultad progresivo, que permite diseñar partidas con una curva de aprendizaje coherente.</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0A000015" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r>
+        <w:lastRenderedPageBreak/>
+        <w:t xml:space="preserve">La aplicación se construyó sobre un </w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:i/>
+          <w:iCs/>
+        </w:rPr>
+        <w:t>stack</w:t>
+      </w:r>
+      <w:r>
+        <w:t xml:space="preserve"> tecnológico completamente gratuito y de código abierto: </w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>React 18</w:t>
+      </w:r>
+      <w:r>
+        <w:t xml:space="preserve"> con </w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>Vite 5</w:t>
+      </w:r>
+      <w:r>
+        <w:t xml:space="preserve"> en el frontend, </w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>Node.js</w:t>
+      </w:r>
+      <w:r>
+        <w:t xml:space="preserve"> con </w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>Express</w:t>
+      </w:r>
+      <w:r>
+        <w:t xml:space="preserve"> en el backend, </w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>Socket.io</w:t>
+      </w:r>
+      <w:r>
+        <w:t xml:space="preserve"> para la comunicación bidireccional en tiempo real y </w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>SQLite</w:t>
+      </w:r>
+      <w:r>
+        <w:t xml:space="preserve"> como motor de base de datos embebido. El despliegue se realizó en la nube mediante </w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>Railway</w:t>
+      </w:r>
+      <w:r>
+        <w:t>, una plataforma de infraestructura como servicio (IaaS) que permite publicar aplicaciones web con acceso público permanente sin costos de licencia, lo que garantiza la disponibilidad del sistema desde cualquier dispositivo con conexión a internet y lo hace replicable en instituciones educativas con recursos limitados.</w:t>
+      </w:r>
+      
+    </w:p>
+    <w:p w14:paraId="0A000016" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r>
+        <w:t>El presente informe documenta el proceso completo de diseño, desarrollo y despliegue de la aplicación, incluyendo las decisiones de arquitectura técnica, la estructura de los contenidos pedagógicos, las mecánicas de cada modo de juego y las consideraciones sobre usabilidad y experiencia de usuario que guiaron el desarrollo.</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="7A44BC0A" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:pStyle w:val="Ttulo1"/>
+        <w:pageBreakBefore/>
+      </w:pPr>
+      <w:bookmarkStart w:id="5" w:name="_Toc230634520"/>
+      <w:r>
+        <w:rPr>
+          <w:caps/>
+        </w:rPr>
+        <w:lastRenderedPageBreak/>
+        <w:t>2. Desarrollo</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="5"/>
+    </w:p>
+    <w:p w14:paraId="0B000001" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr><w:pStyle w:val="Ttulo2"/></w:pPr>
+      <w:bookmarkStart w:id="6" w:name="_Toc230634521"/>
+      <w:r><w:t>2.1 Descripción del Sistema</w:t></w:r>
+      <w:bookmarkEnd w:id="6"/>
+    </w:p>
+    <w:p w14:paraId="0B000002" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r><w:t xml:space="preserve">Grammar X es una Single Page Application (SPA) de tipo cliente-servidor que permite a un docente crear salas de juego multijugador en tiempo real. El sistema diferencia dos roles: el host (docente), quien configura y controla la partida desde un panel de administración proyectable, y los jugadores (estudiantes), quienes se unen mediante un código único de seis caracteres alfanuméricos o escaneando un código QR generado automáticamente.</w:t></w:r>
+    </w:p>
+    <w:p w14:paraId="0B000003" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r><w:t xml:space="preserve">Cada partida consta de diez rondas seleccionadas aleatoriamente de un banco de preguntas estructurado en cinco niveles de dificultad (Beginner, Easy, Medium, Hard y Expert), garantizando que cada sesión sea única. El flujo de una sesión es: el host crea la sala; los jugadores se unen; el host configura el minijuego y el tiempo por ronda; todos leen las instrucciones y confirman que están listos; la partida transcurre con temporizador sincronizado; al finalizar se muestra el podio de resultados. El servidor mantiene el estado autoritativo; los clientes son consumidores puros de ese estado.</w:t></w:r>
+    </w:p>
+    <w:p w14:paraId="0B000004" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr><w:pStyle w:val="Ttulo2"/></w:pPr>
+      <w:bookmarkStart w:id="7" w:name="_Toc230634522"/>
+      <w:r><w:t>2.2 Decisiones de Stack Tecnológico</w:t></w:r>
+      <w:bookmarkEnd w:id="7"/>
+    </w:p>
+    <w:p w14:paraId="0B000005" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r><w:t xml:space="preserve">La selección de cada tecnología respondió a criterios específicos de funcionalidad, costo y facilidad de integración. A continuación se justifica la elección de cada componente del stack:</w:t></w:r>
+    </w:p>
+    <w:p w14:paraId="0B000006" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r><w:rPr><w:b/><w:bCs/></w:rPr><w:t xml:space="preserve">React 18 + Vite 5 (Frontend). </w:t></w:r>
+      <w:r><w:t xml:space="preserve">React 18 fue elegido porque permite construir interfaces reactivas mediante componentes declarativos: cuando el estado cambia (por ejemplo, llega un nuevo estado del juego vía Socket.io), solo se re-renderizan los componentes afectados. Esto es crítico en un juego donde el temporizador, el contador de respuestas y el marcador se actualizan simultáneamente. Vite 5 reemplaza a webpack: el servidor de desarrollo arranca en menos de 300 ms (frente a los 10–30 s de webpack) y genera bundles optimizados mediante tree-shaking automático.</w:t></w:r>
+    </w:p>
+    <w:p w14:paraId="0B000007" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r><w:rPr><w:b/><w:bCs/></w:rPr><w:t xml:space="preserve">Node.js 24 + Express.js (Backend). </w:t></w:r>
+      <w:r><w:t xml:space="preserve">Node.js es idóneo para tiempo real por su modelo de I/O no bloqueante. A diferencia de servidores que crean un hilo por conexión, Node.js maneja miles de conexiones WebSocket en un único hilo mediante su event loop. Express.js simplifica la definición de rutas HTTP, permitiendo servir los archivos estáticos del frontend compilado y la lógica del juego desde el mismo proceso.</w:t></w:r>
+    </w:p>
+    <w:p w14:paraId="0B000008" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r><w:rPr><w:b/><w:bCs/></w:rPr><w:t xml:space="preserve">Socket.io 4.x (Comunicación en Tiempo Real). </w:t></w:r>
+      <w:r><w:t xml:space="preserve">HTTP es un protocolo petición-respuesta; en un juego multijugador necesitamos el patrón inverso: el servidor debe notificar a todos los clientes cuando ocurre un evento. Socket.io implementa WebSockets con fallback automático a long-polling y añade salas virtuales (rooms) que permiten emitir mensajes selectivamente a todos los participantes de una partida con una única llamada io.to(code).emit().</w:t></w:r>
+    </w:p>
+    <w:p w14:paraId="0B000009" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r><w:rPr><w:b/><w:bCs/></w:rPr><w:t xml:space="preserve">SQLite + node:sqlite (Persistencia). </w:t></w:r>
+      <w:r><w:t xml:space="preserve">SQLite fue elegido sobre PostgreSQL o MongoDB porque es serverless: la base de datos es un archivo en disco, sin proceso separado ni credenciales. Node.js 22+ incluye soporte nativo vía node:sqlite sin instalar librerías adicionales. Para una aplicación de aula con sesiones cortas y sin necesidad de escalado horizontal, SQLite ofrece la relación funcionalidad/complejidad óptima.</w:t></w:r>
+    </w:p>
+    <w:p w14:paraId="0B00000A" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r><w:rPr><w:b/><w:bCs/></w:rPr><w:t xml:space="preserve">Web Audio API (Sistema de Sonido). </w:t></w:r>
+      <w:r><w:t xml:space="preserve">En lugar de cargar archivos .mp3 o .wav, Grammar X sintetiza todos los sonidos en tiempo real en el navegador. Esto elimina peticiones HTTP adicionales, garantiza funcionamiento offline y permite personalizar cada sonido por código. La API está disponible en todos los navegadores modernos sin dependencias ni licencias.</w:t></w:r>
+    </w:p>
+    <w:p w14:paraId="0B00000B" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr><w:pStyle w:val="Ttulo2"/></w:pPr>
+      <w:bookmarkStart w:id="8" w:name="_Toc230634523"/>
+      <w:r><w:t>2.3 Arquitectura del Sistema</w:t></w:r>
+      <w:bookmarkEnd w:id="8"/>
+    </w:p>
+    <w:p w14:paraId="0B00000C" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r><w:t xml:space="preserve">La arquitectura sigue el patrón cliente-servidor con un único proceso Node.js que cumple tres funciones: servir los archivos estáticos del frontend (carpeta dist/ generada por Vite), gestionar la lógica del juego y mantener conexiones WebSocket con todos los clientes. La base de datos SQLite corre embebida en el mismo proceso, eliminando la necesidad de infraestructura adicional.</w:t></w:r>
+    </w:p>
+    <w:p w14:paraId="0B00000D" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r><w:t xml:space="preserve">El estado de la partida vive exclusivamente en el servidor. Los clientes son apátridas (stateless) respecto al juego: su única fuente de verdad es el último mensaje ‘state’ recibido por Socket.io. Si un jugador pierde conexión y se reconecta, solicita el estado actual con el evento ‘rejoin’ y retoma la partida desde donde estaba. La función push(code) centraliza toda la distribución de estado:</w:t></w:r>
+    </w:p>
+    <w:p w14:paraId="0B00000E" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">// server/index.js</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00000F" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">function push(code) {</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000010" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  const state = db.getRoundState(code);</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000011" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  if (state) io.to(code).emit('state', state);</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000012" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">}</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000013" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve"></w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000014" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">// Se invoca tras cualquier cambio: respuesta, avance de ronda, fin de juego</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000015" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">socket.on('answer', ({ code, name, roundIndex, score, gameToken }) =&gt; {</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000016" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  db.submitAnswer(code, name, roundIndex, score, gameToken);</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000017" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  push(code);  // notifica a todos los participantes de la sala</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000018" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">});</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000019" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr><w:pStyle w:val="Ttulo2"/></w:pPr>
+      <w:r><w:t>2.4 Comunicación en Tiempo Real: Socket.io</w:t></w:r>
+    </w:p>
+    <w:p w14:paraId="0B00001A" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r><w:t xml:space="preserve">La capa de comunicación define eventos específicos para cada acción del juego. Todos siguen el mismo patrón: el cliente emite un evento con datos y un callback de confirmación (ack), el servidor valida y persiste el cambio en SQLite, y llama a push() para distribuir el nuevo estado a todos los participantes de la sala.</w:t></w:r>
+    </w:p>
+    <w:p w14:paraId="0B00001B" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r><w:t xml:space="preserve">En el cliente se usa un patrón dual ref + state de React: el estado (useState) gestiona el re-render de la UI, mientras que la ref (useRef) garantiza que el temporizador, que corre en un setInterval independiente, siempre lea el valor más reciente sin problemas de closures obsoletas:</w:t></w:r>
+    </w:p>
+    <w:p w14:paraId="0B00001C" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">// index.jsx — PlayerGameScreen</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00001D" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">const rsRef = useRef(null);          // para el intervalo del timer</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00001E" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">const [rs, setRs] = useState(null);  // para el renderizado de React</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00001F" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve"></w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000020" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">useEffect(() =&gt; {</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000021" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  socket.on('state', data =&gt; {</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000022" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">    rsRef.current = data;  // actualiza la ref inmediatamente</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000023" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">    setRs(data);           // dispara re-render de la UI</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000024" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  });</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000025" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  return () =&gt; socket.off('state');</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000026" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">}, [sessionCode]);</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000027" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve"></w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000028" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">// El timer lee rsRef.current, nunca el estado de React directamente</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000029" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">setInterval(() =&gt; {</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00002A" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  const cur = rsRef.current;</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00002B" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  const left = cur.timePerRound - (syncedNow - cur.roundStartedAt) / 1000;</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00002C" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  setTimeLeft(Math.max(0, left));</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00002D" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">}, 200);</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00002E" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr><w:pStyle w:val="Ttulo2"/></w:pPr>
+      <w:r><w:t>2.5 Persistencia con SQLite Nativo</w:t></w:r>
+    </w:p>
+    <w:p w14:paraId="0B00002F" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r><w:t xml:space="preserve">La base de datos tiene tres tablas principales. La tabla sessions almacena el estado global de cada partida: código de sala, status del ciclo de vida (waiting / instructions / playing / ended / closed), las rondas serializadas como JSON, la ronda actual y el timestamp de inicio de ronda activa. La tabla players registra a los participantes. La tabla answers guarda cada respuesta individual:</w:t></w:r>
+    </w:p>
+    <w:p w14:paraId="0B000030" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">-- server/db.js — esquema SQLite</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000031" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">CREATE TABLE sessions (</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000032" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  code             TEXT PRIMARY KEY,</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000033" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  status           TEXT DEFAULT 'waiting',</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000034" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  game_id          TEXT NOT NULL,</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000035" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  rounds           TEXT NOT NULL DEFAULT '[]',   -- JSON array de rondas</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000036" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  current_round    INTEGER DEFAULT 0,</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000037" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  round_started_at INTEGER DEFAULT 0,            -- timestamp ms</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000038" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  time_per_round   INTEGER DEFAULT 20,</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000039" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  game_token       TEXT NOT NULL DEFAULT ''      -- aislador entre partidas</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00003A" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">);</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00003B" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve"></w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00003C" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">CREATE TABLE answers (</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00003D" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  session_code TEXT,    player_name  TEXT,</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00003E" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  round_index  INTEGER, score        INTEGER,</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00003F" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  game_token   TEXT,</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000040" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  PRIMARY KEY (session_code, player_name, round_index, game_token)</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000041" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">);</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000042" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r><w:t xml:space="preserve">El campo game_token es un timestamp en milisegundos generado al iniciar cada partida. Permite jugar múltiples partidas consecutivas en la misma sala sin que las respuestas de una contaminen las puntuaciones de la siguiente: al calcular resultados, solo se consideran las respuestas cuyo game_token coincida con el de la partida activa.</w:t></w:r>
+    </w:p>
+    <w:p w14:paraId="0B000043" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr><w:pStyle w:val="Ttulo2"/></w:pPr>
+      <w:r><w:t>2.6 Corrección de Desfase de Reloj (Clock Skew)</w:t></w:r>
+    </w:p>
+    <w:p w14:paraId="0B000044" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r><w:t xml:space="preserve">En un juego multijugador con temporizador compartido, cada dispositivo tiene su propio reloj del sistema, que puede diferir del servidor por decenas o cientos de milisegundos. Sin corrección, un jugador podría ver 3 segundos restantes mientras otro ve 1 segundo, creando una ventaja injusta.</w:t></w:r>
+    </w:p>
+    <w:p w14:paraId="0B000045" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r><w:t xml:space="preserve">Grammar X implementa corrección de desfase en el cliente: el servidor incluye su timestamp (serverTime) en cada mensaje de estado. El cliente calcula la diferencia entre su reloj local y el del servidor (clockOffset) y la aplica en cada tick del temporizador:</w:t></w:r>
+    </w:p>
+    <w:p w14:paraId="0B000046" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">// index.jsx — al recibir cualquier estado del servidor</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000047" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">if (data.serverTime) {</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000048" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  clockOffset.current = Date.now() - data.serverTime;</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000049" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">}</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00004A" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve"></w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00004B" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">// En el intervalo del temporizador (ejecuta cada 200 ms)</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00004C" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">const syncedNow = Date.now() - clockOffset.current;</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00004D" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">const left = Math.max(0,</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00004E" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  data.timePerRound - (syncedNow - data.roundStartedAt) / 1000</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00004F" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">);</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000050" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">setTimeLeft(left);</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000051" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve"></w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000052" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">// Si el reloj del dispositivo está +500 ms adelantado:</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000053" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">// clockOffset = +500  =&gt;  syncedNow = ahora - 500 aprox. tiempo del servidor</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000054" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr><w:pStyle w:val="Ttulo2"/></w:pPr>
+      <w:r><w:t>2.7 Sistema de Sonido: Web Audio API</w:t></w:r>
+    </w:p>
+    <w:p w14:paraId="0B000055" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r><w:t xml:space="preserve">Todos los efectos de sonido y la música de fondo se generan por síntesis de audio directamente en el navegador, sin archivos externos. La función base tone() crea un oscilador (fuente de sonido), lo conecta a un nodo de ganancia (volumen) y programa su inicio y fin con precisión de microsegundos mediante la API de tiempo del AudioContext:</w:t></w:r>
+    </w:p>
+    <w:p w14:paraId="0B000056" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">// src/sounds.js</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000057" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">function tone(type, freq, startT, dur, vol, freqEnd = null) {</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000058" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  const o = ctx.createOscillator();  // genera la onda sonora</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000059" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  const g = ctx.createGain();        // controla el volumen</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00005A" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  o.connect(g); g.connect(ctx.destination);</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00005B" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  o.type = type;  // 'sine' | 'square' | 'sawtooth' | 'triangle'</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00005C" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  o.frequency.setValueAtTime(freq, startT);</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00005D" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  if (freqEnd != null)</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00005E" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">    o.frequency.exponentialRampToValueAtTime(freqEnd, startT + dur * 0.88);</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00005F" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  g.gain.setValueAtTime(vol, startT);</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000060" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  g.gain.exponentialRampToValueAtTime(0.0001, startT + dur * 0.92);</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000061" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  o.start(startT); o.stop(startT + dur + 0.05);</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000062" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">}</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000063" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r><w:t xml:space="preserve">Sobre esta función base se construyen todos los sonidos. El acorde de respuesta correcta encadena cuatro tonos sinusoidales en Do mayor ascendente (523, 659, 784, 1047 Hz con intervalos de 80 ms). El sonido de error usa una onda diente de sierra con glissando descendente de 230 a 95 Hz. La música de fondo es un bucle de 4.5 segundos: 24 notas en pentátonica de Do mayor (onda triangular, vol. 0.055) con línea de bajo de 8 notas (onda seno, vol. 0.07), reprogramadas automáticamente via setTimeout antes de que termine cada ciclo.</w:t></w:r>
+    </w:p>
+    <w:p w14:paraId="0B000064" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr><w:pStyle w:val="Ttulo2"/></w:pPr>
+      <w:bookmarkStart w:id="9" w:name="_Toc230634524"/>
+      <w:r><w:t>2.8 Sistema de Puntuación Dinámico</w:t></w:r>
+      <w:bookmarkEnd w:id="9"/>
+    </w:p>
+    <w:p w14:paraId="0B000065" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r><w:t xml:space="preserve">La puntuación de cada respuesta combina la dificultad de la pregunta y la velocidad de respuesta. La fórmula implementada en el cliente es:</w:t></w:r>
+    </w:p>
+    <w:p w14:paraId="0B000066" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">// index.jsx</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000067" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">function calcScore(correct, timeLeft, tpr, diff) {</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000068" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  if (!correct) return 0;</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000069" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">  return diff * 100 + Math.round((timeLeft / tpr) * diff * 50);</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00006A" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">}</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00006B" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">// diff     : nivel de dificultad (1 a 5)</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00006C" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">// tpr      : tiempo total de la ronda en segundos</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00006D" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">// timeLeft : segundos restantes al momento de responder</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00006E" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve"></w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00006F" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">// Ejemplo con dificultad 5 y ronda de 20 s:</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000070" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">// Responder al instante : 5x100 + (20/20)x5x50 = 750 pts</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000071" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">// Responder al ultimo s : 5x100 + (1/20)x5x50  = 512 pts</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000072" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">// Respuesta incorrecta  : 0 pts</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000073" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r><w:t xml:space="preserve">El bono de velocidad va de 0 a diff×50 puntos, decreciendo linealmente con el tiempo transcurrido. Al finalizar, el servidor suma todas las puntuaciones via SQL, las persiste en la tabla scores y las devuelve ordenadas de mayor a menor para construir el podio.</w:t></w:r>
+    </w:p>
+    <w:p w14:paraId="0B000074" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr><w:pStyle w:val="Ttulo2"/></w:pPr>
+      <w:r><w:t>2.9 Arquitectura de Componentes React</w:t></w:r>
+    </w:p>
+    <w:p w14:paraId="0B000075" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r><w:t xml:space="preserve">La interfaz está organizada como una máquina de estados controlada por el componente raíz App. La variable screen determina qué pantalla se renderiza; las transiciones ocurren cuando los componentes hijos invocan callbacks que App les pasa como props:</w:t></w:r>
+    </w:p>
+    <w:p w14:paraId="0B000076" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">// App (index.jsx) — máquina de estados de navegación</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000077" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">'login'         =&gt;  LoginScreen        // selección de rol (host / jugador)</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000078" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">'join'          =&gt;  JoinScreen         // ingresar código de sala</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B000079" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">'host-lobby'    =&gt;  HostLobbyScreen    // configurar y esperar jugadores</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00007A" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">'host-game'     =&gt;  HostGameScreen     // dashboard durante la partida</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00007B" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">'host-results'  =&gt;  HostResultsScreen  // podio final del host</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00007C" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">'player-lobby'  =&gt;  PlayerLobbyScreen  // esperar + pantalla instrucciones</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00007D" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">'player-game'   =&gt;  PlayerGameScreen   // responder preguntas</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00007E" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="EFEFEF"/>
+        <w:spacing w:line="240" w:lineRule="auto" w:before="30" w:after="30"/>
+        <w:ind w:left="540"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New"/>
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="1E1E3E"/>
+        </w:rPr>
+        <w:t xml:space="preserve">'podium'        =&gt;  PodiumScreen       // leaderboard histórico global</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0B00007F" w14:textId="77777777" w:rsidR="00FF0001" w:rsidRDefault="00FF0001">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r><w:t xml:space="preserve">Los minijuegos G1 (ordenar palabras) y G2–G4 (opción múltiple) están encapsulados en componentes separados (QuestionG1 y QuestionMCQ) que reciben la ronda actual como prop y emiten un callback onAnswer con el resultado, manteniendo separada la lógica de presentación de la lógica de puntuación. Todos los estilos CSS se inyectan mediante la función injectCSS() en el head del documento al montar la app, eliminando archivos CSS externos y garantizando que el bundle de producción generado por Vite sea un único archivo JavaScript autocontenido.</w:t></w:r>
+    </w:p>
+    <w:p w14:paraId="7DDA510B" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:pStyle w:val="Ttulo1"/>
+        <w:pageBreakBefore/>
+      </w:pPr>
+      <w:bookmarkStart w:id="10" w:name="_Toc230634525"/>
+      <w:r>
+        <w:rPr>
+          <w:caps/>
+        </w:rPr>
+        <w:lastRenderedPageBreak/>
+        <w:t>3. Capturas de Pantalla</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="10"/>
+    </w:p>
+    <w:p w14:paraId="3B641AB1" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r>
+        <w:t>A continuación se presentan las capturas de pantalla de las principales vistas de la aplicación, ilustrando el flujo completo desde el inicio de sesión hasta la visualización de resultados finales.</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0A60D058" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00B35A5C">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+      </w:pPr>
+    </w:p>
+    <w:p w14:paraId="3F2583DB" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:pStyle w:val="Ttulo2"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="11" w:name="_Toc230634526"/>
+      <w:r>
+        <w:t>3.1 Pantalla de Inicio</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="11"/>
+    </w:p>
+    <w:p w14:paraId="1D4031C4" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r>
+        <w:t>La pantalla de inicio permite al usuario ingresar su nombre y seleccionar entre el rol de Host (docente) y Jugador (estudiante). El diseño oscuro con tipografía contrastante crea una estética de videojuego que resulta atractiva para el público estudiantil.</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="42C1F170" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00B35A5C">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+      </w:pPr>
+    </w:p>
+    <w:p w14:paraId="2558293C" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:spacing w:before="160" w:after="80"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:noProof/>
+        </w:rPr>
+        <w:drawing>
+          <wp:inline distT="0" distB="0" distL="0" distR="0" wp14:anchorId="08DBB3BA" wp14:editId="6F8A9C24">
+            <wp:extent cx="4762500" cy="2981325"/>
+            <wp:effectExtent l="0" t="0" r="0" b="0"/>
+            <wp:docPr id="1" name="Figura 1. Pantalla de inicio — selección de rol" descr="Figura 1. Pantalla de inicio — selección de rol" title="Figura 1. Pantalla de inicio — selección de rol"/>
+            <wp:cNvGraphicFramePr>
+              <a:graphicFrameLocks xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" noChangeAspect="1"/>
+            </wp:cNvGraphicFramePr>
+            <a:graphic xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+              <a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture">
+                <pic:pic xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture">
+                  <pic:nvPicPr>
+                    <pic:cNvPr id="0" name=""/>
+                    <pic:cNvPicPr>
+                      <a:picLocks noChangeAspect="1" noChangeArrowheads="1"/>
+                    </pic:cNvPicPr>
+                  </pic:nvPicPr>
+                  <pic:blipFill>
+                    <a:blip r:embed="rId11"/>
+                    <a:srcRect/>
+                    <a:stretch>
+                      <a:fillRect/>
+                    </a:stretch>
+                  </pic:blipFill>
+                  <pic:spPr bwMode="auto">
+                    <a:xfrm>
+                      <a:off x="0" y="0"/>
+                      <a:ext cx="4762500" cy="2981325"/>
+                    </a:xfrm>
+                    <a:prstGeom prst="rect">
+                      <a:avLst/>
+                    </a:prstGeom>
+                  </pic:spPr>
+                </pic:pic>
+              </a:graphicData>
+            </a:graphic>
+          </wp:inline>
+        </w:drawing>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="4232AA94" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:spacing w:after="240"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:i/>
+          <w:iCs/>
+          <w:color w:val="555555"/>
+          <w:sz w:val="20"/>
+          <w:szCs w:val="20"/>
+        </w:rPr>
+        <w:t>Figura 1. Pantalla de inicio — selección de rol</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="2CC6CA0E" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:spacing w:before="160" w:after="80"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:noProof/>
+        </w:rPr>
+        <w:lastRenderedPageBreak/>
+        <w:drawing>
+          <wp:inline distT="0" distB="0" distL="0" distR="0" wp14:anchorId="33950C69" wp14:editId="7809F162">
+            <wp:extent cx="4762500" cy="2981325"/>
+            <wp:effectExtent l="0" t="0" r="0" b="0"/>
+            <wp:docPr id="448701927" name="Figura 2. Pantalla de inicio con rol Host seleccionado" descr="Figura 2. Pantalla de inicio con rol Host seleccionado" title="Figura 2. Pantalla de inicio con rol Host seleccionado"/>
+            <wp:cNvGraphicFramePr>
+              <a:graphicFrameLocks xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" noChangeAspect="1"/>
+            </wp:cNvGraphicFramePr>
+            <a:graphic xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+              <a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture">
+                <pic:pic xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture">
+                  <pic:nvPicPr>
+                    <pic:cNvPr id="0" name=""/>
+                    <pic:cNvPicPr>
+                      <a:picLocks noChangeAspect="1" noChangeArrowheads="1"/>
+                    </pic:cNvPicPr>
+                  </pic:nvPicPr>
+                  <pic:blipFill>
+                    <a:blip r:embed="rId12"/>
+                    <a:srcRect/>
+                    <a:stretch>
+                      <a:fillRect/>
+                    </a:stretch>
+                  </pic:blipFill>
+                  <pic:spPr bwMode="auto">
+                    <a:xfrm>
+                      <a:off x="0" y="0"/>
+                      <a:ext cx="4762500" cy="2981325"/>
+                    </a:xfrm>
+                    <a:prstGeom prst="rect">
+                      <a:avLst/>
+                    </a:prstGeom>
+                  </pic:spPr>
+                </pic:pic>
+              </a:graphicData>
+            </a:graphic>
+          </wp:inline>
+        </w:drawing>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="61425034" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:spacing w:after="240"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:i/>
+          <w:iCs/>
+          <w:color w:val="555555"/>
+          <w:sz w:val="20"/>
+          <w:szCs w:val="20"/>
+        </w:rPr>
+        <w:t>Figura 2. Pantalla de inicio con rol Host seleccionado</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="480BC1EB" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:pStyle w:val="Ttulo2"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="12" w:name="_Toc230634527"/>
+      <w:r>
+        <w:t>3.2 Sala de Espera (Lobby)</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="12"/>
+    </w:p>
+    <w:p w14:paraId="061B24D9" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r>
+        <w:t>Una vez que el docente crea la sala, se muestra un código único de seis caracteres y un código QR que los estudiantes pueden escanear con su dispositivo para unirse automáticamente. El host puede seleccionar el minijuego y el tiempo por pregunta antes de iniciar la partida.</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="5A614F74" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00B35A5C">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+      </w:pPr>
+    </w:p>
+    <w:p w14:paraId="6231FEF0" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:spacing w:before="160" w:after="80"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:noProof/>
+        </w:rPr>
+        <w:lastRenderedPageBreak/>
+        <w:drawing>
+          <wp:inline distT="0" distB="0" distL="0" distR="0" wp14:anchorId="307E2341" wp14:editId="721B48C1">
+            <wp:extent cx="4762500" cy="3238500"/>
+            <wp:effectExtent l="0" t="0" r="0" b="0"/>
+            <wp:docPr id="1316592569" name="Figura 3. Sala del host — selección de minijuego y código de sala" descr="Figura 3. Sala del host — selección de minijuego y código de sala" title="Figura 3. Sala del host — selección de minijuego y código de sala"/>
+            <wp:cNvGraphicFramePr>
+              <a:graphicFrameLocks xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" noChangeAspect="1"/>
+            </wp:cNvGraphicFramePr>
+            <a:graphic xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+              <a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture">
+                <pic:pic xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture">
+                  <pic:nvPicPr>
+                    <pic:cNvPr id="0" name=""/>
+                    <pic:cNvPicPr>
+                      <a:picLocks noChangeAspect="1" noChangeArrowheads="1"/>
+                    </pic:cNvPicPr>
+                  </pic:nvPicPr>
+                  <pic:blipFill>
+                    <a:blip r:embed="rId13"/>
+                    <a:srcRect/>
+                    <a:stretch>
+                      <a:fillRect/>
+                    </a:stretch>
+                  </pic:blipFill>
+                  <pic:spPr bwMode="auto">
+                    <a:xfrm>
+                      <a:off x="0" y="0"/>
+                      <a:ext cx="4762500" cy="3238500"/>
+                    </a:xfrm>
+                    <a:prstGeom prst="rect">
+                      <a:avLst/>
+                    </a:prstGeom>
+                  </pic:spPr>
+                </pic:pic>
+              </a:graphicData>
+            </a:graphic>
+          </wp:inline>
+        </w:drawing>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="330E294F" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:spacing w:after="240"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:i/>
+          <w:iCs/>
+          <w:color w:val="555555"/>
+          <w:sz w:val="20"/>
+          <w:szCs w:val="20"/>
+        </w:rPr>
+        <w:t>Figura 3. Sala del host — selección de minijuego y código de sala</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="415399A9" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:spacing w:before="160" w:after="80"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:noProof/>
+        </w:rPr>
+        <w:drawing>
+          <wp:inline distT="0" distB="0" distL="0" distR="0" wp14:anchorId="1BC313A5" wp14:editId="25D55A6A">
+            <wp:extent cx="4762500" cy="3238500"/>
+            <wp:effectExtent l="0" t="0" r="0" b="0"/>
+            <wp:docPr id="1229640896" name="Figura 4. Sala del host con código QR visible" descr="Figura 4. Sala del host con código QR visible" title="Figura 4. Sala del host con código QR visible"/>
+            <wp:cNvGraphicFramePr>
+              <a:graphicFrameLocks xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" noChangeAspect="1"/>
+            </wp:cNvGraphicFramePr>
+            <a:graphic xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+              <a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture">
+                <pic:pic xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture">
+                  <pic:nvPicPr>
+                    <pic:cNvPr id="0" name=""/>
+                    <pic:cNvPicPr>
+                      <a:picLocks noChangeAspect="1" noChangeArrowheads="1"/>
+                    </pic:cNvPicPr>
+                  </pic:nvPicPr>
+                  <pic:blipFill>
+                    <a:blip r:embed="rId14"/>
+                    <a:srcRect/>
+                    <a:stretch>
+                      <a:fillRect/>
+                    </a:stretch>
+                  </pic:blipFill>
+                  <pic:spPr bwMode="auto">
+                    <a:xfrm>
+                      <a:off x="0" y="0"/>
+                      <a:ext cx="4762500" cy="3238500"/>
+                    </a:xfrm>
+                    <a:prstGeom prst="rect">
+                      <a:avLst/>
+                    </a:prstGeom>
+                  </pic:spPr>
+                </pic:pic>
+              </a:graphicData>
+            </a:graphic>
+          </wp:inline>
+        </w:drawing>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="3F3AB9B1" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:spacing w:after="240"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:i/>
+          <w:iCs/>
+          <w:color w:val="555555"/>
+          <w:sz w:val="20"/>
+          <w:szCs w:val="20"/>
+        </w:rPr>
+        <w:t>Figura 4. Sala del host con código QR visible</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="4AF29836" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:spacing w:before="160" w:after="80"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:noProof/>
+        </w:rPr>
+        <w:lastRenderedPageBreak/>
+        <w:drawing>
+          <wp:inline distT="0" distB="0" distL="0" distR="0" wp14:anchorId="04FA5433" wp14:editId="127CEB24">
+            <wp:extent cx="2476500" cy="5381625"/>
+            <wp:effectExtent l="0" t="0" r="0" b="0"/>
+            <wp:docPr id="1665039454" name="Figura 5. Vista del jugador esperando en la sala (vista móvil)" descr="Figura 5. Vista del jugador esperando en la sala (vista móvil)" title="Figura 5. Vista del jugador esperando en la sala (vista móvil)"/>
+            <wp:cNvGraphicFramePr>
+              <a:graphicFrameLocks xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" noChangeAspect="1"/>
+            </wp:cNvGraphicFramePr>
+            <a:graphic xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+              <a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture">
+                <pic:pic xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture">
+                  <pic:nvPicPr>
+                    <pic:cNvPr id="0" name=""/>
+                    <pic:cNvPicPr>
+                      <a:picLocks noChangeAspect="1" noChangeArrowheads="1"/>
+                    </pic:cNvPicPr>
+                  </pic:nvPicPr>
+                  <pic:blipFill>
+                    <a:blip r:embed="rId15"/>
+                    <a:srcRect/>
+                    <a:stretch>
+                      <a:fillRect/>
+                    </a:stretch>
+                  </pic:blipFill>
+                  <pic:spPr bwMode="auto">
+                    <a:xfrm>
+                      <a:off x="0" y="0"/>
+                      <a:ext cx="2476500" cy="5381625"/>
+                    </a:xfrm>
+                    <a:prstGeom prst="rect">
+                      <a:avLst/>
+                    </a:prstGeom>
+                  </pic:spPr>
+                </pic:pic>
+              </a:graphicData>
+            </a:graphic>
+          </wp:inline>
+        </w:drawing>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="57C63272" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:spacing w:after="240"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:i/>
+          <w:iCs/>
+          <w:color w:val="555555"/>
+          <w:sz w:val="20"/>
+          <w:szCs w:val="20"/>
+        </w:rPr>
+        <w:t>Figura 5. Vista del jugador esperando en la sala (vista móvil)</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="698A2FA8" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:pStyle w:val="Ttulo2"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="13" w:name="_Toc230634528"/>
+      <w:r>
+        <w:t>3.3 Vista del Host Durante el Juego</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="13"/>
+    </w:p>
+    <w:p w14:paraId="75531D9D" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r>
+        <w:t>El panel de control del host muestra la pregunta actual, el temporizador en cuenta regresiva, el estado de respuesta de cada jugador y el marcador en tiempo real. El botón de avance se activa automáticamente cuando todos los jugadores han respondido o cuando el tiempo se agota.</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="10A40B38" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00B35A5C">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+      </w:pPr>
+    </w:p>
+    <w:p w14:paraId="004F2E80" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:spacing w:before="160" w:after="80"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:noProof/>
+        </w:rPr>
+        <w:lastRenderedPageBreak/>
+        <w:drawing>
+          <wp:inline distT="0" distB="0" distL="0" distR="0" wp14:anchorId="5D5589E9" wp14:editId="35989493">
+            <wp:extent cx="5334000" cy="3619500"/>
+            <wp:effectExtent l="0" t="0" r="0" b="0"/>
+            <wp:docPr id="1407841721" name="Figura 6. Sala del host con un jugador conectado" descr="Figura 6. Sala del host con un jugador conectado" title="Figura 6. Sala del host con un jugador conectado"/>
+            <wp:cNvGraphicFramePr>
+              <a:graphicFrameLocks xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" noChangeAspect="1"/>
+            </wp:cNvGraphicFramePr>
+            <a:graphic xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+              <a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture">
+                <pic:pic xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture">
+                  <pic:nvPicPr>
+                    <pic:cNvPr id="0" name=""/>
+                    <pic:cNvPicPr>
+                      <a:picLocks noChangeAspect="1" noChangeArrowheads="1"/>
+                    </pic:cNvPicPr>
+                  </pic:nvPicPr>
+                  <pic:blipFill>
+                    <a:blip r:embed="rId16"/>
+                    <a:srcRect/>
+                    <a:stretch>
+                      <a:fillRect/>
+                    </a:stretch>
+                  </pic:blipFill>
+                  <pic:spPr bwMode="auto">
+                    <a:xfrm>
+                      <a:off x="0" y="0"/>
+                      <a:ext cx="5334000" cy="3619500"/>
+                    </a:xfrm>
+                    <a:prstGeom prst="rect">
+                      <a:avLst/>
+                    </a:prstGeom>
+                  </pic:spPr>
+                </pic:pic>
+              </a:graphicData>
+            </a:graphic>
+          </wp:inline>
+        </w:drawing>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="78B79F17" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:spacing w:after="240"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:i/>
+          <w:iCs/>
+          <w:color w:val="555555"/>
+          <w:sz w:val="20"/>
+          <w:szCs w:val="20"/>
+        </w:rPr>
+        <w:t>Figura 6. Sala del host con un jugador conectado</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="375F3735" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:spacing w:before="160" w:after="80"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:noProof/>
+        </w:rPr>
+        <w:drawing>
+          <wp:inline distT="0" distB="0" distL="0" distR="0" wp14:anchorId="39889894" wp14:editId="4852430D">
+            <wp:extent cx="5334000" cy="3429000"/>
+            <wp:effectExtent l="0" t="0" r="0" b="0"/>
+            <wp:docPr id="26690484" name="Figura 7. Dashboard del host durante Time Machine (Past Simple)" descr="Figura 7. Dashboard del host durante Time Machine (Past Simple)" title="Figura 7. Dashboard del host durante Time Machine (Past Simple)"/>
+            <wp:cNvGraphicFramePr>
+              <a:graphicFrameLocks xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" noChangeAspect="1"/>
+            </wp:cNvGraphicFramePr>
+            <a:graphic xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+              <a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture">
+                <pic:pic xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture">
+                  <pic:nvPicPr>
+                    <pic:cNvPr id="0" name=""/>
+                    <pic:cNvPicPr>
+                      <a:picLocks noChangeAspect="1" noChangeArrowheads="1"/>
+                    </pic:cNvPicPr>
+                  </pic:nvPicPr>
+                  <pic:blipFill>
+                    <a:blip r:embed="rId17"/>
+                    <a:srcRect/>
+                    <a:stretch>
+                      <a:fillRect/>
+                    </a:stretch>
+                  </pic:blipFill>
+                  <pic:spPr bwMode="auto">
+                    <a:xfrm>
+                      <a:off x="0" y="0"/>
+                      <a:ext cx="5334000" cy="3429000"/>
+                    </a:xfrm>
+                    <a:prstGeom prst="rect">
+                      <a:avLst/>
+                    </a:prstGeom>
+                  </pic:spPr>
+                </pic:pic>
+              </a:graphicData>
+            </a:graphic>
+          </wp:inline>
+        </w:drawing>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="5AD5CC3C" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:spacing w:after="240"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:i/>
+          <w:iCs/>
+          <w:color w:val="555555"/>
+          <w:sz w:val="20"/>
+          <w:szCs w:val="20"/>
+        </w:rPr>
+        <w:t>Figura 7. Dashboard del host durante Time Machine (Past Simple)</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="57090DC9" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:pStyle w:val="Ttulo2"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="14" w:name="_Toc230634529"/>
+      <w:r>
+        <w:t>3.4 Vista del Jugador Durante el Juego</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="14"/>
+    </w:p>
+    <w:p w14:paraId="1162B8C1" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r>
+        <w:lastRenderedPageBreak/>
+        <w:t>La vista del jugador se adapta a dispositivos móviles con un diseño vertical optimizado. En Time Machine, el jugador ve las palabras mezcladas como fichas interactivas y debe tocarlas en el orden correcto para formar la oración. Un temporizador visible en la parte superior indica el tiempo restante para responder.</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="13568AB3" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00B35A5C">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+      </w:pPr>
+    </w:p>
+    <w:p w14:paraId="7A13AC8C" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:spacing w:before="160" w:after="80"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:noProof/>
+        </w:rPr>
+        <w:drawing>
+          <wp:inline distT="0" distB="0" distL="0" distR="0" wp14:anchorId="16E32909" wp14:editId="23A9F38C">
+            <wp:extent cx="2476500" cy="5381625"/>
+            <wp:effectExtent l="0" t="0" r="0" b="0"/>
+            <wp:docPr id="1125636132" name="Figura 8. Vista del jugador en Time Machine (palabras sin ordenar)" descr="Figura 8. Vista del jugador en Time Machine (palabras sin ordenar)" title="Figura 8. Vista del jugador en Time Machine (palabras sin ordenar)"/>
+            <wp:cNvGraphicFramePr>
+              <a:graphicFrameLocks xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" noChangeAspect="1"/>
+            </wp:cNvGraphicFramePr>
+            <a:graphic xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+              <a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture">
+                <pic:pic xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture">
+                  <pic:nvPicPr>
+                    <pic:cNvPr id="0" name=""/>
+                    <pic:cNvPicPr>
+                      <a:picLocks noChangeAspect="1" noChangeArrowheads="1"/>
+                    </pic:cNvPicPr>
+                  </pic:nvPicPr>
+                  <pic:blipFill>
+                    <a:blip r:embed="rId18"/>
+                    <a:srcRect/>
+                    <a:stretch>
+                      <a:fillRect/>
+                    </a:stretch>
+                  </pic:blipFill>
+                  <pic:spPr bwMode="auto">
+                    <a:xfrm>
+                      <a:off x="0" y="0"/>
+                      <a:ext cx="2476500" cy="5381625"/>
+                    </a:xfrm>
+                    <a:prstGeom prst="rect">
+                      <a:avLst/>
+                    </a:prstGeom>
+                  </pic:spPr>
+                </pic:pic>
+              </a:graphicData>
+            </a:graphic>
+          </wp:inline>
+        </w:drawing>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="5FCF678D" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:spacing w:after="240"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:i/>
+          <w:iCs/>
+          <w:color w:val="555555"/>
+          <w:sz w:val="20"/>
+          <w:szCs w:val="20"/>
+        </w:rPr>
+        <w:t>Figura 8. Vista del jugador en Time Machine (palabras sin ordenar)</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="32C46D42" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:spacing w:before="160" w:after="80"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:noProof/>
+        </w:rPr>
+        <w:lastRenderedPageBreak/>
+        <w:drawing>
+          <wp:inline distT="0" distB="0" distL="0" distR="0" wp14:anchorId="49F0FAF4" wp14:editId="3CD84C37">
+            <wp:extent cx="2476500" cy="5381625"/>
+            <wp:effectExtent l="0" t="0" r="0" b="0"/>
+            <wp:docPr id="1528622472" name="Figura 9. Jugador colocando palabras en el orden correcto" descr="Figura 9. Jugador colocando palabras en el orden correcto" title="Figura 9. Jugador colocando palabras en el orden correcto"/>
+            <wp:cNvGraphicFramePr>
+              <a:graphicFrameLocks xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" noChangeAspect="1"/>
+            </wp:cNvGraphicFramePr>
+            <a:graphic xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+              <a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture">
+                <pic:pic xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture">
+                  <pic:nvPicPr>
+                    <pic:cNvPr id="0" name=""/>
+                    <pic:cNvPicPr>
+                      <a:picLocks noChangeAspect="1" noChangeArrowheads="1"/>
+                    </pic:cNvPicPr>
+                  </pic:nvPicPr>
+                  <pic:blipFill>
+                    <a:blip r:embed="rId19"/>
+                    <a:srcRect/>
+                    <a:stretch>
+                      <a:fillRect/>
+                    </a:stretch>
+                  </pic:blipFill>
+                  <pic:spPr bwMode="auto">
+                    <a:xfrm>
+                      <a:off x="0" y="0"/>
+                      <a:ext cx="2476500" cy="5381625"/>
+                    </a:xfrm>
+                    <a:prstGeom prst="rect">
+                      <a:avLst/>
+                    </a:prstGeom>
+                  </pic:spPr>
+                </pic:pic>
+              </a:graphicData>
+            </a:graphic>
+          </wp:inline>
+        </w:drawing>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="34A03912" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:spacing w:after="240"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:i/>
+          <w:iCs/>
+          <w:color w:val="555555"/>
+          <w:sz w:val="20"/>
+          <w:szCs w:val="20"/>
+        </w:rPr>
+        <w:t>Figura 9. Jugador colocando palabras en el orden correcto</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="01BA34F2" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:pStyle w:val="Ttulo2"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="15" w:name="_Toc230634530"/>
+      <w:r>
+        <w:t>3.5 Resultados Finales</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="15"/>
+    </w:p>
+    <w:p w14:paraId="5F8DCD60" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r>
+        <w:t>Al concluir todas las rondas, el host ve la pantalla de resultados con el podio de ganadores y las puntuaciones finales. Los jugadores reciben simultáneamente la notificación de fin de juego con su puntuación total. El host puede iniciar una nueva partida o cerrar la sesión.</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="5E0CD52F" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00B35A5C">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+      </w:pPr>
+    </w:p>
+    <w:p w14:paraId="2D5B5FD7" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:spacing w:before="160" w:after="80"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:noProof/>
+        </w:rPr>
+        <w:lastRenderedPageBreak/>
+        <w:drawing>
+          <wp:inline distT="0" distB="0" distL="0" distR="0" wp14:anchorId="50F0B132" wp14:editId="3CCAB57D">
+            <wp:extent cx="5334000" cy="3429000"/>
+            <wp:effectExtent l="0" t="0" r="0" b="0"/>
+            <wp:docPr id="1271512881" name="Figura 10. Pantalla de resultados finales — vista del host" descr="Figura 10. Pantalla de resultados finales — vista del host" title="Figura 10. Pantalla de resultados finales — vista del host"/>
+            <wp:cNvGraphicFramePr>
+              <a:graphicFrameLocks xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" noChangeAspect="1"/>
+            </wp:cNvGraphicFramePr>
+            <a:graphic xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+              <a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture">
+                <pic:pic xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture">
+                  <pic:nvPicPr>
+                    <pic:cNvPr id="0" name=""/>
+                    <pic:cNvPicPr>
+                      <a:picLocks noChangeAspect="1" noChangeArrowheads="1"/>
+                    </pic:cNvPicPr>
+                  </pic:nvPicPr>
+                  <pic:blipFill>
+                    <a:blip r:embed="rId20"/>
+                    <a:srcRect/>
+                    <a:stretch>
+                      <a:fillRect/>
+                    </a:stretch>
+                  </pic:blipFill>
+                  <pic:spPr bwMode="auto">
+                    <a:xfrm>
+                      <a:off x="0" y="0"/>
+                      <a:ext cx="5334000" cy="3429000"/>
+                    </a:xfrm>
+                    <a:prstGeom prst="rect">
+                      <a:avLst/>
+                    </a:prstGeom>
+                  </pic:spPr>
+                </pic:pic>
+              </a:graphicData>
+            </a:graphic>
+          </wp:inline>
+        </w:drawing>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="257886EF" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:spacing w:after="240"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:i/>
+          <w:iCs/>
+          <w:color w:val="555555"/>
+          <w:sz w:val="20"/>
+          <w:szCs w:val="20"/>
+        </w:rPr>
+        <w:t>Figura 10. Pantalla de resultados finales — vista del host</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="1BDD51C6" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:spacing w:before="160" w:after="80"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:noProof/>
+        </w:rPr>
+        <w:lastRenderedPageBreak/>
+        <w:drawing>
+          <wp:inline distT="0" distB="0" distL="0" distR="0" wp14:anchorId="47A14C95" wp14:editId="1203D79C">
+            <wp:extent cx="2476500" cy="5381625"/>
+            <wp:effectExtent l="0" t="0" r="0" b="0"/>
+            <wp:docPr id="12659428" name="Figura 11. Pantalla de fin de juego — vista del jugador (móvil)" descr="Figura 11. Pantalla de fin de juego — vista del jugador (móvil)" title="Figura 11. Pantalla de fin de juego — vista del jugador (móvil)"/>
+            <wp:cNvGraphicFramePr>
+              <a:graphicFrameLocks xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" noChangeAspect="1"/>
+            </wp:cNvGraphicFramePr>
+            <a:graphic xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+              <a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture">
+                <pic:pic xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture">
+                  <pic:nvPicPr>
+                    <pic:cNvPr id="0" name=""/>
+                    <pic:cNvPicPr>
+                      <a:picLocks noChangeAspect="1" noChangeArrowheads="1"/>
+                    </pic:cNvPicPr>
+                  </pic:nvPicPr>
+                  <pic:blipFill>
+                    <a:blip r:embed="rId21"/>
+                    <a:srcRect/>
+                    <a:stretch>
+                      <a:fillRect/>
+                    </a:stretch>
+                  </pic:blipFill>
+                  <pic:spPr bwMode="auto">
+                    <a:xfrm>
+                      <a:off x="0" y="0"/>
+                      <a:ext cx="2476500" cy="5381625"/>
+                    </a:xfrm>
+                    <a:prstGeom prst="rect">
+                      <a:avLst/>
+                    </a:prstGeom>
+                  </pic:spPr>
+                </pic:pic>
+              </a:graphicData>
+            </a:graphic>
+          </wp:inline>
+        </w:drawing>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="1496CF55" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:spacing w:after="240"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:i/>
+          <w:iCs/>
+          <w:color w:val="555555"/>
+          <w:sz w:val="20"/>
+          <w:szCs w:val="20"/>
+        </w:rPr>
+        <w:t>Figura 11. Pantalla de fin de juego — vista del jugador (móvil)</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="789C9E68" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:pStyle w:val="Ttulo1"/>
+        <w:pageBreakBefore/>
+      </w:pPr>
+      <w:bookmarkStart w:id="16" w:name="_Toc230634531"/>
+      <w:r>
+        <w:rPr>
+          <w:caps/>
+        </w:rPr>
+        <w:lastRenderedPageBreak/>
+        <w:t>4. Conclusión</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="16"/>
+    </w:p>
+    <w:p w14:paraId="2B75F444" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r>
+        <w:t>Grammar X demuestra que es posible desarrollar herramientas educativas digitales de alta calidad utilizando exclusivamente tecnologías de código abierto. El proyecto integra conceptos avanzados de desarrollo web —como la comunicación en tiempo real mediante WebSockets, la sincronización de relojes entre cliente y servidor, y el despliegue en la nube— aplicándolos a un contexto educativo concreto.</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="6728B18A" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00B35A5C">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+      </w:pPr>
+    </w:p>
+    <w:p w14:paraId="1F2FD6FF" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r>
+        <w:t>Desde la perspectiva del aprendizaje del idioma inglés, la aplicación contribuye a la práctica de cuatro estructuras gramaticales fundamentales: el pasado simple, los comparativos y superlativos, el present perfect y el tiempo futuro. La mecánica de juego competitiva motiva a los estudiantes a concentrarse y responder rápidamente, creando un ambiente de aprendizaje activo y participativo que complementa eficazmente los métodos de enseñanza tradicionales.</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0957C2A4" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00B35A5C">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+      </w:pPr>
+    </w:p>
+    <w:p w14:paraId="06D2C46E" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:ind w:firstLine="720"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r>
+        <w:t>Entre las posibles mejoras futuras se identifican: la incorporación de más minijuegos que cubran estructuras adicionales como los condicionales o el passive voice; el desarrollo de un sistema de cuentas de usuario que permita a los docentes gestionar sus grupos y hacer seguimiento del progreso individual de cada estudiante; y la optimización del rendimiento para salas con un mayor número de participantes simultáneos.</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="5EC661F0" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:pStyle w:val="Ttulo1"/>
+        <w:pageBreakBefore/>
+      </w:pPr>
+      <w:bookmarkStart w:id="17" w:name="_Toc230634532"/>
+      <w:r>
+        <w:rPr>
+          <w:caps/>
+        </w:rPr>
+        <w:lastRenderedPageBreak/>
+        <w:t>5. Bibliografía</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="17"/>
+    </w:p>
+    <w:p w14:paraId="7BA813F1" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r>
+        <w:t>Meta Platforms. (2024). React – A JavaScript library for building user interfaces. https://react.dev</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="7A1209FF" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00B35A5C">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+      </w:pPr>
+    </w:p>
+    <w:p w14:paraId="211668CF" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r>
+        <w:t>Vite. (2024). Vite: Next Generation Frontend Tooling. https://vitejs.dev</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="73BF99B3" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00B35A5C">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+      </w:pPr>
+    </w:p>
+    <w:p w14:paraId="18785354" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r>
+        <w:t>Socket.IO. (2024). Socket.IO documentation. https://socket.io/docs/v4/</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="5B217530" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00B35A5C">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+      </w:pPr>
+    </w:p>
+    <w:p w14:paraId="2D998AB4" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r>
+        <w:t>Node.js Foundation. (2024). Node.js documentation – node:sqlite. https://nodejs.org/api/sqlite.html</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="766AF42D" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00B35A5C">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+      </w:pPr>
+    </w:p>
+    <w:p w14:paraId="00266BEC" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r>
+        <w:t>Railway. (2024). Railway documentation. https://docs.railway.app</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="5D06DCBA" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00B35A5C">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+      </w:pPr>
+    </w:p>
+    <w:p w14:paraId="6B4EBAEA" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r>
+        <w:t>Brown, H. D. (2014). Principles of Language Learning and Teaching (6.a ed.). Pearson Education.</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="46658816" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00B35A5C">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+      </w:pPr>
+    </w:p>
+    <w:p w14:paraId="40228F2E" w14:textId="77777777" w:rsidR="00B35A5C" w:rsidRDefault="00E46669">
+      <w:pPr>
+        <w:spacing w:line="480" w:lineRule="auto"/>
+        <w:jc w:val="both"/>
+      </w:pPr>
+      <w:r>
+        <w:t>Prensky, M. (2001). Digital game-based learning. McGraw-Hill.</w:t>
+      </w:r>
+    </w:p>
+    <w:sectPr w:rsidR="00B35A5C">
+      <w:headerReference w:type="default" r:id="rId22"/>
+      <w:pgSz w:w="12240" w:h="15840"/>
+      <w:pgMar w:top="1440" w:right="1440" w:bottom="1440" w:left="1440" w:header="708" w:footer="708" w:gutter="0"/>
+      <w:cols w:space="720"/>
+      <w:docGrid w:linePitch="360"/>
+    </w:sectPr>
+  </w:body>
+</w:document>
